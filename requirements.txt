@@ -1,6 +1,4 @@
-streamlit as st
-pandas as pd
-numpy as np
-matplotlib.pyplot as plt
-matplotlib.colors as mcolors
-matplotlib.font_manager as fm  
+streamlit
+pandas
+numpy
+matplotlib
