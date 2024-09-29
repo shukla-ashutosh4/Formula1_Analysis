@@ -432,7 +432,7 @@ color_dictt = {
     'Mercedes': '#00D2BE',  # Mercedes (Teal)
     'Aston Martin Aramco Mercedes': '#006F62', # Aston Martin (Green)
     'McLaren Mercedes': '#FF8700',    # McLaren (Orange)
-    'Alpine Renault': '#FFC0CB',     
+    'Alpine Renault': '#FF69B4',     
     'Alfa Romeo Ferrari': '#A42134',
     'Williams Mercedes': '#00A0DE',
     'AlphaTauri Honda RBPT': '#ffffff',
