@@ -510,6 +510,20 @@ for driver in driverStandingsTop10:
         if i < len(driverPointsTop10Sprint[driver]):
             driverPointsTop10[driver][sp[i]] += driverPointsTop10Sprint[driver][i]
 
+st.header("Drivers Standings 2023")
+racePoints = season2023RaceResults.groupby(['Driver', 'Team'])['Points'].sum().sort_values(ascending=False)
+sprintRacePoints = season2023SprintRaceResults.groupby(['Driver'])['Points'].sum().sort_values(ascending=False)
+for driver in season2023RaceResults['Driver'].unique():
+    if driver not in season2023SprintRaceResults['Driver'].unique():
+        sprintRacePoints.loc[driver] = 0
+driverStandings = (racePoints + sprintRacePoints).fillna(0).sort_values(ascending=False)
+driverStandings = pd.DataFrame(driverStandings).reset_index()
+driverStandings['POS'] = range(1,23)
+driverStandings['Points'] = driverStandings['Points'].astype(int)
+driverStandings.set_index('POS', inplace=True)
+driverStandings
+
+
 # Plotting Driver Points Progression
 plt.style.use('dark_background')
 plt.figure(figsize=(11.5, 7))
@@ -537,6 +551,22 @@ plt.axhline(0, linewidth=1, color='#bbbbbb')
 plt.grid(True, linestyle='--', alpha=0.5)
 plt.legend(loc='upper left', fontsize=9, prop=font_prop)
 st.pyplot(plt)
+
+st.header("Formula 1 - 2023 Season\nPoints Earned From Sprint Races (Drivers)")
+sprintRacePointsNonZero = sprintRacePoints[sprintRacePoints > 0]
+plt.figure(figsize=(10,5))
+plt.axis([0,50,15,-0.6])
+plt.barh([driver.split()[1] for driver in sprintRacePointsNonZero.index.values], sprintRacePointsNonZero, color=c)
+for i in range(len(sprintRacePointsNonZero)):
+    plt.text(sprintRacePointsNonZero[i]-1.7, i+0.3, "{:2}".format(sprintRacePointsNonZero[i]),
+             color='k', fontsize=14, fontweight='bold')
+plt.title('Formula 1 - 2023 Season\nPoints Earned From Sprint Races (Drivers)', fontsize=19, fontweight='bold', color='#bbbbbb')
+plt.xlabel('POINTS', fontsize=14, fontweight='bold', color='#bbbbbb')
+plt.ylabel('DRIVERS', fontsize=14, fontweight='bold', color='#bbbbbb')
+plt.xticks(range(0,50,5), range(0,50,5), color='#bbbbbb')
+plt.yticks(color='#bbbbbb')
+plt.axvline(0, color='#bbbbbb')
+plt.show()
 
 # Section: Constructor Standings
 st.header("Constructor Standings")
