@@ -696,7 +696,7 @@ for driver in season2023PolePos['Driver']:
 season2023PolePos
 
 
-st.header("Sprint Pole Position"),fontproperties=font_prop
+st.header("Sprint Pole Position")
 season2023PolePosSprint = season2023SprintRaceResults[season2023SprintRaceResults['Starting Grid'] == 1] \
     .set_index('Track').drop('Starting Grid', axis=1)
 polePosSprint = {}
