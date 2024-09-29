@@ -400,3 +400,62 @@ st.pyplot(plt)
 # Final remarks
 st.markdown("This analysis provides an overview of the 2023 Formula 1 season, focusing on driver standings, team performance, and key statistics.")
 
+
+
+import streamlit as st
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib.colors as mcolors
+
+# Load datasets
+season2023RaceResults = pd.read_csv('Formula1_2023season_raceResults.csv')
+season2023SprintRaceResults = pd.read_csv('Formula1_2023season_sprintResults.csv')
+season2023Drivers = pd.read_csv('Formula1_2023season_drivers.csv')
+
+# Color assignment function
+def assign_color(val_type, values):
+    cl = []
+    for val in values:
+        if val_type == 'drivers':  
+            abbr = val.split()[1].upper()[0:3]  # Abbreviation based on driver last name
+        elif val_type == 'teams':  
+            abbr = val[0:4].upper()  # Abbreviation based on team name
+        if abbr in ['ALFA','BOT','ZHO']:           cl.append('#900000')
+        elif abbr in ['HAAS','HUL','MAG']:         cl.append('#ffffff')
+        elif abbr in ['ASTO','VET','STR']:         cl.append('#006f62')
+        elif abbr in ['WILL','ALB','LAT','DE']:    cl.append('#0072ff')
+        elif abbr in ['ALPH','RIC','TSU']:         cl.append('#2b5962')
+        elif abbr in ['MCLA','RIC','NOR']:         cl.append('#ff8700')
+        elif abbr in ['RED ','VER','PER']:         cl.append('#0600f0')
+        elif abbr in ['FERR','LEC','SAI']:         cl.append('#cb0000')
+        elif abbr in ['MERC','HAM','RUS']:         cl.append('#00d2bd')
+        elif abbr in ['ALPI','ALO','OCO']:         cl.append('#0090ff')
+    return cl
+
+# Section: Driver Points Progression
+st.header("2023 Season Top 10 Drivers' Points Progression")
+driverStandingsTop10 = season2023Drivers['Driver'][:10].values
+
+# Assign colors for the top 10 drivers
+colors_for_drivers = assign_color('drivers', driverStandingsTop10)
+
+# Prepare data for plotting points progression
+driverPointsTop10 = {}
+for driver in driverStandingsTop10:
+    driverPointsTop10[driver] = season2023RaceResults[season2023RaceResults['Driver'] == driver]['Points'].values
+
+# Plot the points progression
+plt.figure(figsize=(11.5, 7))
+for i, driver in enumerate(driverStandingsTop10):
+    points = np.cumsum(driverPointsTop10[driver])  # Cumulative points
+    plt.plot(points, label=driver.split()[1], color=colors_for_drivers[i], linewidth=2)
+
+plt.title('Formula 1 - 2023 Season\nTop 10 Drivers\' Points Progression', fontsize=19, fontweight='bold', color='#bbbbbb')
+plt.xlabel('Races', fontsize=16, fontweight='bold', color='#bbbbbb')
+plt.ylabel('Points', fontsize=16, fontweight='bold', color='#bbbbbb')
+plt.xticks(fontsize=12, color='#bbbbbb', rotation=45)
+plt.yticks(fontsize=12, color='#bbbbbb')
+plt.legend(loc='upper left', fontsize=9)
+st.pyplot(plt)
+
