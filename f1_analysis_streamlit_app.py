@@ -412,7 +412,7 @@ font_prop = fm.FontProperties(fname=font_path)
 
 # Manually specify the colors for top drivers/teams
 color_dict = {
-    'Max Verstappen''Red Bull Racing Honda RBPT': '#1E41FF',  # Red Bull (Blue)
+    'Max Verstappen': '#1E41FF',  # Red Bull (Blue)
     'Sergio Perez': '#1E41FF',    # Red Bull (Blue)
     'Charles Leclerc': '#DC0000',  # Ferrari (Red), 
     'Carlos Sainz': '#DC0000',     # Ferrari (Red)
