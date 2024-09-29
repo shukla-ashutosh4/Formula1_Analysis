@@ -776,8 +776,8 @@ for i in range(len(podiumFinishes)):
 ax.set_title('Formula 1 - 2023 Season\n# of Podium Finishes (Drivers)',fontproperties=font_prop, fontsize=19, weight='bold', color='#bbbbbb')
 ax.set_xlabel('PODIUMS', fontproperties=font_prop, fontsize=14, fontweight='bold', color='#bbbbbb')
 ax.set_ylabel('DRIVERS', fontproperties=font_prop, fontsize=14, fontweight='bold', color='#bbbbbb')
-ax.tick_params(axis='x', colors='#bbbbbb',fontproperties=font_prop)
-ax.tick_params(axis='y', colors='#bbbbbb',fontproperties=font_prop)
+ax.tick_params(axis='x', fontproperties=font_prop,colors='#bbbbbb')
+ax.tick_params(axis='y', fontproperties=font_prop,colors='#bbbbbb')
 ax.axvline(0, color='#bbbbbb')
 
 st.pyplot(fig)
