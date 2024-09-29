@@ -666,8 +666,10 @@ season2023RaceResults[season2023RaceResults['Position'] == '1'].set_index('Track
 
 winners = season2023RaceResults[season2023RaceResults['Position'] == '1']['Driver'].value_counts()
 plt.figure(figsize=(9,4.5))
-plt.axis([0,20,3,-0.5])
-plt.barh([driver.split()[1] for driver in winners.index], winners, color=color)
+plt.axis((0,20,3,-0.5))
+colors = ['#1E41FF', '#DC0000', '#00D2BE']  # Blue, Red, Blue
+for i, driver in enumerate(winners.index):
+    plt.barh([driver.split()[1]], [winners[i]], color=colors[i % len(colors)])
 for i in range(len(winners)):
     plt.text(winners[i]-1.3, i+0.15, "{:>3}".format(winners[i]), fontsize=19, fontweight='bold', color='k')
 plt.title('Formula 1 - 2023 Season\n# of Race Wins (Drivers)', fontsize=19, fontweight='bold', color='#bbbbbb')
