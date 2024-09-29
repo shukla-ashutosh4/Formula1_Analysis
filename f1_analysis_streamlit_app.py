@@ -358,6 +358,22 @@ plt.grid(True, linestyle='--', alpha=0.5)
 plt.legend(loc='upper left', fontsize=9, prop=font_prop)
 st.pyplot(plt)
 
+
+winners = season2023RaceResults[season2023RaceResults['Position'] == '1']['Driver'].value_counts()
+c = assign_color('drivers', winners.index)
+plt.figure(figsize=(9,4.5))
+plt.axis([0,20,3,-0.5])
+plt.barh([driver.split()[1] for driver in winners.index], winners, color=c)
+for i in range(len(winners)):
+    plt.text(winners[i]-1.3, i+0.15, "{:>3}".format(winners[i]), fontsize=19, fontweight='bold', color='k')
+plt.title('Formula 1 - 2023 Season\n# of Race Wins (Drivers)', fontsize=19, fontweight='bold', color='#bbbbbb')
+plt.xlabel('RACE WINS', fontsize=14, fontweight='bold', color='#bbbbbb')
+plt.ylabel('DRIVERS', fontsize=14, fontweight='bold', color='#bbbbbb')
+plt.xticks(color='#bbbbbb')
+plt.yticks(color='#bbbbbb')
+plt.axvline(0, color='#bbbbbb')
+st.pyplot(plt)
+
 # Final remarks
 st.markdown("This analysis provides an overview of the 2023 Formula 1 season, focusing on driver standings, team performance, and key statistics.")
 
