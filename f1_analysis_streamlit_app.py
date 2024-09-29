@@ -479,6 +479,15 @@ st.title("Formula 1 2023 Season Analysis")
 st.header("Season Calendar")    
 season2023RaceCalendar
 
+st.header("The Drivers")
+season2023Drivers
+
+st.header("Race Tracks")
+RaceTracks
+
+st.header("Several Notable Races in 2022 Season")
+season2023RaceResults[season2023RaceResults['Track'] == 'Bahrain'].drop('Track', axis=1).set_index('Position').head(10)
+
 st.header("RedBull 2023 Wins")
 redbull_wins = season2023RaceResults[(season2023RaceResults['Position'] == '1') & (season2023RaceResults['Team'] == 'Red Bull Racing Honda RBPT')]
 redbull_wins.groupby('Track').head(10)
