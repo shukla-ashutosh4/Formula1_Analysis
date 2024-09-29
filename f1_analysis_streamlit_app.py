@@ -706,4 +706,22 @@ for driver in season2023PolePosSprint['Driver']:
 season2023PolePosSprint
 
 
+polePositions = pd.Series(polePos).sort_values(ascending=False)
+plt.figure(figsize=(9,4.5))
+plt.axis([0,20,7,-0.9])
+for i, driver in enumerate(sprintRacePointsNonZero.index.values):
+    driver_name = driver.split()[1]
+    color = color_dicttt.get(driver_name, '#bbbbbb')  # Default to '#bbbbbb' if driver not found in color_dicttt
+    plt.barh([driver_name], [sprintRacePointsNonZero[i]], color=color)
 
+for i in range(len(sprintRacePointsNonZero)):
+    driver_name = sprintRacePointsNonZero.index.values[i].split()[1]
+    color = color_dicttt.get(driver_name, '#bbbbbb')  # Use color_dicttt for text color as well
+    plt.text(sprintRacePointsNonZero[i] - 1.7, i + 0.3, "{:2}".format(sprintRacePointsNonZero[i]),
+             color=color, fontsize=14, fontweight='bold', fontproperties=font_prop)
+plt.xlabel('POLE POSITIONS', fontsize=14, fontweight='bold', color='#bbbbbb')
+plt.ylabel('DRIVERS', fontsize=14, fontweight='bold', color='#bbbbbb')
+plt.xticks(color='#bbbbbb')
+plt.yticks(color='#bbbbbb')
+plt.axvline(0, color='#bbbbbb')
+plt.show()
