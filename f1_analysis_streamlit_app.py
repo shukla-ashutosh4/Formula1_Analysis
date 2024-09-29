@@ -597,7 +597,7 @@ plt.ylabel('DRIVERS', fontproperties=font_prop, fontsize=16, fontweight='bold', 
 plt.xticks(range(0, 50, 5), range(0, 50, 5), color='#bbbbbb')
 plt.yticks(color='#bbbbbb')
 plt.axvline(0, linewidth=1, color='#bbbbbb')
-plt.grid(True, linestyle='--', alpha=0.5, color='#bbbbbb')
+# plt.grid(True, linestyle='--', alpha=0.5, color='#bbbbbb')
 
 # Display the plot in Streamlit
 st.pyplot(plt)
