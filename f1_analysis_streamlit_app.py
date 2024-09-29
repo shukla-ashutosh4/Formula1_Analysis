@@ -419,12 +419,26 @@ color_dict = {
     'Lewis Hamilton': '#00D2BE',  
     'George Russell': '#00D2BE',  
     'Fernando Alonso': '#006F62', 
-    'Lance Stroll': '#006F62', 
+    {'Lance Stroll',}: '#006F62', 
     'Lando Norris': '#FF8700',    
     'Oscar Piastri': '#FF8700',   
     'Esteban Ocon': '#0090FF'  
 }
 
+color_dict = {
+    'Verstappen': '#1E41FF',  
+    'Perez': '#1E41FF',    
+    'Leclerc': '#DC0000',   
+    'Sainz': '#DC0000',     
+    'Hamilton': '#00D2BE',  
+    'Russell': '#00D2BE',  
+    'Alonso': '#006F62', 
+    'Stroll': '#006F62', 
+    'Norris': '#FF8700',    
+    'Piastri': '#FF8700',   
+    'Ocon': '#0090FF',
+    'Tsunoda':'#ffffff'
+}
 
 color_dictt = {
     'Red Bull Racing Honda RBPT': '#1E41FF', 
