@@ -566,7 +566,7 @@ plt.ylabel('DRIVERS', fontsize=14, fontweight='bold', color='#bbbbbb')
 plt.xticks(range(0,50,5), range(0,50,5), color='#bbbbbb')
 plt.yticks(color='#bbbbbb')
 plt.axvline(0, color='#bbbbbb')
-plt.show()
+st.pyplot(plt)
 
 # Section: Constructor Standings
 st.header("Constructor Standings")
