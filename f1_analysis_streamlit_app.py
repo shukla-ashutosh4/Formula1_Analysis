@@ -481,12 +481,10 @@ container = st.container()
 with container:
     st.write(season2023RaceCalendar) 
 
-st.header("Season Calendar")
-
-col1, col2, col3, col4, col5, col6, col7, col8 = st.columns(2)  # Create two columns
-
-with col1:
-    st.write(season2023RaceCalendar)
+st.header("RedBull 2023 Wins")
+redbull_wins = season2023RaceResults[(season2023RaceResults['Position'] == '1') & (season2023RaceResults['Team'] == 'Red Bull Racing Honda RBPT')]
+redbull_wins.groupby('Track').head(10)
+st.write(redbull_wins)
 
 # Section: Driver Points Progression
 st.header("2023 Season Top 10 Drivers' Points Progression")
