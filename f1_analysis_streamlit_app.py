@@ -552,7 +552,7 @@ plt.grid(True, linestyle='--', alpha=0.5)
 plt.legend(loc='upper left', fontsize=9, prop=font_prop)
 st.pyplot(plt)
 
-st.header("Formula 1 - 2023 Season\nPoints Earned From Sprint Races (Drivers)")
+st.header("Formula 1 - 2023 Season Points Earned From Sprint Races (Drivers)")
 sprintRacePointsNonZero = sprintRacePoints[sprintRacePoints > 0]
 plt.figure(figsize=(10,5))
 plt.axis([0,50,15,-0.6])
