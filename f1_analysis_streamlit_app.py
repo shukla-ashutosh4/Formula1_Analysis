@@ -480,6 +480,9 @@ st.header("Season Calendar")
 container = st.container()  
 with container:
     st.write(season2023RaceCalendar) 
+    
+    
+season2023RaceCalendar
 
 st.header("RedBull 2023 Wins")
 redbull_wins = season2023RaceResults[(season2023RaceResults['Position'] == '1') & (season2023RaceResults['Team'] == 'Red Bull Racing Honda RBPT')]
