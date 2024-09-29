@@ -480,52 +480,7 @@ st.header("Season Calendar")
 season2023RaceCalendar
 
 st.header("The Drivers")
-
-# Define a dictionary with player names and their corresponding images
-player_images = {
-    "Player 1": "https://www.google.com/imgres?q=fernando%20alonso&imgurl=https%3A%2F%2Fassets.astonmartinf1.com%2Fpublic%2Fcms%2F4K9iyVcGFIsiISJHsaP7XC%2F0df7a7fa4ca37a4a94035be12382c4ed%2FFernando_hero.jpg%3F%26h%3D849%26w%3D1440%26fm%3Djpg%26fit%3Dthumb&imgrefurl=https%3A%2F%2Fwww.astonmartinf1.com%2Fen-GB%2Fdriver%2Ffernando-alonso&docid=uSPzEIjYy8UILM&tbnid=FEImHaCKeNzrCM&vet=12ahUKEwiD2fi0puiIAxVvSGcHHdudANEQM3oECFMQAA..i&w=1440&h=849&hcb=2&ved=2ahUKEwiD2fi0puiIAxVvSGcHHdudANEQM3oECFMQAA"
-    # "Player 2": "https://example.com/player2.jpg",
-    # Add more players here...
-}
-
-# Create a container for the content that triggers the tooltip on mouseover
-with st.expander("⛓", expanded=True):
-    # Generate the dynamic HTML and CSS for each player in the list
-    for i, player in enumerate(season2023Drivers):
-        image_url = player_images.get(player, "")  # Get the image URL for the player
-        if image_url:
-            # Define the unique CSS for each image
-            hover_css = f"""
-                .hoverable_{i} {{
-                    position: relative;
-                    display: inline-block;
-                    cursor: pointer;
-                }}
-                .hoverable_{i}:hover .tooltip_{i} {{
-                    opacity: 1;
-                }}
-                .tooltip_{i} {{
-                    position: absolute;
-                    display: none;
-                    background-image: url({image_url});
-                    background-size: cover;
-                    width: 200px;
-                    height: 200px;
-                    z-index: 999;
-                }}
-            """
-            tooltip_css = f"<style>{hover_css}</style>"
-
-            # Define the HTML for each player
-            player_html = f"""
-                <div class="hoverable_{i}">
-                    <a href="{image_url}">{player}</a>
-                    <div class="tooltip_{i}"></div>
-                </div>
-            """
-
-            # Write the dynamic HTML and CSS to the content container
-            st.markdown(f'<p>{player_html}{tooltip_css}</p>', unsafe_allow_html=True)
+season2023Drivers
 
 st.header("Race Tracks")
 RaceTracks
