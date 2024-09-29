@@ -576,11 +576,15 @@ plt.axis([0,50,15,-0.6])
 
 # Use the color dictionary to set the bar colors
 for i, driver in enumerate(sprintRacePointsNonZero.index.values):
-    plt.barh([driver.split()[1]], [sprintRacePointsNonZero[i]], color=color_dict.get(driver.split()[1], '#bbbbbb'))
+    driver_name = driver.split()[1]
+    color = color_dict.get(driver_name, '#bbbbbb')
+    plt.barh([driver_name], [sprintRacePointsNonZero[i]], color=color)
 
 for i in range(len(sprintRacePointsNonZero)):
+    driver_name = sprintRacePointsNonZero.index.values[i].split()[1]
+    color = color_dict.get(driver_name, '#bbbbbb')
     plt.text(sprintRacePointsNonZero[i]-1.7, i+0.3, "{:2}".format(sprintRacePointsNonZero[i]),
-             color='#bbbbbb', fontsize=14, fontweight='bold', fontproperties=font_prop)
+             color=color, fontsize=14, fontweight='bold', fontproperties=font_prop)
 
 plt.title('Formula 1 - 2023 Season\nPoints Earned From Sprint Races (Drivers)', 
           fontproperties=font_prop, fontsize=19, fontweight='bold', color='#bbbbbb')
@@ -591,6 +595,7 @@ plt.yticks(color='#bbbbbb')
 plt.axvline(0, linewidth=1, color='#bbbbbb')
 plt.grid(True, linestyle='--', alpha=0.5, color='#bbbbbb')
 st.pyplot(plt)
+
 
 # Section: Constructor Standings
 st.header("Constructor Standings")
