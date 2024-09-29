@@ -707,39 +707,26 @@ season2023PolePosSprint
 
 
 polePositions = pd.Series(polePos).sort_values(ascending=False)
-
-# Create figure and axis settings
-plt.figure(figsize=(9, 4.5))
-plt.axis([0, 20, 7, -0.9])
-
-# Plot bars with colors from color dictionary
+plt.figure(figsize=(9,4.5))
+plt.axis([0,20,7,-0.9])
 for i, driver in enumerate(polePositions.index.values):
     driver_name = driver.split()[1]
     color = color_dicttt.get(driver_name, '#bbbbbb')  # Default to '#bbbbbb' if driver not found in color_dicttt
     plt.barh([driver_name], [polePositions[i]], color=color)
 
-# Add text labels to the bars
 for i in range(len(polePositions)):
     driver_name = polePositions.index.values[i].split()[1]
+    color = color_dicttt.get(driver_name, '#bbbbbb')  # Use color_dicttt for text color as well
     plt.text(polePositions[i] - 1, i + 0.3, "{:2}".format(polePositions[i]),
              color='#000000', fontsize=14, fontweight='bold', fontproperties=font_prop)
 
-# Set title and axis labels
-plt.title('Formula 1 - 2023 Season\n# of Pole Positions (Drivers)', 
-          fontproperties=font_prop, fontsize=19, fontweight='bold', color='#bbbbbb')
+plt.title('Formula 1 - 2023 Season\n# of Pole Positions (Drivers)', fontproperties=font_prop, fontsize=19, fontweight='bold', color='#bbbbbb')
 plt.xlabel('POLE POSITIONS', fontproperties=font_prop, fontsize=14, fontweight='bold', color='#bbbbbb')
-plt.ylabel('DRIVERS', fontproperties=font_prop, fontsize=14, fontweight='bold', color='#bbbbbb')
-
-# Customize ticks and lines
+plt.ylabel('DRIVERS', fontsize=14, fontproperties=font_prop, fontweight='bold', color='#bbbbbb')
 plt.xticks(fontproperties=font_prop, color='#bbbbbb')
-plt.yticks(fontproperties=font_prop, color='#bbbbbb')
+plt.yticks(fontproperties=font_prop,color='#bbbbbb')
 plt.axvline(0, color='#bbbbbb')
-
-# Save the plot as an image
-plt.savefig('/mnt/data/output_pole_positions.png', bbox_inches='tight', dpi=300)
-
-# Display the image using Streamlit
-st.image('/mnt/data/output_pole_positions.png')
+st.pyplot(plt)
 
 
 st.header("Formula 1 - 2023 Season Pole Positions Insights")
