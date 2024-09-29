@@ -772,7 +772,7 @@ fig, ax = plt.subplots(figsize=(9,5))
 ax.axis([0,25,11,-0.5])
 ax.barh([driver.split()[1] for driver in podiumFinishes.index], podiumFinishes, color=[color_dicttt[driver.split()[1]] for driver in podiumFinishes.index])
 for i in range(len(podiumFinishes)):
-    ax.text(podiumFinishes[i]-0.6, i+0.2, "{:>3}".format(podiumFinishes[i]),fontproperties=font_prop, fontsize=16, color='k')
+    ax.text(podiumFinishes[i]-1.5, i+0.2, "{:>3}".format(podiumFinishes[i]),fontproperties=font_prop, fontsize=16, color='k')
 ax.set_title('Formula 1 - 2023 Season\n# of Podium Finishes (Drivers)',fontproperties=font_prop, fontsize=19, weight='bold', color='#bbbbbb')
 ax.set_xlabel('PODIUMS', fontproperties=font_prop, fontsize=14, fontweight='bold', color='#bbbbbb')
 ax.set_ylabel('DRIVERS', fontproperties=font_prop, fontsize=14, fontweight='bold', color='#bbbbbb')
