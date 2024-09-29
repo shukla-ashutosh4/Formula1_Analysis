@@ -852,3 +852,64 @@ ax.set_xticks(range(0,22,2))
 ax.axvline(0, color='#bbbbbb')
 
 st.pyplot(fig)
+
+
+st.header("Formula 1 - 2023 Season Top 10 Finishes")
+
+# 1. Verstappen's Exceptional Season
+st.subheader("1. Verstappen's Exceptional Season")
+st.write("22 top 10 finishes (potentially perfect record)")
+st.write("Indicates dominant championship performance")
+
+# 2. Mercedes' Resurgence
+st.subheader("2. Mercedes' Resurgence")
+st.write("Hamilton: 20 top 10 finishes")
+st.write("Russell: 17 top 10 finishes")
+st.write("Significant improvement from 2022 struggles")
+
+# 3. Red Bull's Strong Package
+st.subheader("3. Red Bull's Strong Package")
+st.write("Verstappen: 22 top 10 finishes")
+st.write("Perez: 19 top 10 finishes")
+st.write("Most competitive car on the grid")
+
+# 4. Alonso's Renaissance
+st.subheader("4. Alonso's Renaissance")
+st.write("19 top 10 finishes")
+st.write("Demonstrates top-tier performance")
+st.write("Significant improvement for Aston Martin")
+
+# 5. Ferrari's Consistency Issues
+st.subheader("5. Ferrari's Consistency Issues")
+st.write("Sainz: 18 top 10 finishes")
+st.write("Leclerc: 16 top 10 finishes")
+st.write("Suggests potential reliability or strategic challenges")
+
+# 6. Tight Midfield Battle
+st.subheader("6. Tight Midfield Battle")
+st.write("Sainz, Russell, Norris, Leclerc: 16-18 top 10 finishes each")
+st.write("Highly competitive midfield")
+
+# 7. Alpine's Solid Performance
+st.subheader("7. Alpine's Solid Performance")
+st.write("Ocon and Gasly: 11+ top 10 finishes each")
+st.write("Consistent points-scoring presence")
+
+# 8. Struggles of Bottom Teams
+st.subheader("8. Struggles of Bottom Teams")
+st.write("Magnussen, Zhou, Hulkenberg: ≤5 top 10 finishes")
+st.write("Illustrates performance gap in current F1")
+
+# 9. Rookie Performances
+st.subheader("9. Rookie Performances")
+st.write("Piastri: 11 top 10 finishes (promising)")
+st.write("Sargeant: 1 top 10 finish (steeper learning curve)")
+
+# 10. Midseason Driver Changes
+st.subheader("10. Midseason Driver Changes")
+st.write("Lawson, Ricciardo: 1 top 10 finish each")
+st.write("Suggests dynamic driver lineup changes during the season")
+
+# Conclusion
+st.subheader("Conclusion")
+st.write("This analysis provides a comprehensive overview of the 2023 F1 season's competitive landscape, team performances, and individual driver achievements.")
