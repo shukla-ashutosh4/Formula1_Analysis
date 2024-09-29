@@ -410,10 +410,19 @@ import matplotlib.font_manager as fm  # Import the font manager
 font_path = 'Formula1-Regular.otf'  # Make sure this path is correct
 font_prop = fm.FontProperties(fname=font_path)
 
-# Function to assign colors based on teams or drivers
-def assign_color(num_colors):
-    color_map = plt.cm.get_cmap('tab10', num_colors)  # Using a colormap with 10 colors
-    return [mcolors.to_hex(color_map(i)) for i in range(num_colors)]  # Use mcolors.to_hex
+# Manually specify the colors for top drivers/teams
+color_dict = {
+    'Max Verstappen': '#1E41FF',  # Red Bull (Blue)
+    'Sergio Perez': '#1E41FF',    # Red Bull (Blue)
+    'Charles Leclerc': '#DC0000',  # Ferrari (Red)
+    'Carlos Sainz': '#DC0000',     # Ferrari (Red)
+    'Lewis Hamilton': '#00D2BE',  # Mercedes (Teal)
+    'George Russell': '#00D2BE',  # Mercedes (Teal)
+    'Fernando Alonso': '#006F62', # Aston Martin (Green)
+    'Lando Norris': '#FF8700',    # McLaren (Orange)
+    'Oscar Piastri': '#FF8700',   # McLaren (Orange)
+    'Esteban Ocon': '#0090FF'     # Alpine (Blue)
+}
 
 # Load your datasets here
 season2023RaceResults = pd.read_csv('Formula1_2023season_raceResults.csv')
@@ -463,15 +472,16 @@ for driver in driverStandingsTop10:
 plt.style.use('dark_background')
 plt.figure(figsize=(11.5, 7))
 plt.axis([0, len(season2023RaceResults['Track'].unique()) + 0.2, -5, 800])
-c = assign_color(len(driverStandingsTop10))  # Use the number of top drivers
 
-for i in range(len(driverStandingsTop10)):
-    ls = '--' if driverStandingsTop10[i] in ['Sergio Perez', 'Carlos Sainz', 'Lewis Hamilton', 'Fernando Alonso'] else '-'
-    sprint_points = driverPointsTop10Sprint[driverStandingsTop10[i]]
-    interpolated_sprint_points = np.interp(np.arange(len(driverPointsTop10[driverStandingsTop10[i]])), np.arange(len(sprint_points)), sprint_points)
-    label = driverStandingsTop10[i].split()[-1]  # Get last name for label
-    plt.plot(np.cumsum(driverPointsTop10[driverStandingsTop10[i]] + interpolated_sprint_points), 
-             label=label, color=c[i], linewidth=2, linestyle=ls)
+# Use manually assigned colors
+for i, driver in enumerate(driverStandingsTop10):
+    ls = '--' if driver in ['Sergio Perez', 'Carlos Sainz', 'Lewis Hamilton', 'Fernando Alonso'] else '-'
+    sprint_points = driverPointsTop10Sprint[driver]
+    interpolated_sprint_points = np.interp(np.arange(len(driverPointsTop10[driver])), np.arange(len(sprint_points)), sprint_points)
+    label = driver.split()[-1]  # Get last name for label
+    color = color_dict.get(driver, '#ffffff')  # Use default white if no color specified
+    plt.plot(np.cumsum(driverPointsTop10[driver] + interpolated_sprint_points), 
+             label=label, color=color, linewidth=2, linestyle=ls)
 
 plt.title('Formula 1 - 2023 Season\nTop 10 Drivers\' Points Progression (including sprint points)', 
           fontproperties=font_prop, fontsize=19, fontweight='bold', color='#bbbbbb')
@@ -525,10 +535,11 @@ for team in teamNames:
 # Plotting team points progression
 plt.figure(figsize=(11.5, 7))
 plt.axis([0.2, len(season2023RaceResults['Track'].unique()) + 0.2, -5, 800])
-c = assign_color(len(teamNames))
 
+# Use manually assigned colors for teams
 for i, team in enumerate(teamNames):
-    plt.plot(np.cumsum(teamPoints[team]), label=team, color=c[i], linewidth=2)
+    color = color_dict.get(team, '#ffffff')  # Use white if no color specified
+    plt.plot(np.cumsum(teamPoints[team]), label=team, color=color, linewidth=2)
 
 plt.title('Formula 1 - 2023 Season\nConstructor Points Progression', 
           fontproperties=font_prop, fontsize=19, fontweight='bold', color='#bbbbbb')
