@@ -483,7 +483,7 @@ with container:
 
 st.header("Season Calendar")
 
-col1, col2 = st.columns(2)  # Create two columns
+col1, col2, col3, col4, col5, col6, col7, col8 = st.columns(2)  # Create two columns
 
 with col1:
     st.write(season2023RaceCalendar)
