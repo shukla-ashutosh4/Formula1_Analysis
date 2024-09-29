@@ -423,7 +423,9 @@ color_dict = {
     'Lance Stroll': '#006F62', 
     'Lando Norris': '#FF8700',    
     'Oscar Piastri': '#FF8700',   
-    'Esteban Ocon': '#0090FF'  
+    'Esteban Ocon': '#0090FF',
+    'Valterri Bottas':'#A42134',
+    
 }
 
 color_dicttt = {
