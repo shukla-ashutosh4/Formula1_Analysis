@@ -786,7 +786,7 @@ fig, ax = plt.subplots(figsize=(9,5))
 ax.axis([0,25,11,-0.5])
 ax.barh([driver.split()[1] for driver in podiumFinishes.index], podiumFinishes, color=[color_dicttt[driver.split()[1]] for driver in podiumFinishes.index])
 for i in range(len(podiumFinishes)):
-    ax.text(podiumFinishes[i]-1.35, i+0.2, "{:>3}".format(podiumFinishes[i]),fontproperties=font_prop, fontsize=16, color='k')
+    ax.text(podiumFinishes[i]-1.35, i+0.2, "{:>3}".format(podiumFinishes[i]), fontsize=16, color='k')
 ax.set_title('Formula 1 - 2023 Season\n# of Podium Finishes (Drivers)',fontproperties=font_prop, fontsize=19, weight='bold', color='#bbbbbb')
 ax.set_xlabel('PODIUMS', fontproperties=font_prop, fontsize=14, fontweight='bold', color='#bbbbbb')
 ax.set_ylabel('DRIVERS', fontproperties=font_prop, fontsize=14, fontweight='bold', color='#bbbbbb')
@@ -839,7 +839,6 @@ st.write("The 2023 season was dominated by Red Bull, particularly through Versta
 top10Finishes = season2023RaceResults[season2023RaceResults['Position'].isin([str(i) for i in range(1,11)])] \
                 ['Driver'].value_counts()
 
-font_prop = fm.FontProperties(fname='Formula1-Regular.otf')
 fig, ax = plt.subplots(figsize=(10,6.5))
 ax.axis([0,25,21,-0.6])
 ax.barh([" ".join(driver.split()[1:]) for driver in top10Finishes.index], top10Finishes, color=[color_dicttt[" ".join(driver.split()[1:])] for driver in top10Finishes.index])
