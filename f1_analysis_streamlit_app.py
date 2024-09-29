@@ -379,7 +379,7 @@ st.pyplot(plt)
 
 
 winners = season2023RaceResults[season2023RaceResults['Position'] == '1']['Driver'].value_counts()
-c = assign_color(len(winners))
+c = assign_color('drivers', winners.index)
 plt.figure(figsize=(9,4.5))
 plt.axis([0,20,3,-0.5])
 plt.barh([driver.split()[1] for driver in winners.index], winners, color=c)
