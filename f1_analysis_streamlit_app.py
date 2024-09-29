@@ -839,6 +839,7 @@ st.write("The 2023 season was dominated by Red Bull, particularly through Versta
 top10Finishes = season2023RaceResults[season2023RaceResults['Position'].isin([str(i) for i in range(1,11)])] \
                 ['Driver'].value_counts()
 
+font_prop = fm.FontProperties(fname='Formula1-Regular.otf')
 fig, ax = plt.subplots(figsize=(10,6.5))
 ax.axis([0,25,21,-0.6])
 ax.barh([" ".join(driver.split()[1:]) for driver in top10Finishes.index], top10Finishes, color=[color_dicttt[" ".join(driver.split()[1:])] for driver in top10Finishes.index])
