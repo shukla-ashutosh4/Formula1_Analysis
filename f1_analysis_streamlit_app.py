@@ -427,15 +427,11 @@ color_dict = {
 
 color_dictt = {
     'Red Bull Racing Honda RBPT': '#1E41FF',  # Red Bull (Blue)
-    'Sergio Perez': '#1E41FF',    # Red Bull (Blue)
-    'Charles Leclerc': '#DC0000',  # Ferrari (Red), 
-    'Carlos Sainz': '#DC0000',     # Ferrari (Red)
-    'Lewis Hamilton': '#00D2BE',  # Mercedes (Teal)
-    'George Russell': '#00D2BE',  # Mercedes (Teal)
-    'Fernando Alonso': '#006F62', # Aston Martin (Green)
-    'Lando Norris': '#FF8700',    # McLaren (Orange)
-    'Oscar Piastri': '#FF8700',   # McLaren (Orange)
-    'Esteban Ocon': '#0090FF'     # Alpine (Blue)
+    'Ferrari': '#DC0000',  # Ferrari (Red), 
+    'Mercedes': '#00D2BE',  # Mercedes (Teal)
+    'Aston Martin Aramco Mercedes': '#006F62', # Aston Martin (Green)
+    'McLaren': '#FF8700',    # McLaren (Orange)
+    'Alpine Renault': '#0090FF'     # Alpine (Blue)
 }
 
 
