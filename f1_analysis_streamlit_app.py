@@ -712,13 +712,13 @@ plt.axis([0,20,7,-0.9])
 for i, driver in enumerate(polePositions.index.values):
     driver_name = driver.split()[1]
     color = color_dicttt.get(driver_name, '#bbbbbb')  # Default to '#bbbbbb' if driver not found in color_dicttt
-    plt.barh([driver_name], [polePositions[i]], color='#000000')
+    plt.barh([driver_name], [polePositions[i]], color=color)
 
 for i in range(len(polePositions)):
     driver_name = polePositions.index.values[i].split()[1]
     color = color_dicttt.get(driver_name, '#bbbbbb')  # Use color_dicttt for text color as well
     plt.text(polePositions[i] - 1, i + 0.3, "{:2}".format(polePositions[i]),
-             color=color, fontsize=14, fontweight='bold', fontproperties=font_prop)
+             color='#000000', fontsize=14, fontweight='bold', fontproperties=font_prop)
 
 plt.title('Formula 1 - 2023 Season\n# of Pole Positions (Drivers)', fontsize=19, fontweight='bold', color='#bbbbbb')
 plt.xlabel('POLE POSITIONS', fontsize=14, fontweight='bold', color='#bbbbbb')
