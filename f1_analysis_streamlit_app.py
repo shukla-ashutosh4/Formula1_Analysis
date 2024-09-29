@@ -467,8 +467,10 @@ st.markdown(
 # Set Streamlit title
 st.title("Formula 1 2023 Season Analysis")
 
+st.header("RedBull 2023 Wins")
 redbull_wins = season2023RaceResults[(season2023RaceResults['Position'] == '1') & (season2023RaceResults['Team'] == 'Red Bull Racing Honda RBPT')]
 redbull_wins.groupby('Track').head(10)
+st.write(redbull_wins)
 
 # Section: Driver Points Progression
 st.header("2023 Season Top 10 Drivers' Points Progression")
