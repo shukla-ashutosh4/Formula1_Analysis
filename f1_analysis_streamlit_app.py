@@ -418,7 +418,7 @@ color_dict = {
     'Carlos Sainz': '#DC0000',     # Ferrari (Red)
     'Lewis Hamilton': '#00D2BE',  # Mercedes (Teal)
     'George Russell': '#00D2BE',  # Mercedes (Teal)
-    'Fernando Alonso': '#006F62', # Aston Martin (Green)\
+    'Fernando Alonso': '#006F62', # Aston Martin (Green)
     'Lance Stroll': '#006F62', # Aston Martin (Green)
     'Lando Norris': '#FF8700',    # McLaren (Orange)
     'Oscar Piastri': '#FF8700',   # McLaren (Orange)
