@@ -483,7 +483,7 @@ st.header("The Drivers")
 
 # Define a dictionary with player names and their corresponding images
 player_images = {
-    "Player 1": "F1 2023 Season Drivers\Fernando_Alonso_14.png"
+    "Player 1": "https://www.google.com/imgres?q=fernando%20alonso&imgurl=https%3A%2F%2Fassets.astonmartinf1.com%2Fpublic%2Fcms%2F4K9iyVcGFIsiISJHsaP7XC%2F0df7a7fa4ca37a4a94035be12382c4ed%2FFernando_hero.jpg%3F%26h%3D849%26w%3D1440%26fm%3Djpg%26fit%3Dthumb&imgrefurl=https%3A%2F%2Fwww.astonmartinf1.com%2Fen-GB%2Fdriver%2Ffernando-alonso&docid=uSPzEIjYy8UILM&tbnid=FEImHaCKeNzrCM&vet=12ahUKEwiD2fi0puiIAxVvSGcHHdudANEQM3oECFMQAA..i&w=1440&h=849&hcb=2&ved=2ahUKEwiD2fi0puiIAxVvSGcHHdudANEQM3oECFMQAA"
     # "Player 2": "https://example.com/player2.jpg",
     # Add more players here...
 }
