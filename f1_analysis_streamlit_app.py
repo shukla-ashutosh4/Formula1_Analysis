@@ -594,10 +594,9 @@ plt.title('Formula 1 - 2023 Season\nPoints Earned From Sprint Races (Drivers)',
           fontproperties=font_prop, fontsize=19, fontweight='bold', color='#bbbbbb')
 plt.xlabel('POINTS', fontproperties=font_prop, fontsize=16, fontweight='bold', color='#bbbbbb')
 plt.ylabel('DRIVERS', fontproperties=font_prop, fontsize=16, fontweight='bold', color='#bbbbbb')
-plt.xticks(range(0, 50, 5), range(0, 50, 5), color='#bbbbbb')
-plt.yticks(color='#bbbbbb')
+plt.xticks(fontproperties=font_prop,range(0, 50, 5), range(0, 50, 5), color='#bbbbbb')
+plt.yticks(fontproperties=font_prop,color='#bbbbbb')
 plt.axvline(0, linewidth=1, color='#bbbbbb')
-# plt.grid(True, linestyle='--', alpha=0.5, color='#bbbbbb')
 
 # Display the plot in Streamlit
 st.pyplot(plt)
