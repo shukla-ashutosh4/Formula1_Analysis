@@ -696,4 +696,14 @@ for driver in season2023PolePos['Driver']:
 season2023PolePos
 
 
+st.header("Sprint Pole Position")
+season2023PolePosSprint = season2023SprintRaceResults[season2023SprintRaceResults['Starting Grid'] == 1] \
+    .set_index('Track').drop('Starting Grid', axis=1)
+polePosSprint = {}
+for driver in season2023PolePosSprint['Driver']:
+    if driver not in polePos:   polePos[driver] = 1
+    else:   polePos[driver] += 1
+season2023PolePosSprint
+
+
 
