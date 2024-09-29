@@ -426,8 +426,8 @@ color_dict = {
     'Esteban Ocon': '#0090FF',
     'Valterri Bottas':'#A42134',
     'Kevin Magnussen': '#E6002B',
-    'Zhou Guanyu': '#A42134'
-    
+    'Zhou Guanyu': '#A42134',
+    'Liam Lawson': '#ffffff'
 }
 
 color_dicttt = {
@@ -449,7 +449,9 @@ color_dicttt = {
     'Albon': '#00A0DE',
     'Bottas': '#A42134',
     'Magnussen': '#E6002B',
-    'Zhou':'#A42134'
+    'Zhou':'#A42134',
+    'Lawson': '#ffffff'
+    
 }
 
 color_dictt = {
