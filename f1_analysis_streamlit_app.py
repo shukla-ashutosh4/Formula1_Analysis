@@ -567,33 +567,35 @@ plt.legend(loc='upper left', fontsize=9, prop=font_prop)
 st.pyplot(plt)
 
 
-font_prop = fm.FontProperties(fname='Formula1-Regular.otf', size=12)
 st.header("Formula 1 - 2023 Season Points Earned From Sprint Races (Drivers)")
 
 sprintRacePointsNonZero = sprintRacePoints[sprintRacePoints > 0]
-plt.figure(figsize=(10,5))
-plt.axis([0,50,15,-0.6])
 
-# Use the color dictionary to set the bar colors
+plt.figure(figsize=(10, 5))
+plt.axis([0, 50, 15, -0.6])
+
+# Use the new color dictionary (color_dicttt) to set the bar colors
 for i, driver in enumerate(sprintRacePointsNonZero.index.values):
     driver_name = driver.split()[1]
-    color = color_dict.get(driver_name, '#bbbbbb')
+    color = color_dicttt.get(driver_name, '#bbbbbb')  # Default to '#bbbbbb' if driver not found in color_dicttt
     plt.barh([driver_name], [sprintRacePointsNonZero[i]], color=color)
 
 for i in range(len(sprintRacePointsNonZero)):
     driver_name = sprintRacePointsNonZero.index.values[i].split()[1]
-    color = color_dict.get(driver_name, '#bbbbbb')
-    plt.text(sprintRacePointsNonZero[i]-1.7, i+0.3, "{:2}".format(sprintRacePointsNonZero[i]),
+    color = color_dicttt.get(driver_name, '#bbbbbb')  # Use color_dicttt for text color as well
+    plt.text(sprintRacePointsNonZero[i] - 1.7, i + 0.3, "{:2}".format(sprintRacePointsNonZero[i]),
              color=color, fontsize=14, fontweight='bold', fontproperties=font_prop)
 
 plt.title('Formula 1 - 2023 Season\nPoints Earned From Sprint Races (Drivers)', 
           fontproperties=font_prop, fontsize=19, fontweight='bold', color='#bbbbbb')
 plt.xlabel('POINTS', fontproperties=font_prop, fontsize=16, fontweight='bold', color='#bbbbbb')
 plt.ylabel('DRIVERS', fontproperties=font_prop, fontsize=16, fontweight='bold', color='#bbbbbb')
-plt.xticks(range(0,50,5), range(0,50,5), color='#bbbbbb')
+plt.xticks(range(0, 50, 5), range(0, 50, 5), color='#bbbbbb')
 plt.yticks(color='#bbbbbb')
 plt.axvline(0, linewidth=1, color='#bbbbbb')
 plt.grid(True, linestyle='--', alpha=0.5, color='#bbbbbb')
+
+# Display the plot in Streamlit
 st.pyplot(plt)
 
 
