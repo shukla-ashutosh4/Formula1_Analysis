@@ -552,9 +552,8 @@ plt.grid(True, linestyle='--', alpha=0.5)
 plt.legend(loc='upper left', fontsize=9, prop=font_prop)
 st.pyplot(plt)
 
-# Define the font properties
-font_prop = fm.FontProperties(fname='Formula1-Regular.otf', size=12)  # Replace with your font file
 
+font_prop = fm.FontProperties(fname='Formula1-Regular.otf', size=12)
 st.header("Formula 1 - 2023 Season Points Earned From Sprint Races (Drivers)")
 
 sprintRacePointsNonZero = sprintRacePoints[sprintRacePoints > 0]
@@ -563,9 +562,7 @@ plt.axis([0,50,15,-0.6])
 
 # Use the color dictionary to set the bar colors
 for i, driver in enumerate(sprintRacePointsNonZero.index.values):
-    driver_name = driver.split()[1]
-    color = color_dict.get(driver_name, '#bbbbbb')
-    plt.barh([driver_name], [sprintRacePointsNonZero[i]], color=color)
+    plt.barh([driver.split()[1]], [sprintRacePointsNonZero[i]], color=color_dict.get(driver.split()[1], '#bbbbbb'))
 
 for i in range(len(sprintRacePointsNonZero)):
     plt.text(sprintRacePointsNonZero[i]-1.7, i+0.3, "{:2}".format(sprintRacePointsNonZero[i]),
@@ -580,7 +577,6 @@ plt.yticks(color='#bbbbbb')
 plt.axvline(0, linewidth=1, color='#bbbbbb')
 plt.grid(True, linestyle='--', alpha=0.5, color='#bbbbbb')
 st.pyplot(plt)
-
 
 # Section: Constructor Standings
 st.header("Constructor Standings")
