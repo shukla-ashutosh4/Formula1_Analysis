@@ -726,3 +726,24 @@ plt.xticks(fontproperties=font_prop, color='#bbbbbb')
 plt.yticks(fontproperties=font_prop,color='#bbbbbb')
 plt.axvline(0, color='#bbbbbb')
 st.pyplot(plt)
+
+
+
+
+st.header("Constructor Standings")
+racePointsTeam = season2023RaceResults.groupby('Team')['Points'].sum().sort_values(ascending=False)
+sprintRacePointsTeam = season2023SprintRaceResults.groupby('Team')['Points'].sum().sort_values(ascending=False)
+constructorStandings = (racePointsTeam + sprintRacePointsTeam).fillna(0).sort_values(ascending=False)
+constructorStandings = pd.DataFrame(constructorStandings).reset_index()
+constructorStandings.columns = ['Team', 'Points']
+constructorStandings['POS'] = range(1, len(constructorStandings) + 1)
+constructorStandings.set_index('POS', inplace=True)
+
+# Add rows to the constructor standings table
+constructorStandings['Wins'] = season2023RaceResults.groupby('Team')['Position'].apply(lambda x: (x == '1').sum())
+constructorStandings['Pole Positions'] = season2023QualifyingResults.groupby('Team')['Position'].apply(lambda x: (x == '1').sum())
+constructorStandings['Fastest Laps'] = season2023RaceResults.groupby('Team')['Fastest Lap'].apply(lambda x: (x == True).sum())
+constructorStandings['Races'] = season2023RaceResults.groupby('Team')['Team'].count()
+constructorStandings['Average Points'] = constructorStandings['Points'] / constructorStandings['Races']
+
+st.write(constructorStandings)
