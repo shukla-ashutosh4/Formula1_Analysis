@@ -476,10 +476,10 @@ st.markdown(
 # Set Streamlit title
 st.title("Formula 1 2023 Season Analysis")
 
-st.header("RedBull 2023 Wins")
-redbull_wins = season2023RaceResults[(season2023RaceResults['Position'] == '1') & (season2023RaceResults['Team'] == 'Red Bull Racing Honda RBPT')]
-grouped_redbull_wins = redbull_wins.groupby('Track').head(10)
-st.dataframe(grouped_redbull_wins, width=None, height=None)
+st.header("Season Calendar")
+container = st.container()  
+with container:
+    st.write(season2023RaceCalendar) 
 
 st.header("RedBull 2023 Wins")
 redbull_wins = season2023RaceResults[(season2023RaceResults['Position'] == '1') & (season2023RaceResults['Team'] == 'Red Bull Racing Honda RBPT')]
