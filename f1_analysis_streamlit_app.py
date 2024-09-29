@@ -762,17 +762,22 @@ st.write("This reflects Mercedes' struggles throughout the 2023 season, as they 
 st.write("These insights highlight the competitive landscape of the 2023 Formula 1 season in qualifying, with Verstappen and Red Bull showing clear superiority, while Ferrari remained competitive and other teams had occasional standout performances.")
 
 
+import streamlit as st
+import matplotlib.pyplot as plt
+import pandas as pd
+
 podiumFinishes = season2023RaceResults[season2023RaceResults['Position'].isin(['1','2','3'])]['Driver'].value_counts()
-c = assign_color('drivers', podiumFinishes.index)
-plt.figure(figsize=(9,5))
-plt.axis([0,25,11,-0.5])
-plt.barh([driver.split()[1] for driver in podiumFinishes.index], podiumFinishes, color=c)
+
+fig, ax = plt.subplots(figsize=(9,5))
+ax.axis([0,25,11,-0.5])
+ax.barh([driver.split()[1] for driver in podiumFinishes.index], podiumFinishes, color=[color_dicttt[driver.split()[1]] for driver in podiumFinishes.index])
 for i in range(len(podiumFinishes)):
-    plt.text(podiumFinishes[i]-1.18, i+0.2, "{:>3}".format(podiumFinishes[i]), fontsize=16, fontweight='bold', color='k')
-plt.title('Formula 1 - 2023 Season\n# of Podium Finishes (Drivers)', fontsize=19, weight='bold', color='#bbbbbb')
-plt.xlabel('PODIUMS', fontsize=14, fontweight='bold', color='#bbbbbb')
-plt.ylabel('DRIVERS', fontsize=14, fontweight='bold', color='#bbbbbb')
-plt.xticks(color='#bbbbbb')
-plt.yticks(color='#bbbbbb')
-plt.axvline(0, color='#bbbbbb')
-plt.show()
+    ax.text(podiumFinishes[i]-1.18, i+0.2, "{:>3}".format(podiumFinishes[i]), fontsize=16, fontweight='bold', color='k')
+ax.set_title('Formula 1 - 2023 Season\n# of Podium Finishes (Drivers)', fontsize=19, weight='bold', color='#bbbbbb')
+ax.set_xlabel('PODIUMS', fontsize=14, fontweight='bold', color='#bbbbbb')
+ax.set_ylabel('DRIVERS', fontsize=14, fontweight='bold', color='#bbbbbb')
+ax.tick_params(axis='x', colors='#bbbbbb')
+ax.tick_params(axis='y', colors='#bbbbbb')
+ax.axvline(0, color='#bbbbbb')
+
+st.pyplot(fig)
