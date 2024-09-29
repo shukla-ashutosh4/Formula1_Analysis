@@ -685,3 +685,15 @@ plt.xticks(color='#bbbbbb')
 plt.yticks(color='#bbbbbb')
 plt.axvline(0, color='#bbbbbb')
 st.pyplot(plt)
+
+
+st.header("Pole Position")
+season2023PolePos = season2023RaceResults[season2023RaceResults['Starting Grid'] == 1].set_index('Track')
+polePos = {}
+for driver in season2023PolePos['Driver']:
+    if driver not in polePos:   polePos[driver] = 1
+    else:   polePos[driver] += 1
+season2023PolePos
+
+
+
