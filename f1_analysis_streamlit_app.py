@@ -676,6 +676,7 @@ for i in range(len(winners)):
     driver_name = winners.index[i].split()[1]
     color = color_dicttt.get(driver_name, '#bbbbbb')
     plt.text(winners[i]-1.3, i+0.15, "{:>3}".format(winners[i]), fontsize=19, fontweight='bold', color=color)
+    plt.text(winners[i]+0.2, i+0.15, "{:>3}".format(winners[i]), fontsize=19, fontweight='bold', color='k')
 
 plt.title('Formula 1 - 2023 Season\n# of Race Wins (Drivers)', fontsize=19, fontweight='bold', color='#bbbbbb')
 plt.xlabel('RACE WINS', fontsize=14, fontweight='bold', color='#bbbbbb')
