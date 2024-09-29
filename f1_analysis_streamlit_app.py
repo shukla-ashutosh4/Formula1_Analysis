@@ -419,7 +419,7 @@ color_dict = {
     'Lewis Hamilton': '#00D2BE',  
     'George Russell': '#00D2BE',  
     'Fernando Alonso': '#006F62', 
-    {'Lance Stroll',}: '#006F62', 
+    'Lance Stroll',: '#006F62', 
     'Lando Norris': '#FF8700',    
     'Oscar Piastri': '#FF8700',   
     'Esteban Ocon': '#0090FF'  
