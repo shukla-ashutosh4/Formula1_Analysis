@@ -424,6 +424,21 @@ color_dict = {
     'Esteban Ocon': '#0090FF'     # Alpine (Blue)
 }
 
+
+color_dict = {
+    'Red Bull Racing Honda RBPT': '#1E41FF',  # Red Bull (Blue)
+    'Sergio Perez': '#1E41FF',    # Red Bull (Blue)
+    'Charles Leclerc': '#DC0000',  # Ferrari (Red), 
+    'Carlos Sainz': '#DC0000',     # Ferrari (Red)
+    'Lewis Hamilton': '#00D2BE',  # Mercedes (Teal)
+    'George Russell': '#00D2BE',  # Mercedes (Teal)
+    'Fernando Alonso': '#006F62', # Aston Martin (Green)
+    'Lando Norris': '#FF8700',    # McLaren (Orange)
+    'Oscar Piastri': '#FF8700',   # McLaren (Orange)
+    'Esteban Ocon': '#0090FF'     # Alpine (Blue)
+}
+
+
 # Load your datasets here
 season2023RaceResults = pd.read_csv('Formula1_2023season_raceResults.csv')
 season2023SprintRaceResults = pd.read_csv('Formula1_2023season_sprintResults.csv')
