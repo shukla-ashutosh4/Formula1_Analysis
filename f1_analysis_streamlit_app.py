@@ -179,6 +179,28 @@ import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
 import matplotlib.font_manager as fm  # Import the font manager
 
+
+
+def assign_color(val_type, values):
+    cl = []
+    for val in values:
+        if val_type == 'drivers':  abbr = val.split()[1].upper()[0:3]
+        elif val_type == 'teams':  abbr = val[0:4].upper()
+        if abbr in ['ALFA','BOT','ZHO']:           cl.append('#900000')
+        elif abbr in ['HAAS','HUL','MAG']:         cl.append('#ffffff')
+        elif abbr in ['ASTO','VET','STR']:         cl.append('#006f62')
+        elif abbr in ['WILL','ALB','LAT','DE']:    cl.append('#0072ff')
+        elif abbr in ['ALPH','RIC','TSU']:         cl.append('#2b5962')
+        elif abbr in ['MCLA','RIC','NOR']:         cl.append('#ff8700')
+        elif abbr in ['RED ','VER','PER']:         cl.append('#0600f0')
+        elif abbr in ['FERR','LEC','SAI']:         cl.append('#cb0000')
+        elif abbr in ['MERC','HAM','RUS']:         cl.append('#00d2bd')
+        elif abbr in ['ALPI','ALO','OCO']:         cl.append('#0090ff')
+    return cl
+
+
+
+
 # Load the Formula1 font
 font_path = 'Formula1-Regular.otf'  # Ensure this path is correct
 font_prop = fm.FontProperties(fname=font_path)
