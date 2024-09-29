@@ -437,7 +437,11 @@ color_dicttt = {
     'Norris': '#FF8700',    
     'Piastri': '#FF8700',   
     'Ocon': '#0090FF',
-    'Tsunoda':'#ffffff'
+    'Tsunoda':'#ffffff',
+    'Riccardo':'#ffffff',
+    'Gasly': '#0090FF',
+    'Hulkenberg': '#E6002B',
+    'Albon': '#00A0DE'
 }
 
 color_dictt = {
