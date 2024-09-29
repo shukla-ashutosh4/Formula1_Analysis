@@ -838,18 +838,29 @@ st.write("The 2023 season was dominated by Red Bull, particularly through Versta
 
 top10Finishes = season2023RaceResults[season2023RaceResults['Position'].isin([str(i) for i in range(1,11)])] \
                 ['Driver'].value_counts()
-
-fig, ax = plt.subplots(figsize=(10,6.5))
-ax.axis([0,25,21,-0.6])
-ax.barh([" ".join(driver.split()[1:]) for driver in top10Finishes.index], top10Finishes, color=[color_dicttt[" ".join(driver.split()[1:])] for driver in top10Finishes.index])
+plt.figure(figsize=(10,6.5))
+plt.axis([0,25,21,-0.6])
+plt.barh([" ".join(driver.split()[1:]) for driver in top10Finishes.index], top10Finishes, color=color)
 for i in range(len(top10Finishes)):
-    ax.text(top10Finishes[i]-0.9, i+0.25, "{:>3}".format(top10Finishes[i]), fontsize=12, fontweight='bold', color='k', fontproperties=font_prop)
-ax.set_title('Formula 1 - 2023 Season\n# of Top 10 Finishes (Drivers)', fontsize=19, fontweight='bold', color='#bbbbbb', fontproperties=font_prop)
-ax.set_xlabel('TOP 10 FINISHES', fontsize=14, fontweight='bold', color='#bbbbbb', fontproperties=font_prop)
-ax.set_ylabel('DRIVERS', fontsize=14, fontweight='bold', color='#bbbbbb', fontproperties=font_prop)
-ax.tick_params(axis='x', colors='#bbbbbb', labelsize=9, fontproperties=font_prop)
-ax.tick_params(axis='y', colors='#bbbbbb', labelsize=9, fontproperties=font_prop)
-ax.set_xticks(range(0,22,2))
-ax.axvline(0, color='#bbbbbb')
-
-st.pyplot(fig)
+    plt.text(top10Finishes[i]-0.9, i+0.25, "{:>3}".format(top10Finishes[i]), fontsize=12,top10Finishes = season2023RaceResults[season2023RaceResults['Position'].isin([str(i) for i in range(1,11)])] \
+                ['Driver'].value_counts()
+c = assign_color('drivers', top10Finishes.index)
+plt.figure(figsize=(10,6.5))
+plt.axis([0,25,21,-0.6])
+plt.barh([" ".join(driver.split()[1:]) for driver in top10Finishes.index], top10Finishes, color=c)
+for i in range(len(top10Finishes)):
+    plt.text(top10Finishes[i]-0.9, i+0.25, "{:>3}".format(top10Finishes[i]), fontsize=12, fontweight='bold', color='k')
+plt.title('Formula 1 - 2023 Season\n# of Top 10 Finishes (Drivers)', fontsize=19, fontweight='bold', color='#bbbbbb')
+plt.xlabel('TOP 10 FINISHES', fontsize=14, fontweight='bold', color='#bbbbbb')
+plt.ylabel('DRIVERS', fontsize=14, fontweight='bold', color='#bbbbbb')
+plt.xticks(range(0,22,2), range(0,22,2), color='#bbbbbb')
+plt.yticks(color='#bbbbbb', fontsize=9)
+plt.axvline(0, color='#bbbbbb')
+plt.show() fontweight='bold', color='k')
+plt.title('Formula 1 - 2023 Season\n# of Top 10 Finishes (Drivers)', fontsize=19, fontweight='bold', color='#bbbbbb')
+plt.xlabel('TOP 10 FINISHES', fontsize=14, fontweight='bold', color='#bbbbbb')
+plt.ylabel('DRIVERS', fontsize=14, fontweight='bold', color='#bbbbbb')
+plt.xticks(range(0,22,2), range(0,22,2), color='#bbbbbb')
+plt.yticks(color='#bbbbbb', fontsize=9)
+plt.axvline(0, color='#bbbbbb')
+plt.show()
