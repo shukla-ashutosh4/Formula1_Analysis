@@ -412,8 +412,8 @@ font_prop = fm.FontProperties(fname=font_path)
 
 # Manually specify the colors for top drivers/teams
 color_dict = {
-    'Max Verstappen': '#1E41FF',  
-    'Sergio Perez': '#1E41FF',    
+    'Max Verstappen': '#00008B',  
+    'Sergio Perez': '#00008B',    
     'Charles Leclerc': '#DC0000',   
     'Carlos Sainz': '#DC0000',     
     'Lewis Hamilton': '#00D2BE',  
@@ -426,8 +426,8 @@ color_dict = {
 }
 
 color_dicttt = {
-    'Verstappen': '#1E41FF',  
-    'Perez': '#1E41FF',    
+    'Verstappen': '#00008B',  
+    'Perez': '#00008B',    
     'Leclerc': '#DC0000',   
     'Sainz': '#DC0000',     
     'Hamilton': '#00D2BE',  
