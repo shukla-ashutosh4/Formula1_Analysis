@@ -913,3 +913,5 @@ st.write("Suggests dynamic driver lineup changes during the season")
 # Conclusion
 st.subheader("Conclusion")
 st.write("This analysis provides a comprehensive overview of the 2023 F1 season's competitive landscape, team performances, and individual driver achievements.")
+
+st.write(season2023QualifyingResults[season2023QualifyingResults['Position'] == '1'].set_index('Track').drop('Position', axis=1))
