@@ -550,7 +550,7 @@ for team in teamNames:
 
 # Plotting team points progression
 plt.figure(figsize=(11.5, 7))
-plt.axis([0.2, len(season2023RaceResults['Track'].unique()) + 0.2, -5, 800])
+plt.axis([0.2, len(season2023RaceResults['Track'].unique()) , -5, 800])
 
 # Use manually assigned colors for teams
 for i, team in enumerate(teamNames):
