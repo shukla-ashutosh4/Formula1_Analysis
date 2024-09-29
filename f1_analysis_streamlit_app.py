@@ -467,6 +467,9 @@ st.markdown(
 # Set Streamlit title
 st.title("Formula 1 2023 Season Analysis")
 
+redbull_wins = season2023RaceResults[(season2023RaceResults['Position'] == '1') & (season2023RaceResults['Team'] == 'Red Bull Racing Honda RBPT')]
+redbull_wins.groupby('Track').head(10)
+
 # Section: Driver Points Progression
 st.header("2023 Season Top 10 Drivers' Points Progression")
 driverStandingsTop10 = season2023Drivers['Driver'][:10].values
@@ -569,3 +572,6 @@ plt.axhline(0, linewidth=1, color='#bbbbbb')
 plt.grid(True, linestyle='--', alpha=0.5)
 plt.legend(loc='upper left', fontsize=9, prop=font_prop)
 st.pyplot(plt)
+
+
+
