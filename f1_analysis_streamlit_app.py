@@ -733,69 +733,65 @@ st.header("Formula 1 - 2023 Season Pole Positions Insights")
 
 # Verstappen's Dominance
 st.subheader("Verstappen's Dominance")
-for char in "Max Verstappen secured 15 pole positions, far more than any other driver. ":
-    st.write(char, end='')
-    time.sleep(0.05)
-st.write("\n")
-for char in "This reflects his exceptional qualifying pace and Red Bull's strong car performance. ":
-    st.write(char, end='')
-    time.sleep(0.05)
-st.write("\n")
-for char in "Verstappen's dominance in qualifying set the stage for many of his race victories. ":
-    st.write(char, end='')
-    time.sleep(0.05)
-st.write("\n")
+st.write("Max Verstappen secured 15 pole positions, far more than any other driver.")
+st.write("This reflects his exceptional qualifying pace and Red Bull's strong car performance.")
+st.write("Verstappen's dominance in qualifying set the stage for many of his race victories.")
+
+# Typing effect
+with st.spinner("Loading..."):
+    for i in range(5):
+        st.write("Verstappen's Pole Positions: 15")
+        st.write("...")
+        time.sleep(1)
 
 # Ferrari's Strong Qualifying
 st.subheader("Ferrari's Strong Qualifying")
-for char in "Charles Leclerc managed to claim 6 pole positions, the second-highest number in the season. ":
-    st.write(char, end='')
-    time.sleep(0.05)
-st.write("\n")
-for char in "Carlos Sainz also contributed with 2 pole positions. ":
-    st.write(char, end='')
-    time.sleep(0.05)
-st.write("\n")
-for char in "Ferrari showcased a strong overall qualifying performance, indicating that they often had the pace to challenge for pole but couldn't always convert it into race wins. ":
-    st.write(char, end='')
-    time.sleep(0.05)
-st.write("\n")
+st.write("Charles Leclerc managed to claim 6 pole positions, the second-highest number in the season.")
+st.write("Carlos Sainz also contributed with 2 pole positions.")
+st.write("Ferrari showcased a strong overall qualifying performance, indicating that they often had the pace to challenge for pole but couldn't always convert it into race wins.")
+
+# Typing effect
+with st.spinner("Loading..."):
+    for i in range(5):
+        st.write("Ferrari's Pole Positions: 8")
+        st.write("...")
+        time.sleep(1)
 
 # Limited Competition at the Top
 st.subheader("Limited Competition at the Top")
-for char in "Only 7 drivers managed to secure a pole position throughout the entire season. ":
-    st.write(char, end='')
-    time.sleep(0.05)
-st.write("\n")
-for char in "This highlights the concentration of qualifying performance among a few top drivers and teams, with most pole positions coming from Red Bull and Ferrari. ":
-    st.write(char, end='')
-    time.sleep(0.05)
-st.write("\n")
+st.write("Only 7 drivers managed to secure a pole position throughout the entire season.")
+st.write("This highlights the concentration of qualifying performance among a few top drivers and teams, with most pole positions coming from Red Bull and Ferrari.")
+
+# Typing effect
+with st.spinner("Loading..."):
+    for i in range(5):
+        st.write("Drivers with Pole Positions: 7")
+        st.write("...")
+        time.sleep(1)
 
 # Unexpected Performances
 st.subheader("Unexpected Performances")
-for char in "Kevin Magnussen (Haas) and Lando Norris (McLaren) each achieved 1 pole position. ":
-    st.write(char, end='')
-    time.sleep(0.05)
-st.write("\n")
-for char in "These results were unexpected and represent breakthrough performances from midfield teams, showing that on certain weekends, smaller teams can outperform expectations. ":
-    st.write(char, end='')
-    time.sleep(0.05)
-st.write("\n")
+st.write("Kevin Magnussen (Haas) and Lando Norris (McLaren) each achieved 1 pole position.")
+st.write("These results were unexpected and represent breakthrough performances from midfield teams, showing that on certain weekends, smaller teams can outperform expectations.")
+
+# Typing effect
+with st.spinner("Loading..."):
+    for i in range(5):
+        st.write("Midfield Teams' Pole Positions: 2")
+        st.write("...")
+        time.sleep(1)
 
 # Hamilton's Struggles
 st.subheader("Hamilton's Struggles")
-for char in "Lewis Hamilton only secured 1 pole position during the season, a significant decline from his usual performance in previous years. ":
-    st.write(char, end='')
-    time.sleep(0.05)
-st.write("\n")
-for char in "This reflects Mercedes' struggles throughout the 2023 season, as they couldn't consistently compete for pole positions like they had in the past. ":
-    st.write(char, end='')
-    time.sleep(0.05)
-st.write("\n")
+st.write("Lewis Hamilton only secured 1 pole position during the season, a significant decline from his usual performance in previous years.")
+st.write("This reflects Mercedes' struggles throughout the 2023 season, as they couldn't consistently compete for pole positions like they had in the past.")
+
+# Typing effect
+with st.spinner("Loading..."):
+    for i in range(5):
+        st.write("Hamilton's Pole Positions: 1")
+        st.write("...")
+        time.sleep(1)
 
 # Final Insights
-for char in "These insights highlight the competitive landscape of the 2023 Formula 1 season in qualifying, with Verstappen and Red Bull showing clear superiority, while Ferrari remained competitive and other teams had occasional standout performances. ":
-    st.write(char, end='')
-    time.sleep(0.05)
-st.write("\n")
+st.write("These insights highlight the competitive landscape of the 2023 Formula 1 season in qualifying, with Verstappen and Red Bull showing clear superiority, while Ferrari remained competitive and other teams had occasional standout performances.")
