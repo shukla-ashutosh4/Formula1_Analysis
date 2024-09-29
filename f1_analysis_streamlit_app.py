@@ -678,9 +678,9 @@ for i in range(len(winners)):
     plt.text(winners[i]-1.3, i+0.15, "{:>3}".format(winners[i]), fontsize=19, fontweight='bold', color='#000000')
     plt.text(winners[i]+0.2, i+0.15, "{:>3}".format(winners[i]), fontsize=19, fontweight='bold', color='k')
 
-plt.title('Formula 1 - 2023 Season\n# of Race Wins (Drivers)', fontsize=19, fontweight='bold', color='#bbbbbb')
-plt.xlabel('RACE WINS', fontsize=14, fontweight='bold', color='#bbbbbb')
-plt.ylabel('DRIVERS', fontsize=14, fontweight='bold', color='#bbbbbb')
+plt.title('Formula 1 - 2023 Season\n# of Race Wins (Drivers)', fontproperties=font_prop, fontsize=19, fontweight='bold', color='#bbbbbb')
+plt.xlabel('RACE WINS', fontproperties=font_prop, fontsize=14, fontweight='bold', color='#bbbbbb')
+plt.ylabel('DRIVERS', fontproperties=font_prop, fontsize=14, fontweight='bold', color='#bbbbbb')
 plt.xticks(color='#bbbbbb')
 plt.yticks(color='#bbbbbb')
 plt.axvline(0, color='#bbbbbb')
@@ -696,7 +696,7 @@ for driver in season2023PolePos['Driver']:
 season2023PolePos
 
 
-st.header("Sprint Pole Position")
+st.header("Sprint Pole Position"),fontproperties=font_prop
 season2023PolePosSprint = season2023SprintRaceResults[season2023SprintRaceResults['Starting Grid'] == 1] \
     .set_index('Track').drop('Starting Grid', axis=1)
 polePosSprint = {}
@@ -720,9 +720,9 @@ for i in range(len(polePositions)):
     plt.text(polePositions[i] - 1, i + 0.3, "{:2}".format(polePositions[i]),
              color='#000000', fontsize=14, fontweight='bold', fontproperties=font_prop)
 
-plt.title('Formula 1 - 2023 Season\n# of Pole Positions (Drivers)', fontsize=19, fontweight='bold', color='#bbbbbb')
-plt.xlabel('POLE POSITIONS', fontsize=14, fontweight='bold', color='#bbbbbb')
-plt.ylabel('DRIVERS', fontsize=14, fontweight='bold', color='#bbbbbb')
+plt.title('Formula 1 - 2023 Season\n# of Pole Positions (Drivers)', fontproperties=font_prop, fontsize=19, fontweight='bold', color='#bbbbbb')
+plt.xlabel('POLE POSITIONS', fontproperties=font_prop, fontsize=14, fontweight='bold', color='#bbbbbb')
+plt.ylabel('DRIVERS', fontsize=14, fontproperties=font_prop, fontweight='bold', color='#bbbbbb')
 plt.xticks(color='#bbbbbb')
 plt.yticks(color='#bbbbbb')
 plt.axvline(0, color='#bbbbbb')
