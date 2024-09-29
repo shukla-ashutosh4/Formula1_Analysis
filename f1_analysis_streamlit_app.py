@@ -553,13 +553,19 @@ plt.legend(loc='upper left', fontsize=9, prop=font_prop)
 st.pyplot(plt)
 
 st.header("Formula 1 - 2023 Season Points Earned From Sprint Races (Drivers)")
+
 sprintRacePointsNonZero = sprintRacePoints[sprintRacePoints > 0]
 plt.figure(figsize=(10,5))
 plt.axis([0,50,15,-0.6])
-plt.barh([driver.split()[1] for driver in sprintRacePointsNonZero.index.values], sprintRacePointsNonZero, color='#bbbbbb')
+
+# Use the color dictionary to set the bar colors
+for i, driver in enumerate(sprintRacePointsNonZero.index.values):
+    plt.barh([driver.split()[1]], [sprintRacePointsNonZero[i]], color=color_dict.get(driver.split()[1], '#bbbbbb'))
+
 for i in range(len(sprintRacePointsNonZero)):
     plt.text(sprintRacePointsNonZero[i]-1.7, i+0.3, "{:2}".format(sprintRacePointsNonZero[i]),
              color='#bbbbbb', fontsize=14, fontweight='bold', fontproperties=font_prop)
+
 plt.title('Formula 1 - 2023 Season\nPoints Earned From Sprint Races (Drivers)', 
           fontproperties=font_prop, fontsize=19, fontweight='bold', color='#bbbbbb')
 plt.xlabel('POINTS', fontproperties=font_prop, fontsize=16, fontweight='bold', color='#bbbbbb')
@@ -569,7 +575,6 @@ plt.yticks(color='#bbbbbb')
 plt.axvline(0, linewidth=1, color='#bbbbbb')
 plt.grid(True, linestyle='--', alpha=0.5, color='#bbbbbb')
 st.pyplot(plt)
-
 
 # Section: Constructor Standings
 st.header("Constructor Standings")
