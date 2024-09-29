@@ -412,26 +412,26 @@ font_prop = fm.FontProperties(fname=font_path)
 
 # Manually specify the colors for top drivers/teams
 color_dict = {
-    'Max Verstappen': '#1E41FF',  # Red Bull (Blue)
-    'Sergio Perez': '#1E41FF',    # Red Bull (Blue)
-    'Charles Leclerc': '#DC0000',  # Ferrari (Red), 
-    'Carlos Sainz': '#DC0000',     # Ferrari (Red)
-    'Lewis Hamilton': '#00D2BE',  # Mercedes (Teal)
-    'George Russell': '#00D2BE',  # Mercedes (Teal)
-    'Fernando Alonso': '#006F62', # Aston Martin (Green)
-    'Lance Stroll': '#006F62', # Aston Martin (Green)
-    'Lando Norris': '#FF8700',    # McLaren (Orange)
-    'Oscar Piastri': '#FF8700',   # McLaren (Orange)
-    'Esteban Ocon': '#0090FF'     # Alpine (Blue)
+    'Max Verstappen': '#1E41FF',  
+    'Sergio Perez': '#1E41FF',    
+    'Charles Leclerc': '#DC0000',   
+    'Carlos Sainz': '#DC0000',     
+    'Lewis Hamilton': '#00D2BE',  
+    'George Russell': '#00D2BE',  
+    'Fernando Alonso': '#006F62', 
+    'Lance Stroll': '#006F62', 
+    'Lando Norris': '#FF8700',    
+    'Oscar Piastri': '#FF8700',   
+    'Esteban Ocon': '#0090FF'  
 }
 
 
 color_dictt = {
-    'Red Bull Racing Honda RBPT': '#1E41FF',  # Red Bull (Blue)
-    'Ferrari': '#DC0000',  # Ferrari (Red), 
-    'Mercedes': '#00D2BE',  # Mercedes (Teal)
-    'Aston Martin Aramco Mercedes': '#006F62', # Aston Martin (Green)
-    'McLaren Mercedes': '#FF8700',    # McLaren (Orange)
+    'Red Bull Racing Honda RBPT': '#1E41FF', 
+    'Ferrari': '#DC0000', 
+    'Mercedes': '#00D2BE',
+    'Aston Martin Aramco Mercedes': '#006F62',
+    'McLaren Mercedes': '#FF8700', 
     'Alpine Renault': '#FF69B4',     
     'Alfa Romeo Ferrari': '#A42134',
     'Williams Mercedes': '#00A0DE',
@@ -542,7 +542,7 @@ for team in teamNames:
         teamPointsSprint[team] = np.zeros(len(season2023SprintRaceResults['Track'].unique()))
 
 # Adjust points based on sprint results
-sp = [3, 10, 20]
+sp = [6, 10, 20]
 for team in teamNames:
     for i in range(len(sp)):
         if i < len(teamPointsSprint[team]):
