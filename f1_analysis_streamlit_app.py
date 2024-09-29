@@ -425,7 +425,8 @@ color_dict = {
     'Oscar Piastri': '#FF8700',   
     'Esteban Ocon': '#0090FF',
     'Valterri Bottas':'#A42134',
-    'Kevin Magnussen': '#E6002B'
+    'Kevin Magnussen': '#E6002B',
+    'Zhou Guanyu': '#A42134'
     
 }
 
@@ -447,7 +448,8 @@ color_dicttt = {
     'Hulkenberg': '#E6002B',
     'Albon': '#00A0DE',
     'Bottas': '#A42134',
-    'Magnussen': '#E6002B'
+    'Magnussen': '#E6002B',
+    'Zhou':'#A42134'
 }
 
 color_dictt = {
