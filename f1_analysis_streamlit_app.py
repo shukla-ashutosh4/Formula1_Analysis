@@ -542,7 +542,7 @@ for team in teamNames:
         teamPointsSprint[team] = np.zeros(len(season2023SprintRaceResults['Track'].unique()))
 
 # Adjust points based on sprint results
-sp = [6, 10, 20]
+sp = [3, 10, 20]
 for team in teamNames:
     for i in range(len(sp)):
         if i < len(teamPointsSprint[team]):
@@ -563,7 +563,7 @@ plt.xlabel('RACES', fontproperties=font_prop, fontsize=16, fontweight='bold', co
 plt.ylabel('POINTS', fontproperties=font_prop, fontsize=16, fontweight='bold', color='#bbbbbb')
 plt.xticks(np.arange(len(season2023RaceResults['Track'].unique())), 
            season2023RaceResults['Track'].unique(), rotation=80, fontsize=10, fontproperties=font_prop, color='#bbbbbb')
-plt.yticks(np.arange(0, 800, 50), fontsize=12, fontproperties=font_prop, color='#bbbbbb')
+plt.yticks(np.arange(0, 900, 50), fontsize=12, fontproperties=font_prop, color='#bbbbbb')
 plt.axvline(0, linewidth=1, color='#bbbbbb')
 plt.axhline(0, linewidth=1, color='#bbbbbb')
 plt.grid(True, linestyle='--', alpha=0.5)
