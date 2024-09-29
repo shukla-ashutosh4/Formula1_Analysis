@@ -444,7 +444,8 @@ color_dicttt = {
     'Riccardo':'#ffffff',
     'Gasly': '#0090FF',
     'Hulkenberg': '#E6002B',
-    'Albon': '#00A0DE'
+    'Albon': '#00A0DE',
+    'Bottas': '#A42134'
 }
 
 color_dictt = {
