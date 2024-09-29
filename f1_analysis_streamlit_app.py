@@ -915,3 +915,24 @@ st.subheader("Conclusion")
 st.write("This analysis provides a comprehensive overview of the 2023 F1 season's competitive landscape, team performances, and individual driver achievements.")
 
 st.write(season2023QualifyingResults[season2023QualifyingResults['Position'] == '1'].set_index('Track').drop('Position', axis=1))
+
+
+import streamlit as st
+import matplotlib.pyplot as plt
+import pandas as pd
+
+fastestTimeQualifying = season2023QualifyingResults[season2023QualifyingResults['Position'] == '1']['Driver'].value_counts()
+
+fig, ax = plt.subplots(figsize=(9,5))
+ax.axis([0,15,5,-0.6])
+ax.barh([driver.split()[1] for driver in fastestTimeQualifying.index], fastestTimeQualifying, color=[color_dicttt[driver.split()[1]] for driver in fastestTimeQualifying.index])
+for i in range(len(fastestTimeQualifying)):
+    ax.text(fastestTimeQualifying[i]-0.59, i+0.15, fastestTimeQualifying[i], fontsize=17, fontweight='bold', color='k', fontproperties=font_prop)
+ax.set_title('Formula 1 - 2023 Season\n# of Fastest Time Set in Qualifying (Drivers)', fontsize=19, fontweight='bold', color='#bbbbbb', fontproperties=font_prop)
+ax.set_xlabel('FASTEST TIME SET', fontsize=14, fontweight='bold', color='#bbbbbb', fontproperties=font_prop)
+ax.set_ylabel('DRIVERS', fontsize=14, fontweight='bold', color='#bbbbbb', fontproperties=font_prop)
+ax.tick_params(axis='x', colors='#bbbbbb')
+ax.tick_params(axis='y', colors='#bbbbbb')
+ax.axvline(0, color='#bbbbbb')
+
+st.pyplot(fig)
