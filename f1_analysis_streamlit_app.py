@@ -729,49 +729,18 @@ st.pyplot(plt)
 
 
 st.header("Formula 1 - 2023 Season Pole Positions Insights")
+
 # Verstappen's Dominance
 st.subheader("Verstappen's Dominance")
 st.write("Max Verstappen secured 15 pole positions, far more than any other driver.")
 st.write("This reflects his exceptional qualifying pace and Red Bull's strong car performance.")
 st.write("Verstappen's dominance in qualifying set the stage for many of his race victories.")
 
-# Animation
-st.write("Verstappen's Pole Positions: 15")
-st.progress_bar(0.75)  # 15/20
-
-# Ferrari's Strong Qualifying
-st.subheader("Ferrari's Strong Qualifying")
-st.write("Charles Leclerc managed to claim 6 pole positions, the second-highest number in the season.")
-st.write("Carlos Sainz also contributed with 2 pole positions.")
-st.write("Ferrari showcased a strong overall qualifying performance, indicating that they often had the pace to challenge for pole but couldn't always convert it into race wins.")
-
-# Animation
-st.write("Ferrari's Pole Positions: 8")
-st.progress_bar(0.4)  # 8/20
-
-# Limited Competition at the Top
-st.subheader("Limited Competition at the Top")
-st.write("Only 7 drivers managed to secure a pole position throughout the entire season.")
-st.write("This highlights the concentration of qualifying performance among a few top drivers and teams, with most pole positions coming from Red Bull and Ferrari.")
-
-# Animation
-st.write("Drivers with Pole Positions: 7")
-st.progress_bar(0.35)  # 7/20
-
-# Unexpected Performances
-st.subheader("Unexpected Performances")
-st.write("Kevin Magnussen (Haas) and Lando Norris (McLaren) each achieved 1 pole position.")
-st.write("These results were unexpected and represent breakthrough performances from midfield teams, showing that on certain weekends, smaller teams can outperform expectations.")
-
-# Animation
-st.write("Midfield Teams' Pole Positions: 2")
-st.progress_bar(0.1)  # 2/20
-
-# Hamilton's Struggles
-st.subheader("Hamilton's Struggles")
-st.write("Lewis Hamilton only secured 1 pole position during the season, a significant decline from his usual performance in previous years.")
-st.write("This reflects Mercedes' struggles throughout the 2023 season, as they couldn't consistently compete for pole positions like they had in the past.")
-
-# Animation
-st.write("Hamilton's Pole Positions: 1")
-st.progress_bar(0.05)  # 1/20
+# Progress bar
+fig, ax = plt.subplots()
+ax.barh(0, 0.75, color='blue')
+ax.set_xlim(0, 1)
+ax.set_yticks([])
+ax.set_xticks([0, 0.25, 0.5, 0.75, 1])
+ax.set_xticklabels(['0%', '25%', '50%', '75%', '100%'])
+st.pyplot(fig)
