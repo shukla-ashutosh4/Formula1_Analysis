@@ -845,7 +845,7 @@ for i in range(len(top10Finishes)):
     ax.text(top10Finishes[i]-0.9, i+0.25, "{:>3}".format(top10Finishes[i]), fontsize=12,  fontweight='bold', color='k')
 ax.set_title('Formula 1 - 2023 Season\n# of Top 10 Finishes (Drivers)', fontsize=19, fontproperties=font_prop,fontweight='bold', color='#bbbbbb')
 ax.set_xlabel('TOP 10 FINISHES', fontsize=14, fontweight='bold', color='#bbbbbb')
-ax.set_ylabel('DRIVERS', fontsize=14, fontweight='bold', color='#bbbbbb')
+ax.set_ylabel('DRIVERS', fontsize=14,fontproperties=font_prop, fontweight='bold', color='#bbbbbb')
 plt.xticks(fontproperties=font_prop, color='#bbbbbb')
 plt.yticks(fontproperties=font_prop,color='#bbbbbb')
 ax.set_xticks(range(0,22,2))
