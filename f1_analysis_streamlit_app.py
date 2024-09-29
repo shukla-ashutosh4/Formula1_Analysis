@@ -667,11 +667,16 @@ season2023RaceResults[season2023RaceResults['Position'] == '1'].set_index('Track
 winners = season2023RaceResults[season2023RaceResults['Position'] == '1']['Driver'].value_counts()
 plt.figure(figsize=(9,4.5))
 plt.axis((0,20,3,-0.5))
-colors = ['#1E41FF', '#DC0000', '#00D2BE']  # Blue, Red, Blue
 for i, driver in enumerate(winners.index):
-    plt.barh([driver.split()[1]], [winners[i]], color=color_dicttt)
+    driver_name = driver.split()[1]
+    color = color_dicttt.get(driver_name, '#bbbbbb')
+    plt.barh([driver_name], [winners[i]], color=color)
+
 for i in range(len(winners)):
-    plt.text(winners[i]-1.3, i+0.15, "{:>3}".format(winners[i]), fontsize=19, fontweight='bold', color='k')
+    driver_name = winners.index[i].split()[1]
+    color = color_dicttt.get(driver_name, '#bbbbbb')
+    plt.text(winners[i]-1.3, i+0.15, "{:>3}".format(winners[i]), fontsize=19, fontweight='bold', color=color)
+
 plt.title('Formula 1 - 2023 Season\n# of Race Wins (Drivers)', fontsize=19, fontweight='bold', color='#bbbbbb')
 plt.xlabel('RACE WINS', fontsize=14, fontweight='bold', color='#bbbbbb')
 plt.ylabel('DRIVERS', fontsize=14, fontweight='bold', color='#bbbbbb')
