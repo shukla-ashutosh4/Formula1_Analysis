@@ -425,7 +425,7 @@ color_dict = {
     'Esteban Ocon': '#0090FF'  
 }
 
-color_dict = {
+color_dicttt = {
     'Verstappen': '#1E41FF',  
     'Perez': '#1E41FF',    
     'Leclerc': '#DC0000',   
