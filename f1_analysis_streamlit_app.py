@@ -556,7 +556,7 @@ st.header("Formula 1 - 2023 Season\nPoints Earned From Sprint Races (Drivers)")
 sprintRacePointsNonZero = sprintRacePoints[sprintRacePoints > 0]
 plt.figure(figsize=(10,5))
 plt.axis([0,50,15,-0.6])
-plt.barh([driver.split()[1] for driver in sprintRacePointsNonZero.index.values], sprintRacePointsNonZero, color=c)
+plt.barh([driver.split()[1] for driver in sprintRacePointsNonZero.index.values], sprintRacePointsNonZero)
 for i in range(len(sprintRacePointsNonZero)):
     plt.text(sprintRacePointsNonZero[i]-1.7, i+0.3, "{:2}".format(sprintRacePointsNonZero[i]),
              color='k', fontsize=14, fontweight='bold')
