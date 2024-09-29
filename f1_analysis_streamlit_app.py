@@ -441,9 +441,18 @@ color_dictt = {
 
 
 # Load your datasets here
-season2023RaceResults = pd.read_csv('Formula1_2023season_raceResults.csv')
-season2023SprintRaceResults = pd.read_csv('Formula1_2023season_sprintResults.csv')
+season2023RaceCalendar = pd.read_csv('Formula1_2023season_calendar.csv')
+season2023RaceCalendar.set_index('Round', inplace=True)
 season2023Drivers = pd.read_csv('Formula1_2023season_drivers.csv')
+season2023Drivers.set_index('Abbreviation', inplace=True)
+season2023Teams = pd.read_csv('Formula1_2023season_teams.csv')
+season2023Teams.index = range(1,11)
+season2023QualifyingResults = pd.read_csv('Formula1_2023season_qualifyingResults.csv')
+season2023SprintRaceResults = pd.read_csv('Formula1_2023season_sprintResults.csv')
+season2023RaceResults = pd.read_csv('Formula1_2023season_raceResults.csv')
+season2023DotdVotes = pd.read_csv('Formula1_2023season_driverOfTheDayVotes.csv')
+season2023DotdVotes.set_index('Track', inplace=True)
+RaceTracks = season2023RaceCalendar.loc[:, 'Race Date':'Circuit Name']
 
 # Set Streamlit title with custom font
 st.markdown(
@@ -466,6 +475,9 @@ st.markdown(
 
 # Set Streamlit title
 st.title("Formula 1 2023 Season Analysis")
+
+st.header("Season Calendar".markdown)
+st.write(season2023RaceCalendar)
 
 st.header("RedBull 2023 Wins")
 redbull_wins = season2023RaceResults[(season2023RaceResults['Position'] == '1') & (season2023RaceResults['Team'] == 'Red Bull Racing Honda RBPT')]
