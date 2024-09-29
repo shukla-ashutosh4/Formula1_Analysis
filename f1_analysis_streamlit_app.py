@@ -727,8 +727,6 @@ plt.yticks(fontproperties=font_prop,color='#bbbbbb')
 plt.axvline(0, color='#bbbbbb')
 st.pyplot(plt)
 
-import streamlit as st
-
 st.header("Formula 1 - 2023 Season Pole Positions Insights")
 
 # Verstappen's Dominance
@@ -739,7 +737,7 @@ st.write("Verstappen's dominance in qualifying set the stage for many of his rac
 
 # Animation
 st.write("Verstappen's Pole Positions: 15")
-st.progress_bar(0.75)  # 15/20
+st.progress_bar(75)  # 15/20 * 100
 
 # Ferrari's Strong Qualifying
 st.subheader("Ferrari's Strong Qualifying")
@@ -749,7 +747,7 @@ st.write("Ferrari showcased a strong overall qualifying performance, indicating 
 
 # Animation
 st.write("Ferrari's Pole Positions: 8")
-st.progress_bar(0.4)  # 8/20
+st.progress_bar(40)  # 8/20 * 100
 
 # Limited Competition at the Top
 st.subheader("Limited Competition at the Top")
@@ -758,7 +756,7 @@ st.write("This highlights the concentration of qualifying performance among a fe
 
 # Animation
 st.write("Drivers with Pole Positions: 7")
-st.progress_bar(0.35)  # 7/20
+st.progress_bar(35)  # 7/20 * 100
 
 # Unexpected Performances
 st.subheader("Unexpected Performances")
@@ -767,7 +765,7 @@ st.write("These results were unexpected and represent breakthrough performances 
 
 # Animation
 st.write("Midfield Teams' Pole Positions: 2")
-st.progress_bar(0.1)  # 2/20
+st.progress_bar(10)  # 2/20 * 100
 
 # Hamilton's Struggles
 st.subheader("Hamilton's Struggles")
@@ -776,4 +774,4 @@ st.write("This reflects Mercedes' struggles throughout the 2023 season, as they 
 
 # Animation
 st.write("Hamilton's Pole Positions: 1")
-st.progress_bar(0.05)  # 1/20
+st.progress_bar(5)  # 1/20 * 100
