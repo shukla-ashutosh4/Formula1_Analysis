@@ -407,7 +407,7 @@ import matplotlib.colors as mcolors
 import matplotlib.font_manager as fm  # Import the font manager
 
 # Load the Formula1-Regular font
-font_path = '/path/to/Formula1-Regular.otf'  # Make sure this path is correct
+font_path = 'Formula1-Regular.otf'  # Make sure this path is correct
 font_prop = fm.FontProperties(fname=font_path)
 
 # Function to assign colors based on teams or drivers
