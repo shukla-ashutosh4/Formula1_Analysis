@@ -428,7 +428,8 @@ color_dict = {
     'Kevin Magnussen': '#E6002B',
     'Zhou Guanyu': '#A42134',
     'Liam Lawson': '#ffffff',
-    'Logan Sargeant': '#00A0DE'
+    'Logan Sargeant': '#00A0DE',
+    'Daniel Ricciardo':'#ffffff'
 }
 
 color_dicttt = {
@@ -452,7 +453,9 @@ color_dicttt = {
     'Magnussen': '#E6002B',
     'Zhou':'#A42134',
     'Lawson': '#ffffff',
-    'Sargeant': '#00A0DE'
+    'Sargeant': '#00A0DE',
+    'Ricciardo':'#ffffff'
+
     
 }
 
