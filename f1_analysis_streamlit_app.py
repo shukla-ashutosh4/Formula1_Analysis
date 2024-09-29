@@ -719,6 +719,22 @@ for i in range(len(polePositions)):
     color = color_dicttt.get(driver_name, '#bbbbbb')  # Use color_dicttt for text color as well
     plt.text(polePositions[i] - 1, i + 0.3, "{:2}".format(polePositions[i]),
              color='#000000', fontsize=14, fontweight='bold', fontproperties=font_prop)
+    
+
+polePositions = pd.Series(polePos).sort_values(ascending=False)
+
+fig, ax = plt.subplots(figsize=(9,4.5))
+ax.axis([0,20,7,-0.9])
+ax.barh([driver.split()[1] for driver in polePositions.index], polePositions, color=[color_dicttt[driver.split()[1]] for driver in polePositions.index])
+ax.set_title('Formula 1 - 2023 Season\n# of Pole Positions (Drivers)', fontsize=19, fontweight='bold', color='#bbbbbb')
+for i in range(len(polePositions)):
+    ax.text(polePositions[i]-0.9, i+0.15, polePositions[i], fontsize=18, fontweight='bold', color='k')
+ax.set_xlabel('POLE POSITIONS', fontsize=14, fontweight='bold', color='#bbbbbb')
+ax.set_ylabel('DRIVERS', fontsize=14, fontweight='bold', color='#bbbbbb')
+ax.tick_params(axis='x', colors='#bbbbbb')
+ax.tick_params(axis='y', colors='#bbbbbb')
+ax.axvline(0, color='#bbbbbb')
+
 
 plt.title('Formula 1 - 2023 Season\n# of Pole Positions (Drivers)', fontproperties=font_prop, fontsize=19, fontweight='bold', color='#bbbbbb')
 plt.xlabel('POLE POSITIONS', fontproperties=font_prop, fontsize=14, fontweight='bold', color='#bbbbbb')
