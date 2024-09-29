@@ -418,7 +418,7 @@ def assign_color(val_type, values):
     cl = []
     for val in values:
         if val_type == 'drivers':  
-            abbr = val.split()[1].upper()[0:3]  # Abbreviation based on driver last name
+            abbr = val.split()[-1].upper()[0:3]  # Use last name safely
         elif val_type == 'teams':  
             abbr = val[0:4].upper()  # Abbreviation based on team name
         if abbr in ['ALFA','BOT','ZHO']:           cl.append('#900000')
@@ -449,7 +449,10 @@ for driver in driverStandingsTop10:
 plt.figure(figsize=(11.5, 7))
 for i, driver in enumerate(driverStandingsTop10):
     points = np.cumsum(driverPointsTop10[driver])  # Cumulative points
-    plt.plot(points, label=driver.split()[1], color=colors_for_drivers[i], linewidth=2)
+    
+    # Safely handle driver names
+    driver_label = driver.split()[-1]  # Use last name only, to avoid issues with single names
+    plt.plot(points, label=driver_label, color=colors_for_drivers[i], linewidth=2)
 
 plt.title('Formula 1 - 2023 Season\nTop 10 Drivers\' Points Progression', fontsize=19, fontweight='bold', color='#bbbbbb')
 plt.xlabel('Races', fontsize=16, fontweight='bold', color='#bbbbbb')
