@@ -425,7 +425,7 @@ color_dict = {
 }
 
 
-color_dict = {
+color_dictt = {
     'Red Bull Racing Honda RBPT': '#1E41FF',  # Red Bull (Blue)
     'Sergio Perez': '#1E41FF',    # Red Bull (Blue)
     'Charles Leclerc': '#DC0000',  # Ferrari (Red), 
@@ -553,7 +553,7 @@ plt.axis([0.2, len(season2023RaceResults['Track'].unique()) + 0.2, -5, 800])
 
 # Use manually assigned colors for teams
 for i, team in enumerate(teamNames):
-    color = color_dict.get(team, '#ffffff')  # Use white if no color specified
+    color = color_dictt.get(team, '#ffffff')  # Use white if no color specified
     plt.plot(np.cumsum(teamPoints[team]), label=team, color=color, linewidth=2)
 
 plt.title('Formula 1 - 2023 Season\nConstructor Points Progression', 
