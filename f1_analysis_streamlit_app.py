@@ -781,3 +781,61 @@ plt.yticks(fontproperties=font_prop,color='#bbbbbb')
 ax.axvline(0, color='#bbbbbb')
 
 st.pyplot(fig)
+
+
+
+import streamlit as st
+
+st.header("Formula 1 - 2023 Season Podium Finishes Insights")
+
+# Verstappen's Dominance
+st.subheader("Verstappen's Dominance")
+st.write("Max Verstappen achieved an extraordinary 21 podium finishes, far surpassing any other driver.")
+st.write("This reflects his exceptional consistency and performance throughout the season, solidifying his dominance in the championship.")
+
+# Red Bull's Strength
+st.subheader("Red Bull's Strength")
+st.write("With Verstappen’s 21 podiums and Sergio Perez securing 9 podiums, Red Bull Racing demonstrated they had the strongest overall package.")
+st.write("Both drivers frequently finished in top positions, highlighting Red Bull’s competitive edge throughout the season.")
+
+# Alonso’s Resurgence
+st.subheader("Alonso’s Resurgence")
+st.write("Fernando Alonso managed to secure 8 podium finishes, signaling a resurgence for both Aston Martin and Alonso himself.")
+st.write("This indicates a strong performance from the veteran driver and his team, competing effectively at the front of the grid.")
+
+# Tight Midfield Battle
+st.subheader("Tight Midfield Battle")
+st.write("Several drivers, including Lando Norris, Lewis Hamilton, and Charles Leclerc, achieved a close number of podium finishes.")
+st.write("This reflects a competitive midfield, with multiple teams and drivers capable of reaching the podium at different stages of the season.")
+
+# Ferrari’s Struggles
+st.subheader("Ferrari’s Struggles")
+st.write("Charles Leclerc achieved 6 podiums, while Carlos Sainz only managed 3, suggesting that Ferrari had a less competitive season compared to their 2022 performance.")
+st.write("This indicates struggles in both performance and consistency for Ferrari throughout the year.")
+
+# Mercedes Consistency
+st.subheader("Mercedes Consistency")
+st.write("Both Lewis Hamilton and George Russell consistently reached the podium, showing that Mercedes maintained a level of competitiveness, even if they were not as dominant as in previous years.")
+st.write("Their podium finishes reflect the team’s ability to compete regularly, even if they couldn't match Red Bull’s level of performance.")
+
+# Conclusion
+st.subheader("Conclusion")
+st.write("The 2023 season was dominated by Red Bull, particularly through Verstappen’s exceptional form. However, there was a competitive battle for the remaining podium positions among the midfield teams. The season also saw a resurgence for Fernando Alonso and Aston Martin, while Ferrari and Mercedes experienced varied levels of success compared to previous seasons.")
+
+top10Finishes = season2023RaceResults[season2023RaceResults['Position'].isin([str(i) for i in range(1,11)])] \
+                ['Driver'].value_counts()
+
+fig, ax = plt.subplots(figsize=(10,6.5))
+ax.axis([0,25,21,-0.6])
+ax.barh([" ".join(driver.split()[1:]) for driver in top10Finishes.index], top10Finishes, color=[color_dicttt[" ".join(driver.split()[1:])] for driver in top10Finishes.index])
+for i in range(len(top10Finishes)):
+    ax.text(top10Finishes[i]-0.9, i+0.25, "{:>3}".format(top10Finishes[i]), fontsize=12, fontweight='bold', color='k', fontproperties=font_prop)
+ax.set_title('Formula 1 - 2023 Season\n# of Top 10 Finishes (Drivers)', fontsize=19, fontweight='bold', color='#bbbbbb', fontproperties=font_prop)
+ax.set_xlabel('TOP 10 FINISHES', fontsize=14, fontweight='bold', color='#bbbbbb', fontproperties=font_prop)
+ax.set_ylabel('DRIVERS', fontsize=14, fontweight='bold', color='#bbbbbb', fontproperties=font_prop)
+ax.tick_params(axis='x', colors='#bbbbbb', labelsize=9, fontproperties=font_prop)
+ax.tick_params(axis='y', colors='#bbbbbb', labelsize=9, fontproperties=font_prop)
+ax.set_xticks(range(0,22,2))
+ax.axvline(0, color='#bbbbbb')
+
+st.pyplot(fig)
