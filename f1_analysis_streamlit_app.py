@@ -405,6 +405,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
 import matplotlib.font_manager as fm  # Import the font manager
+import time
 
 # Load the Formula1-Regular font
 font_path = 'Formula1-Regular.otf'  # Make sure this path is correct
@@ -732,15 +733,69 @@ st.header("Formula 1 - 2023 Season Pole Positions Insights")
 
 # Verstappen's Dominance
 st.subheader("Verstappen's Dominance")
-st.write("Max Verstappen secured 15 pole positions, far more than any other driver.")
-st.write("This reflects his exceptional qualifying pace and Red Bull's strong car performance.")
-st.write("Verstappen's dominance in qualifying set the stage for many of his race victories.")
+for char in "Max Verstappen secured 15 pole positions, far more than any other driver. ":
+    st.write(char, end='')
+    time.sleep(0.05)
+st.write("\n")
+for char in "This reflects his exceptional qualifying pace and Red Bull's strong car performance. ":
+    st.write(char, end='')
+    time.sleep(0.05)
+st.write("\n")
+for char in "Verstappen's dominance in qualifying set the stage for many of his race victories. ":
+    st.write(char, end='')
+    time.sleep(0.05)
+st.write("\n")
 
-# Progress bar
-fig, ax = plt.subplots()
-ax.barh(0, 0.75, color='blue')
-ax.set_xlim(0, 1)
-ax.set_yticks([])
-ax.set_xticks([0, 0.25, 0.5, 0.75, 1])
-ax.set_xticklabels(['0%', '25%', '50%', '75%', '100%'])
-st.pyplot(fig)
+# Ferrari's Strong Qualifying
+st.subheader("Ferrari's Strong Qualifying")
+for char in "Charles Leclerc managed to claim 6 pole positions, the second-highest number in the season. ":
+    st.write(char, end='')
+    time.sleep(0.05)
+st.write("\n")
+for char in "Carlos Sainz also contributed with 2 pole positions. ":
+    st.write(char, end='')
+    time.sleep(0.05)
+st.write("\n")
+for char in "Ferrari showcased a strong overall qualifying performance, indicating that they often had the pace to challenge for pole but couldn't always convert it into race wins. ":
+    st.write(char, end='')
+    time.sleep(0.05)
+st.write("\n")
+
+# Limited Competition at the Top
+st.subheader("Limited Competition at the Top")
+for char in "Only 7 drivers managed to secure a pole position throughout the entire season. ":
+    st.write(char, end='')
+    time.sleep(0.05)
+st.write("\n")
+for char in "This highlights the concentration of qualifying performance among a few top drivers and teams, with most pole positions coming from Red Bull and Ferrari. ":
+    st.write(char, end='')
+    time.sleep(0.05)
+st.write("\n")
+
+# Unexpected Performances
+st.subheader("Unexpected Performances")
+for char in "Kevin Magnussen (Haas) and Lando Norris (McLaren) each achieved 1 pole position. ":
+    st.write(char, end='')
+    time.sleep(0.05)
+st.write("\n")
+for char in "These results were unexpected and represent breakthrough performances from midfield teams, showing that on certain weekends, smaller teams can outperform expectations. ":
+    st.write(char, end='')
+    time.sleep(0.05)
+st.write("\n")
+
+# Hamilton's Struggles
+st.subheader("Hamilton's Struggles")
+for char in "Lewis Hamilton only secured 1 pole position during the season, a significant decline from his usual performance in previous years. ":
+    st.write(char, end='')
+    time.sleep(0.05)
+st.write("\n")
+for char in "This reflects Mercedes' struggles throughout the 2023 season, as they couldn't consistently compete for pole positions like they had in the past. ":
+    st.write(char, end='')
+    time.sleep(0.05)
+st.write("\n")
+
+# Final Insights
+for char in "These insights highlight the competitive landscape of the 2023 Formula 1 season in qualifying, with Verstappen and Red Bull showing clear superiority, while Ferrari remained competitive and other teams had occasional standout performances. ":
+    st.write(char, end='')
+    time.sleep(0.05)
+st.write("\n")
