@@ -717,7 +717,7 @@ for i, driver in enumerate(polePositions.index.values):
 for i in range(len(polePositions)):
     driver_name = polePositions.index.values[i].split()[1]
     color = color_dicttt.get(driver_name, '#bbbbbb')  # Use color_dicttt for text color as well
-    plt.text(polePositions[i] - 1.7, i + 0.3, "{:2}".format(polePositions[i]),
+    plt.text(polePositions[i] - 3, i + 0.3, "{:2}".format(polePositions[i]),
              color=color, fontsize=14, fontweight='bold', fontproperties=font_prop)
 
 plt.title('Formula 1 - 2023 Season\n# of Pole Positions (Drivers)', fontsize=19, fontweight='bold', color='#bbbbbb')
@@ -726,5 +726,4 @@ plt.ylabel('DRIVERS', fontsize=14, fontweight='bold', color='#bbbbbb')
 plt.xticks(color='#bbbbbb')
 plt.yticks(color='#bbbbbb')
 plt.axvline(0, color='#bbbbbb')
-plt.grid(True, linestyle='--', alpha=0.5, color='#bbbbbb')
 st.pyplot(plt)
