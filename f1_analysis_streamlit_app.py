@@ -406,7 +406,6 @@ import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
 import matplotlib.font_manager as fm  # Import the font manager
 import time
-import altair as alt
 
 # Load the Formula1-Regular font
 font_path = 'Formula1-Regular.otf'  # Make sure this path is correct
