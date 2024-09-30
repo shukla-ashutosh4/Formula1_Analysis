@@ -1,12 +1,3 @@
-# Sidebar for selecting season, driver, and team
-st.sidebar.header("Filter Options")
-seasons = ['2013', '2014', '2015', '2016', '2017', '2018']
-selected_season = st.sidebar.selectbox("Select Season", seasons)
-
-
-
-
-
 import streamlit as st
 import pandas as pd
 import numpy as np
