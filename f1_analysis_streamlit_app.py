@@ -1457,18 +1457,6 @@ section = st.sidebar.radio("Choose a section",
                             "2024 Season Insights", 
                             "Feedback"])
 
-# Helper: Plot Distance Driven (Example Data)
-def plot_distance_driven():
-    drivers = ["Verstappen", "Ricciardo", "Lawson", "Alonso", "Hamilton", "Norris", "Hulkenberg"]
-    distance = [7156.46, 7040.23, 7023.12, 6800.45, 6721.50, 6612.34, 6550.29]
-    
-    fig, ax = plt.subplots(figsize=(10, 6))
-    ax.barh(drivers, distance, color='skyblue')
-    ax.set_xlabel('Total Distance Driven (km)')
-    ax.set_ylabel('Drivers')
-    ax.set_title('Top Drivers: Total Distance Driven in the 2023 Season')
-    st.pyplot(fig)
-
 # 2023 Season - Total Distance Driven (Drivers)
 if section == "2023 Season - Total Distance Driven (Drivers)":
     st.header("2023 Season - Total Distance Driven (Drivers)")
@@ -1476,10 +1464,6 @@ if section == "2023 Season - Total Distance Driven (Drivers)":
     # Verstappen's Dominance Insights
     st.subheader("Verstappen's Dominance")
     st.write("Max Verstappen's impressive total of 7156.46 kilometers driven clearly demonstrates his dominance throughout the 2023 season.")
-    
-    # Plot Distance Chart
-    st.subheader("📊 Total Distance Driven (Drivers) Chart")
-    plot_distance_driven()
     
     # Additional Insights
     st.write("""
