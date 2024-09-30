@@ -138,20 +138,6 @@ for driver in driverStandingsTop10:
         if i < len(driverPointsTop10Sprint[driver]):
             driverPointsTop10[driver][sp[i]] += driverPointsTop10Sprint[driver][i]
 
-st.header("Drivers Standings 2023")
-racePoints = season2023RaceResults.groupby(['Driver', 'Team'])['Points'].sum().sort_values(ascending=False)
-sprintRacePoints = season2023SprintRaceResults.groupby(['Driver'])['Points'].sum().sort_values(ascending=False)
-for driver in season2023RaceResults['Driver'].unique():
-    if driver not in season2023SprintRaceResults['Driver'].unique():
-        sprintRacePoints.loc[driver] = 0
-driverStandings = (racePoints + sprintRacePoints).fillna(0).sort_values(ascending=False)
-driverStandings = pd.DataFrame(driverStandings).reset_index()
-driverStandings['POS'] = range(1,23)
-driverStandings['Points'] = driverStandings['Points'].astype(int)
-driverStandings.set_index('POS', inplace=True)
-driverStandings
-
-
 # Plotting Driver Points Progression
 plt.style.use('dark_background')
 plt.figure(figsize=(11.5, 7))
@@ -179,6 +165,19 @@ plt.axhline(0, linewidth=1, color='#bbbbbb')
 plt.grid(True, linestyle='--', alpha=0.5)
 plt.legend(loc='upper left', fontsize=9, prop=font_prop)
 st.pyplot(plt)
+
+st.header("Drivers Standings 2023")
+racePoints = season2023RaceResults.groupby(['Driver', 'Team'])['Points'].sum().sort_values(ascending=False)
+sprintRacePoints = season2023SprintRaceResults.groupby(['Driver'])['Points'].sum().sort_values(ascending=False)
+for driver in season2023RaceResults['Driver'].unique():
+    if driver not in season2023SprintRaceResults['Driver'].unique():
+        sprintRacePoints.loc[driver] = 0
+driverStandings = (racePoints + sprintRacePoints).fillna(0).sort_values(ascending=False)
+driverStandings = pd.DataFrame(driverStandings).reset_index()
+driverStandings['POS'] = range(1,23)
+driverStandings['Points'] = driverStandings['Points'].astype(int)
+driverStandings.set_index('POS', inplace=True)
+driverStandings
 
 
 st.header("Formula 1 - 2023 Season Points Earned From Sprint Races (Drivers)")
