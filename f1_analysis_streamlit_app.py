@@ -914,7 +914,7 @@ st.write("Suggests dynamic driver lineup changes during the season")
 st.subheader("Conclusion")
 st.write("This analysis provides a comprehensive overview of the 2023 F1 season's competitive landscape, team performances, and individual driver achievements.")
 
-st.write_stream("Qualifying Results")
+st.header("Qualifying Results")
 st.write(season2023QualifyingResults[season2023QualifyingResults['Position'] == '1'].set_index('Track').drop('Position', axis=1))
 
 fastestTimeQualifying = season2023QualifyingResults[season2023QualifyingResults['Position'] == '1']['Driver'].value_counts()
@@ -933,3 +933,10 @@ ax.axvline(0, color='#bbbbbb')
 
 st.pyplot(fig)
 
+def stream_data():
+    for word in "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.".split(" "):
+        yield word + " "
+        time.sleep(0.02)
+
+if st.button("Stream data"):
+    st.write(stream_data())
