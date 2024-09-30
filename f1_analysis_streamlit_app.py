@@ -1296,3 +1296,35 @@ st.write("Alonso, Piastri, Russell, and Sainz: Fernando Alonso, Oscar Piastri, G
 st.subheader("Variability in Performance")
 st.write("Albon, Tsunoda, Gasly, Ocon, Lawson, and Ricciardo: Drivers like Alex Albon, Yuki Tsunoda, Pierre Gasly, Esteban Ocon, Nyck de Vries, and Daniel Ricciardo experienced some fluctuations in their performances, as evidenced by their lower number of appearances in Driver of the Day votes.")
 
+# Data
+driversTotalLaps = season2023RaceResults.groupby('Driver')['Laps'].sum().sort_values(ascending=False)[:20]
+
+# Create figure
+fig, ax = plt.subplots(figsize=(10,6))
+
+# Set axis limits
+ax.axis([90,1500,19.6,-0.6])
+
+# Create bar chart
+ax.barh([" ".join(driver.split()[1:]) for driver in driversTotalLaps.index], driversTotalLaps, color=[color_dicttt.get(" ".join(driver.split()[1:]), 'gray') for driver in driversTotalLaps.index])
+
+# Add text to bars
+for i in range(len(driversTotalLaps)):
+    ax.text(driversTotalLaps[i]-100, i+0.25, driversTotalLaps[i], fontproperties=font_prop,fontsize=12, fontweight='bold', color='k')
+
+# Add note
+ax.text(999, 19.3, "* Reserve Drivers Not Included",fontproperties=font_prop, fontweight='bold', color='#bbbbbb')
+
+# Set title and labels
+ax.set_title('Formula 1 - 2023 Season\nTotal Laps Driven in Race Sessions (Drivers)',fontproperties=font_prop, fontsize=19, fontweight='bold', color='#bbbbbb')
+ax.set_xlabel('TOTAL LAPS', fontsize=14, fontweight='bold',fontproperties=font_prop, color='#bbbbbb')
+ax.set_ylabel('DRIVERS', fontsize=14, fontweight='bold',fontproperties=font_prop, color='#bbbbbb')
+
+plt.xticks(fontproperties=font_prop, color='#bbbbbb')
+plt.yticks(fontproperties=font_prop,color='#bbbbbb')
+
+# Add vertical line
+ax.axvline(90, color='#bbbbbb')
+
+# Display plot
+st.pyplot(fig) 
