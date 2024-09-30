@@ -472,9 +472,6 @@ color_dictt = {
     'Haas Ferrari':'#E6002B'
 }
 
-# Set Streamlit title
-st.title("Formula 1 2023 Season Analysis")
-
 # Load your datasets here
 season2023RaceCalendar = pd.read_csv('Formula1_2023season_calendar.csv')
 season2023RaceCalendar.set_index('Round', inplace=True)
