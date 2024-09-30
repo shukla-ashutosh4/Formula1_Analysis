@@ -1422,7 +1422,7 @@ for i in range(len(driversTotalDist)):
     ax.text(driversTotalDist[i]-666, i+0.22, "{:4.2f}".format(driversTotalDist[i]), fontproperties=font_prop, fontsize=12, fontweight='bold', color='k')
 
 # Add note
-ax.text(6333, 19.3, '* Reserve Drivers \nNot Included', fontweight='bold', color='#bbbbbb')
+ax.text(6333, 19.3, '* Reserve Drivers \nNot Included', fontproperties=font_prop, fontweight='bold', color='#bbbbbb')
 
 # Set title and labels
 ax.set_title('Formula 1 - 2023 Season\nTotal Distance Driven in Race Sessions (Drivers)', fontproperties=font_prop, fontsize=19, fontweight='bold', color='#bbbbbb')
@@ -1438,4 +1438,6 @@ ax.axvline(2000, color='#bbbbbb')
 
 # Display plot
 st.pyplot(fig)
+
+
 
