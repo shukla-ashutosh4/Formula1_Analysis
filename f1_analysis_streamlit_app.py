@@ -981,7 +981,7 @@ insights = [
 
 for insight in insights:
     st.write("• " + insight)
-    time.sleep(0.5)  # Add a slight delay for animation effect
+    time.sleep(0.1)  # Add a slight delay for animation effect
 
 # Team Dominance
 st.subheader("Team Dominance in Fastest Qualifying Times")
