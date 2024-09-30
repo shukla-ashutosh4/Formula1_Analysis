@@ -946,12 +946,12 @@ st.pyplot(fig)
 st.title("Formula 1 - 2023 Season Fastest Qualifying Times Insights")
 
 # Data
-data = {
-    "Driver": ["Verstappen", "Leclerc", "Sainz", "Perez", "Hamilton"],
-    "FastestTimes": [13, 4, 2, 2, 1],
-    "Team": ["Red Bull", "Ferrari", "Ferrari", "Red Bull", "Mercedes"]
-}
-df = pd.DataFrame(data)
+# data = {
+#     "Driver": ["Verstappen", "Leclerc", "Sainz", "Perez", "Hamilton"],
+#     "FastestTimes": [13, 4, 2, 2, 1],
+#     "Team": ["Red Bull", "Ferrari", "Ferrari", "Red Bull", "Mercedes"]
+# }
+# df = pd.DataFrame(data)
 
 # Animated bar chart
 st.subheader("Fastest Qualifying Times by Driver")
