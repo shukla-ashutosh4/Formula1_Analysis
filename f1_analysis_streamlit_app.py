@@ -934,9 +934,10 @@ ax.axvline(0, color='#bbbbbb')
 st.pyplot(fig)
 
 def stream_data():
-    for word in "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.".split(" "):
+    for word in "Qualifying Results".split(" "):
         yield word + " "
         time.sleep(0.02)
+st.write(stream_data())
 
-if st.button("Stream data"):
-    st.write(stream_data())
+# if st.button("Stream data"):
+#     st.write(stream_data())
