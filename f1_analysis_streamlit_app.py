@@ -506,6 +506,67 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+# Sidebar for Navigation
+st.sidebar.title("Navigate the Analysis")
+section = st.sidebar.radio("Choose a section", 
+                           ["Season Calendar", 
+                            "The Drivers", 
+                            "Race Tracks", 
+                            "Several Notable Races in 2023 Season", 
+                            "RedBull 2023 Wins", 
+                            "2023 Season Top 10 Drivers' Points Progression", 
+                            "Drivers Standings 2023", 
+                            "Constructor Standings", 
+                            "Race Results", 
+                            "Pole Position", 
+                            "Sprint Pole Position", 
+                            "Qualifying Results", 
+                            "Fastest Time in Qualifying", 
+                            "Q2 Appearances in Qualifying", 
+                            "Q3 Appearances in Qualifying", 
+                            "DNFs in Races", 
+                            "DNFs in Races (Tracks)", 
+                            "Driver of the Day 2023", 
+                            "Driver of the Day Votes 2023", 
+                            "Total Laps Driven in Race Sessions (Drivers)", 
+                            "Total Laps Driven in Race Sessions (Teams)", 
+                            "Total Distance Driven in Race Sessions (Drivers)"])
+
+# Season Calendar
+if section == "Season Calendar":
+    st.header("Season Calendar")    
+    season2023RaceCalendar
+
+# The Drivers
+elif section == "The Drivers":
+    st.header("The Drivers")
+    season2023Drivers
+
+# Race Tracks
+elif section == "Race Tracks":
+    st.header("Race Tracks")
+    RaceTracks
+
+# Several Notable Races in 2023 Season
+elif section == "Several Notable Races in 2023 Season":
+    st.header("Several Notable Races in 2023 Season")
+    season2023RaceResults[season2023RaceResults['Track'] == 'Bahrain'].drop('Track', axis=1).set_index('Position').head(10)
+
+# RedBull 2023 Wins
+elif section == "RedBull 2023 Wins":
+    st.header("RedBull 2023 Wins")
+    redbull_wins = season2023RaceResults[(season2023RaceResults['Position'] == '1') & (season2023RaceResults['Team'] == 'Red Bull Racing Honda RBPT')]
+    redbull_wins.groupby('Track').head(10)
+    st.write(redbull_wins)
+
+# Section: Driver Points Progression
+elif section == "2023 Season Top 10 Drivers' Points Progression":
+    st.header("2023 Season Top 10 Drivers' Points Progression")
+    driverStandingsTop10 = season2023Drivers['Driver'][:10].values
+    driverPointsTop10 = {}
+    driverPointsTop10Sprint = {}
+    
+
 # Set Streamlit title
 st.title("Formula 1 2023 Season Analysis")
 
