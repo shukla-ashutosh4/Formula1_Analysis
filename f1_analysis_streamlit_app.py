@@ -916,11 +916,6 @@ st.write("This analysis provides a comprehensive overview of the 2023 F1 season'
 
 st.write(season2023QualifyingResults[season2023QualifyingResults['Position'] == '1'].set_index('Track').drop('Position', axis=1))
 
-
-import streamlit as st
-import matplotlib.pyplot as plt
-import pandas as pd
-
 fastestTimeQualifying = season2023QualifyingResults[season2023QualifyingResults['Position'] == '1']['Driver'].value_counts()
 
 fig, ax = plt.subplots(figsize=(9,5))
