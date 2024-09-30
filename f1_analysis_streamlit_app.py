@@ -937,7 +937,8 @@ def stream_data():
     for word in "Qualifying Results".split(" "):
         yield word + " "
         time.sleep(0.02)
-st.write(stream_data())
+if st.snow:
+    st.header(stream_data())
 
 # if st.button("Stream data"):
 #     st.write(stream_data())
