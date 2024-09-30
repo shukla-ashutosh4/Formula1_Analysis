@@ -1438,50 +1438,6 @@ ax.axvline(2000, color='#bbbbbb')
 # Display plot
 st.pyplot(fig)
 
-# Title and Introduction
-st.title("🏎️ Formula 1 2023 Season Review & 2024 Season Insights 🌟")
-
-st.markdown("""
-**Welcome to the Ultimate Formula 1 2023 Season Review and 2024 Season Insights! 🚦**
-In this analysis, we dive deep into the incredible performances, key stats, and surprises that defined the 2023 season and provide an exciting look ahead to how the 2024 season is progressing as of September. Let's get started! 🏁
-""")
-
-# 2023 Season Total Distance Driven - Verstappen's Dominance
-st.header("📊 2023 Season: Total Distance Driven by Drivers")
-st.subheader("Verstappen's Dominance 🏆")
-st.markdown("""
-- Max Verstappen's **7156.46 kilometers driven** clearly demonstrates his dominance throughout the 2023 season. His consistency, reliability, and ability to complete a high number of laps make him stand out. 🚀
-""")
-
-# Close competition
-st.subheader("Close Competition 🔥")
-st.markdown("""
-- **Daniel Ricciardo** and **Liam Lawson** followed closely behind, both driving over 7000 kilometers, indicating a strong competition among the top drivers. 💪
-""")
-
-# Experienced Drivers
-st.subheader("Experienced Drivers 🌟")
-st.markdown("""
-- **Fernando Alonso**, **Lando Norris**, **Lewis Hamilton**, and **Nico Hulkenberg** showed consistent performance, driving significant distances and proving their experience on the track. 🧠
-""")
-
-# Midfield Battle
-st.subheader("Midfield Battle ⚔️")
-st.markdown("""
-- The midfield drivers, including **George Russell**, **Zhou Guanyu**, **Carlos Sainz**, **Pierre Gasly**, and more, demonstrated their competitive nature with distances between **6217.30 km** and **6744.61 km**. 🔄
-""")
-
-# Variability in Performance
-st.subheader("Variability in Performance 📉")
-st.markdown("""
-- Drivers like **Kevin Magnussen**, **Alex Albon**, **Lance Stroll**, and **Charles Leclerc** drove fewer kilometers, hinting at some missed races or retirements during the season. 🚧
-""")
-
-# Overall Insights
-st.subheader("Overall Insights 🔍")
-st.markdown("""
-- The chart highlights Verstappen’s dominance 🏅 and the competitive nature of the midfield battle. While **Ricciardo** and **Lawson** showed strong performances, experienced drivers in the middle pack showcased consistent participation. 🏎️💨
-""")
 
 # Formula 1 2023 Season Review
 st.header("🏎️ 2023 Formula 1 Season Review")
@@ -1528,7 +1484,7 @@ st.markdown("""
 - The 2023 season saw an expansion of **sprint races**, requiring teams to adapt their strategies for both qualifying and race days. 🏎️
 """)
 
-# 2024 Season Insights
+# Formula 1 2024 Season Insights
 st.header("🔮 Formula 1 2024 Season - Detailed Analysis (as of September)")
 
 # Max Verstappen’s Continued Dominance
@@ -1546,7 +1502,7 @@ st.markdown("""
 # Competitive Midfield Battle
 st.subheader("Competitive Midfield Battle ⚔️")
 st.markdown("""
-- Teams like **Ferrari**, **Mercedes**, and **Aston Martin** continue their fight for podiums. While **Charles Leclerc** and **Lewis Hamilton** show flashes of brilliance, the midfield remains fiercely competitive. 🏎️💨
+- Teams like **Ferrari**, **Mercedes**, and **Aston Martin** continue their fight for podiums. While **Charles Leclerc** and **Lewis Hamilton** show flashes of brilliance, the midfield remains fiercely competitive. 🚗💨
 """)
 
 # Sustainability and Logistical Adjustments
@@ -1558,7 +1514,7 @@ st.markdown("""
 # Daniel Ricciardo’s Retirement
 st.subheader("Daniel Ricciardo’s Retirement 😢")
 st.markdown("""
-- **Daniel Ricciardo** The Legend announced his retirement after the Singapore Grand Prix. Known for his bold overtakes and charming personality, Ricciardo leaves behind a legacy of **8 Grand Prix wins** and unforgettable moments. 🏁
+- **Daniel Ricciardo** announced his retirement after the Singapore Grand Prix. Known for his bold overtakes and charming personality, Ricciardo leaves behind a legacy of **8 Grand Prix wins** and unforgettable moments. 🏁
 """)
 
 # McLaren’s New Tech Upgrades
@@ -1573,6 +1529,28 @@ st.markdown("""
 - The final third of the season features pivotal races in **Austin**, **Mexico City**, **Brazil**, and the grand finale in **Abu Dhabi**. 🏁 Teams like **Ferrari** and **Mercedes** will look to disrupt Red Bull’s dominance. 🌟
 """)
 
+# News for 2025 Season
+st.header("📰 News for the 2025 Formula 1 Season")
+
+st.markdown("""
+As we look ahead to 2025, there are some exciting developments and changes anticipated:
+
+1. **New Engine Regulations 🔧**:  
+   Formula 1 will introduce new engine regulations in 2025 focused on sustainability, including increased use of biofuels and hybrid systems, pushing the boundaries of speed and environmental responsibility.
+
+2. **Driver Lineup Changes 🏎️**:  
+   - **Fernando Alonso** may retire at the end of 2024, sparking rumors about potential replacements at Aston Martin.
+   - **Oscar Piastri** is rumored to be on Mercedes' radar, with **Lewis Hamilton** potentially considering his retirement after the 2024 season.
+
+3. **Audi's Full Entry 🏁**:  
+   - Audi is set to make its full entry into Formula 1 as a factory team in 2025, raising anticipation about how they will perform in their debut season.
+
+4. **Sprint Races Expansion 🏁**:  
+   - More sprint races are expected in 2025, potentially introducing exciting new formats that could shake up the strategy for teams.
+
+5. **Calendar Expansion 🌍**:  
+   - Formula 1 is expected to add new races in regions like **Africa** and **South America** as part of its global expansion efforts.
+""")
 # Conclusion
 st.subheader("Conclusion 🎉")
 st.markdown("""
