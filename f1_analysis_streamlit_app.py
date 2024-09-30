@@ -1378,3 +1378,68 @@ ax.axvline(2000, color='#bbbbbb')
 
 # Display plot
 st.pyplot(fig)
+
+st.header("Elaborated Insights from the Formula 1 2023 Season Total Laps Driven (Teams) Chart")
+
+st.subheader("Red Bull's Dominance")
+st.write("Red Bull Racing once again showcased their supremacy in the 2023 season, leading all teams in total laps driven. This dominance reflects their consistent performance, reliability, and ability to keep their cars on the track.")
+
+st.subheader("Mercedes' Close Challenge")
+st.write("Mercedes-Benz closely followed Red Bull, indicating a competitive battle between the two top teams. Their high total laps driven demonstrate their strong performance and reliability, making them a formidable opponent throughout the season.")
+
+st.subheader("Midfield Competition")
+st.write("The midfield teams engaged in a fiercely competitive battle, with Alfa Romeo, AlphaTauri, Aston Martin, McLaren, Haas, Ferrari, and Alpine all vying for positions. The close proximity of their total laps driven underscores the tight competition for points and positions throughout the season.")
+
+st.subheader("Williams' Challenges")
+st.write("Williams Racing faced challenges during the season, as indicated by their lower total laps driven. This suggests potential issues with reliability or performance, which hindered their ability to consistently compete at the same level as the other teams. However, it's important to note that this ranking includes reserve drivers, which may impact the overall comparison.")
+
+st.subheader("Overall Insights")
+st.write("Overall, the chart highlights Red Bull's dominance, the competitive nature of the midfield battle, and the challenges faced by Williams Racing during the 2023 season.")
+
+trackDistance = season2023RaceCalendar['Circuit Length(km)'].values
+drivers = season2023RaceResults['Driver'].unique()
+driversLaps = {}
+for driver in drivers:
+    driversLaps[driver] = season2023RaceResults[season2023RaceResults['Driver'] == driver]['Laps'].values
+driversDist = {}
+for driver in driversLaps.keys():
+    if len(driversLaps[driver]) != len(trackDistance):
+        driversLaps[driver] = np.resize(driversLaps[driver], len(trackDistance))
+    driversDist[driver] = round((driversLaps[driver] * trackDistance).sum(), 2)
+driversTotalDist = pd.Series(driversDist).sort_values(ascending=False)[:20]
+
+
+# Data
+driversTotalDist = season2023RaceResults.groupby('Driver')['Distance'].sum().sort_values(ascending=False)
+
+# Create figure
+fig, ax = plt.subplots(figsize=(10,6))
+
+# Set axis limits
+ax.axis([2000,7336,19.6,-0.6])
+
+# Create bar chart
+ax.barh([" ".join(driver.split()[1:]) for driver in driversTotalDist.index], driversTotalDist, color=[color_dicttt.get(" ".join(driver.split()[1:]), 'gray') for driver in driversTotalDist.index])
+
+# Add text to bars
+for i in range(len(driversTotalDist)):
+    ax.text(driversTotalDist[i]-666, i+0.22, "{:4.2f}".format(driversTotalDist[i]), fontproperties=font_prop, fontsize=12, fontweight='bold', color='k')
+
+# Add note
+ax.text(6333, 19.3, '* Reserve Drivers \nNot Included', fontweight='bold', color='#bbbbbb')
+
+# Set title and labels
+ax.set_title('Formula 1 - 2023 Season\nTotal Distance Driven in Race Sessions (Drivers)', fontproperties=font_prop, fontsize=19, fontweight='bold', color='#bbbbbb')
+ax.set_xlabel('DISTANCE (km)', fontsize=14, fontweight='bold', fontproperties=font_prop, color='#bbbbbb')
+ax.set_ylabel('DRIVERS', fontsize=14, fontweight='bold', fontproperties=font_prop, color='#bbbbbb')
+
+# Set ticks
+plt.xticks(fontproperties=font_prop, color='#bbbbbb')
+plt.yticks(fontproperties=font_prop,color='#bbbbbb')
+
+# Add vertical line
+ax.axvline(2000, color='#bbbbbb')
+
+# Display plot
+st.pyplot(fig)
+
