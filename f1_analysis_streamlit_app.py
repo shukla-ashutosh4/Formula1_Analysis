@@ -1090,3 +1090,22 @@ ax.axvline(0, color='#bbbbbb')
 
 # Display plot
 st.pyplot(fig)
+
+import streamlit as st
+
+st.header("Elaborated Insights from the Formula 1 2023 Season Q3 Appearances Chart")
+
+st.subheader("Dominance and Consistency")
+st.write("Verstappen, Leclerc, and Alonso: The chart highlights the exceptional qualifying performances of Max Verstappen, Charles Leclerc, and Fernando Alonso. Their consistent appearances in Q3 underscore their dominance and ability to secure top starting positions throughout the season.")
+
+st.subheader("Close Competition")
+st.write("Sainz, Russell, and Hamilton: Following closely behind the top three are Carlos Sainz, George Russell, and Lewis Hamilton. These drivers have also made significant appearances in Q3, showcasing a competitive level of qualifying performance.")
+
+st.subheader("Midfield Battle")
+st.write("Norris, Piastri, Perez, Gasly: The midfield drivers, including Lando Norris, Oscar Piastri, Sergio Perez, and Pierre Gasly, have demonstrated solid qualifying performances, with multiple appearances in Q3. This indicates a competitive and dynamic midfield battle.")
+
+st.subheader("Variability in Performance")
+st.write("Ocon, Hulkenberg, Stroll, Albon, Bottas, Tsunoda: Drivers like Esteban Ocon, Nico Hulkenberg, Lance Stroll, Alex Albon, Valtteri Bottas, and Yuki Tsunoda experienced some fluctuations in their qualifying performances. While they secured Q3 appearances on several occasions, their numbers were lower compared to the top contenders.")
+
+st.subheader("Struggling Drivers")
+st.write("Magnussen, Zhou, Sargeant, Lawson, Ricciardo: Zhou Guanyu, Logan Sargeant, Kevin Magnussen, Nyck de Vries, and Liam Lawson faced significant challenges in qualifying, with very few Q3 appearances. These drivers might have struggled to adapt to the demands of Formula 1 or encountered difficulties with their cars or teams.")
