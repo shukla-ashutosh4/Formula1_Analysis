@@ -956,17 +956,17 @@ df = pd.DataFrame(data)
 # Animated bar chart
 st.subheader("Fastest Qualifying Times by Driver")
 
-progress_bar = st.progress(0)
-chart = st.bar_chart(df.set_index('Driver')['FastestTimes'])
+# progress_bar = st.progress(0)
+# chart = st.bar_chart(df.set_index('Driver')['FastestTimes'])
 
-for i in range(len(df)):
-    # Updating progress bar
-    progress_bar.progress((i + 1) / len(df))
+# for i in range(len(df)):
+#     # Updating progress bar
+#     progress_bar.progress((i + 1) / len(df))
     
-    # Updating chart
-    chart.add_rows(df.iloc[:i+1].set_index('Driver')['FastestTimes'])
+#     # Updating chart
+#     chart.add_rows(df.iloc[:i+1].set_index('Driver')['FastestTimes'])
     
-    time.sleep(0.5)
+#     time.sleep(0.5)
 
 # Key Insights
 st.subheader("Key Insights")
