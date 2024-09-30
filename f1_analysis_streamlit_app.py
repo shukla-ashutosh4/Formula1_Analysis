@@ -1217,7 +1217,8 @@ for i in range(len(DotdAwards)):
 ax.set_title('Formula 1 - 2023 Season\n# of Driver of the Day Awards (Drivers)', fontproperties = font_prop, fontsize=19, fontweight='bold', color='#bbbbbb')
 ax.set_xlabel('DotD AWARDS', fontsize=14, fontweight='bold', fontproperties = font_prop,color='#bbbbbb')
 ax.set_ylabel('DRIVERS', fontsize=14, fontweight='bold', fontproperties = font_prop,color='#bbbbbb')
-
+plt.xticks(fontproperties=font_prop, color='#bbbbbb')
+plt.yticks(fontproperties=font_prop,color='#bbbbbb')
 # Add vertical line
 ax.axvline(0, color='#bbbbbb')
 
