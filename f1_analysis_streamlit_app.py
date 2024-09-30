@@ -957,14 +957,18 @@ df = pd.DataFrame(data)
 st.subheader("Fastest Qualifying Times by Driver")
 
 progress_bar = st.progress(0)
-chart = st.bar_chart(df.set_index('Driver')['FastestTimes'])
-
+fig, ax = plt.subplots()
 for i in range(len(df)):
     # Updating progress bar
     progress_bar.progress((i + 1) / len(df))
     
     # Updating chart
-    chart.add_rows(df.iloc[:i+1].set_index('Driver')['FastestTimes'])
+    ax.clear()
+    ax.bar(df['Driver'][:i+1], df['FastestTimes'][:i+1], color=[color_dictt[driver] for driver in df['Driver'][:i+1]])
+    ax.set_title('Fastest Qualifying Times by Driver')
+    ax.set_xlabel('Driver')
+    ax.set_ylabel('Fastest Times')
+    st.pyplot(fig)
     
     time.sleep(0.5)
 
@@ -987,7 +991,12 @@ for insight in insights:
 st.subheader("Team Dominance in Fastest Qualifying Times")
 
 team_data = df.groupby('Team')['FastestTimes'].sum().reset_index()
-st.bar_chart(team_data.set_index('Team')['FastestTimes'])
+fig, ax = plt.subplots()
+ax.bar(team_data['Team'], team_data['FastestTimes'], color=[color_dictt[team] for team in team_data['Team']])
+ax.set_title('Team Dominance in Fastest Qualifying Times')
+ax.set_xlabel('Team')
+ax.set_ylabel('Fastest Times')
+st.pyplot(fig)
 
 # Conclusion
 st.subheader("Conclusion")
