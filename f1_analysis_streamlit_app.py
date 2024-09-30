@@ -1440,4 +1440,119 @@ ax.axvline(2000, color='#bbbbbb')
 st.pyplot(fig)
 
 
+import streamlit as st
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Set Streamlit App Config
+st.set_page_config(page_title="Formula 1 2023 & 2024 Season Review", layout="wide")
+
+# App Title
+st.title("🏎️ Formula 1 2023 & 2024 Season Review")
+
+# Intro Section
+st.markdown("""
+## 🏁 Introduction
+Welcome to a comprehensive analysis of the 2023 and the progressing 2024 Formula 1 seasons. We’ll dive into Max Verstappen's dominance, the competitive midfield, and Ferrari and Mercedes' struggles. Let’s explore the exciting stories that unfolded across the seasons!
+""")
+
+# Sidebar for Navigation
+st.sidebar.title("Navigate the Analysis")
+section = st.sidebar.radio("Choose a section", 
+                           ["2023 Season - Total Distance Driven (Drivers)", 
+                            "2023 Season Review", 
+                            "2024 Season Insights", 
+                            "Feedback"])
+
+# Helper: Plot Distance Driven (Example Data)
+def plot_distance_driven():
+    drivers = ["Verstappen", "Ricciardo", "Lawson", "Alonso", "Hamilton", "Norris", "Hulkenberg"]
+    distance = [7156.46, 7040.23, 7023.12, 6800.45, 6721.50, 6612.34, 6550.29]
+    
+    fig, ax = plt.subplots(figsize=(10, 6))
+    ax.barh(drivers, distance, color='skyblue')
+    ax.set_xlabel('Total Distance Driven (km)')
+    ax.set_ylabel('Drivers')
+    ax.set_title('Top Drivers: Total Distance Driven in the 2023 Season')
+    st.pyplot(fig)
+
+# 2023 Season - Total Distance Driven (Drivers)
+if section == "2023 Season - Total Distance Driven (Drivers)":
+    st.header("2023 Season - Total Distance Driven (Drivers)")
+    
+    # Verstappen's Dominance Insights
+    st.subheader("Verstappen's Dominance")
+    st.write("Max Verstappen's impressive total of 7156.46 kilometers driven clearly demonstrates his dominance throughout the 2023 season.")
+    
+    # Plot Distance Chart
+    st.subheader("📊 Total Distance Driven (Drivers) Chart")
+    plot_distance_driven()
+    
+    # Additional Insights
+    st.write("""
+    - **Close Competition:** Ricciardo and Lawson also had strong performances, driving over 7000 kilometers.
+    - **Experienced Drivers:** Alonso, Norris, Hamilton, and Hulkenberg demonstrated consistent performance and reliability.
+    - **Midfield Battle:** Midfield drivers like Russell, Zhou, and Sainz contributed to the exciting rivalry in the 2023 season.
+    """)
+    
+# 2023 Season Review
+elif section == "2023 Season Review":
+    st.header("Formula 1 2023 Season Review")
+    
+    st.subheader("1. Max Verstappen and Red Bull's Dominance")
+    st.write("""
+    Max Verstappen secured his third consecutive World Drivers' Championship, solidifying his legacy as one of the greats of the sport with a record-breaking 19 race wins.
+    """)
+    
+    # Red Bull Victory Highlight with Emoji
+    st.write("🏆 Red Bull Racing dominated the Constructors' Championship, winning 21 out of 22 races.")
+    
+    # Sprint Points
+    st.subheader("Sprint Race Points Leaderboard")
+    # Example Data for Sprint Races
+    sprint_data = {'Driver': ['Verstappen', 'Perez', 'Leclerc', 'Sainz'], 'Sprint Points': [125, 92, 85, 77]}
+    df_sprint = pd.DataFrame(sprint_data)
+    st.table(df_sprint)
+    
+    # Ferrari’s Inconsistency and Mercedes’ Struggles
+    st.subheader("2. Ferrari’s Inconsistency and Mercedes’ Developments")
+    st.write("""
+    Ferrari and Mercedes struggled to consistently challenge Red Bull, though Ferrari’s Carlos Sainz managed one race victory, and Mercedes introduced key mid-season upgrades.
+    """)
+    
+    # Alonso's Comeback
+    st.subheader("3. Fernando Alonso’s Aston Martin Revival")
+    st.write("Fernando Alonso secured 8 podium finishes in 2023, showcasing Aston Martin’s growing potential.")
+    
+# 2024 Season Insights
+elif section == "2024 Season Insights":
+    st.header("Formula 1 2024 Season Insights")
+    
+    # Verstappen's Continued Dominance
+    st.subheader("1. Max Verstappen’s Continued Dominance")
+    st.write("""
+    Max Verstappen continues to dominate the 2024 season with multiple race wins, showcasing his exceptional consistency and Red Bull’s superior car performance.
+    """)
+    
+    # Red Bull's Strength with Special Formatting
+    st.write("🔴 **Red Bull Racing's dominance** has persisted, with Sergio Perez also contributing crucial points towards the Constructors' Championship.")
+    
+    # McLaren's Tech Upgrades
+    st.subheader("2. McLaren’s New Tech Upgrades")
+    st.write("McLaren introduced significant aerodynamic upgrades, resulting in a strong performance by Lando Norris and Oscar Piastri.")
+    
+    # Ricciardo’s Retirement Note
+    st.subheader("3. Daniel Ricciardo's Retirement")
+    st.write("""
+    Daniel Ricciardo announced his retirement after the Singapore Grand Prix in 2024, marking the end of an era for the F1 paddock.
+    """)
+
+# Feedback Section
+elif section == "Feedback":
+    st.header("💬 We Value Your Feedback!")
+    st.write("Thank you for reading the analysis. Please provide your feedback below:")
+    feedback = st.text_area("Your Feedback")
+    
+    if st.button("Submit Feedback"):
+        st.write("Thank you for your valuable feedback!")
 
