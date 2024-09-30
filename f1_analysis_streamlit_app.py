@@ -1128,8 +1128,8 @@ for i in range(len(DNFdriver)):
 
 # Set title and labels
 ax.set_title('Formula 1 - 2023 Season\n# of DNFs in Races (Drivers)', fontsize=19, fontproperties = font_prop, fontweight='bold', color='#bbbbbb')
-ax.set_xlabel('DNFs', fontsize=14, fontweight='bold',fontproperties = font_prop, color='#bbbbbb')
-ax.set_ylabel('DRIVERS', fontsize=14, fontweight='bold',fontproperties = font_prop, color='#bbbbbb')
+ax.set_xlabel('DNFs', fontsize=14, fontweight='bold', fontproperties = font_prop, color='#bbbbbb')
+ax.set_ylabel('DRIVERS', fontsize=14, fontweight='bold', fontproperties = font_prop, color='#bbbbbb')
 
 # Set ticks
 ax.set_xticks(color='#bbbbbb')
