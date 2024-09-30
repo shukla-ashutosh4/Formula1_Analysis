@@ -1081,9 +1081,9 @@ ax.set_xlabel('Q3 APPEARANCES', fontproperties = font_prop, fontsize=14, fontwei
 ax.set_ylabel('DRIVERS', fontsize=14, fontproperties = font_prop, fontweight='bold', color='#bbbbbb')
 
 # Set ticks
-ax.set_xticks(range(0,23,2))
-ax.set_xticklabels(range(0,23,2), color='#bbbbbb')
-ax.set_yticks(fontsize=9, color='#bbbbbb')
+# ax.set_xticks(range(0,23,2))
+# ax.set_xticklabels(range(0,23,2), color='#bbbbbb')
+# ax.set_yticks(fontsize=9, color='#bbbbbb')
 
 # Add vertical line
 ax.axvline(0, color='#bbbbbb')
