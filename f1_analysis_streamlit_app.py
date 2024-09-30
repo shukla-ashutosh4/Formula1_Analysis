@@ -1364,7 +1364,7 @@ for i in range(len(teamsTotalLaps)):
     ax.text(teamsTotalLaps[i]-45, i+0.2, teamsTotalLaps[i],fontproperties=font_prop, fontsize=14, fontweight='bold', color='k')
 
 # Add note
-ax.text(2400, 8.6, "* Reserve Drivers Included", fontweight='bold', color='#bbbbbb')
+ax.text(2400, 8.6, "* Reserve Drivers Included", fontproperties=font_prop,fontweight='bold', color='#bbbbbb')
 
 # Set title and labels
 ax.set_title('Formula 1 - 2023 Season\nTotal Laps Driven in Race Sessions (Teams)', fontproperties=font_prop,fontsize=19, fontweight='bold', color='#bbbbbb')
