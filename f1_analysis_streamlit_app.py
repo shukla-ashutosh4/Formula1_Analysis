@@ -106,6 +106,7 @@ st.markdown(
 
 # Set Streamlit title
 st.title("🏎️ Formula 1 2023 Season Analysis")
+st.write("Developed by Ashutosh Shukla")
 
 st.header("Season Calendar 📅")    
 season2023RaceCalendar
@@ -521,15 +522,6 @@ ax.axvline(0, color='#bbbbbb')
 
 st.pyplot(fig)
 
-# def stream_data():
-#     for word in "Qualifying Results".split(" "):
-#         yield word + " "
-#         time.sleep(0.02)
-# if st.button("Qualifying results"):
-#     st.write(stream_data())
-
-# Set page config (this must be the first Streamlit command)
-
 # Title
 st.header("Formula 1 - 2023 Season Fastest Qualifying Times Insights")
 
@@ -543,18 +535,6 @@ df = pd.DataFrame(data)
 
 # Animated bar chart
 st.subheader("Fastest Qualifying Times by Driver")
-
-# progress_bar = st.progress(0)
-# chart = st.bar_chart(df.set_index('Driver')['FastestTimes'])
-
-# for i in range(len(df)):
-#     # Updating progress bar
-#     progress_bar.progress((i + 1) / len(df))
-    
-#     # Updating chart
-#     chart.add_rows(df.iloc[:i+1].set_index('Driver')['FastestTimes'])
-    
-#     time.sleep(0.5)
 
 # Key Insights
 st.subheader("Key Insights")
@@ -1152,4 +1132,26 @@ st.markdown("""
 The 2024 season is shaping up to be another dominant year for Max Verstappen and Red Bull Racing, but the battles in the midfield and technological advancements from teams like McLaren ensure that the season remains thrilling. 🌟
 
 Thank you for reading the analysis! 🙌 Feel free to share your feedback, and stay tuned for more insights as we move towards the season’s end! 🏁
+""")
+
+# Section: About the Author
+st.write("---")
+st.subheader("About the Author")
+
+# Add some introductory text
+st.write("""
+Hello, my name is **Ashutosh Shukla**, a passionate Data Scientist and Machine Learning enthusiast with a deep interest in AI, Formula 1, and advanced data analytics. My work revolves around analyzing data to provide insights and predictions, with a particular focus on motorsports analytics.
+""")
+
+# Add LinkedIn and GitHub links with emojis
+st.write("Feel free to connect with me:")
+st.markdown("""
+- [![LinkedIn](https://img.shields.io/badge/LinkedIn-Ashutosh%20Shukla-blue)](https://www.linkedin.com/in/your-linkedin-profile)
+- [![GitHub](https://img.shields.io/badge/GitHub-ashutoshshukla-blue?logo=github)](https://github.com/your-github-profile)
+- [Email Me](mailto:your-email@example.com)
+""")
+
+# Add a thank you message
+st.write("""
+Thank you for checking out my analysis! If you have any questions or feedback, feel free to reach out via LinkedIn or email.
 """)
