@@ -1007,3 +1007,40 @@ else:
 # st.sidebar.title("Fun Fact")
 # st.sidebar.write("Did you know? The total number of fastest qualifying times set in the 2023 season was", 
 #                  df['FastestTimes'].sum())
+
+
+import streamlit as st
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# Data
+qualiQ2 = season2023QualifyingResults[season2023QualifyingResults['Position'].isin([str(i) for i in range(1,16)])] \
+    ['Driver'].value_counts()
+
+# Create a figure and axis
+fig, ax = plt.subplots(figsize=(10,6))
+
+# Set the axis limits
+ax.axis([0,25,22,-0.6])
+
+# Create a horizontal bar chart
+ax.barh([" ".join(driver.split()[1:]) for driver in qualiQ2.index], qualiQ2, color=[color_dicttt.get(" ".join(driver.split()[1:]), 'gray') for driver in qualiQ2.index])
+
+# Add text to the bars
+for i in range(len(qualiQ2)):
+    ax.text(qualiQ2[i]-0.75, i+0.24, "{:>2}".format(qualiQ2[i]), fontsize=12, fontweight='bold', color='k')
+
+# Set the title and labels
+ax.set_title("Formula 1 - 2023 Season\n# of Q2 Appearances in Qualifying (Drivers)", fontsize=19, fontweight='bold', color='#bbbbbb')
+ax.set_xlabel('Q2 APPEARANCES', fontsize=14, fontweight='bold', color='#bbbbbb')
+ax.set_ylabel('DRIVERS', fontsize=14, fontweight='bold', color='#bbbbbb')
+
+# Set the tick colors and labels
+ax.tick_params(axis='x', colors='#bbbbbb', labelsize=9)
+ax.tick_params(axis='y', colors='#bbbbbb', labelsize=9)
+
+# Add a vertical line at x=0
+ax.axvline(0, color='#bbbbbb')
+
+# Display the plot
+st.pyplot(fig)
