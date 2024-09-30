@@ -942,6 +942,13 @@ st.pyplot(fig)
 
 # Set page config (this must be the first Streamlit command)
 
+import streamlit as st
+import pandas as pd
+import time
+
+# Set page config (this must be the first Streamlit command)
+st.set_page_config(page_title="F1 2023 Qualifying Insights", layout="wide")
+
 # Title
 st.title("Formula 1 - 2023 Season Fastest Qualifying Times Insights")
 
@@ -953,22 +960,27 @@ data = {
 }
 df = pd.DataFrame(data)
 
+# Color dictionary
+color_dict = {
+    "Red Bull": "#0600EF",
+    "Ferrari": "#DC0000",
+    "Mercedes": "#00D2BE"
+}
+
 # Animated bar chart
 st.subheader("Fastest Qualifying Times by Driver")
 
 progress_bar = st.progress(0)
-fig, ax = plt.subplots()
+chart = st.bar_chart(df.set_index('Driver')['FastestTimes'])
+
 for i in range(len(df)):
     # Updating progress bar
     progress_bar.progress((i + 1) / len(df))
     
     # Updating chart
-    ax.clear()
-    ax.bar(df['Driver'][:i+1], df['FastestTimes'][:i+1], color=[color_dicttt[driver] for driver in df['Driver'][:i+1]])
-    ax.set_title('Fastest Qualifying Times by Driver')
-    ax.set_xlabel('Driver')
-    ax.set_ylabel('Fastest Times')
-    st.pyplot(fig)
+    temp_df = df.iloc[:i+1].copy()
+    temp_df['color'] = temp_df['Team'].map(color_dict)
+    st.bar_chart(temp_df.set_index('Driver')['FastestTimes'], use_container_width=True, color=temp_df['color'].tolist())
     
     time.sleep(0.5)
 
@@ -991,12 +1003,8 @@ for insight in insights:
 st.subheader("Team Dominance in Fastest Qualifying Times")
 
 team_data = df.groupby('Team')['FastestTimes'].sum().reset_index()
-fig, ax = plt.subplots()
-ax.bar(team_data['Team'], team_data['FastestTimes'], color=[color_dictt[team] for team in team_data['Team']])
-ax.set_title('Team Dominance in Fastest Qualifying Times')
-ax.set_xlabel('Team')
-ax.set_ylabel('Fastest Times')
-st.pyplot(fig)
+team_data['color'] = team_data['Team'].map(color_dict)
+st.bar_chart(team_data.set_index('Team')['FastestTimes'], use_container_width=True, color=team_data['color'].tolist())
 
 # Conclusion
 st.subheader("Conclusion")
