@@ -1040,7 +1040,6 @@ ax.axvline(0, color='#bbbbbb')
 # Display the plot
 st.pyplot(fig)
 
-import streamlit as st
 
 st.header("Formula 1 - 2023 Season Number of Q2 Appearances in Qualifying (Drivers)")
 
