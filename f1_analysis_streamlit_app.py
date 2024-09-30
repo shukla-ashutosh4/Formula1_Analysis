@@ -1168,9 +1168,9 @@ for i in range(len(DNFtrack)):
     ax.text(DNFtrack[i]-0.18, i+0.22, DNFtrack[i], fontsize=12, fontweight='bold', color='k')
 
 # Set title and labels
-ax.set_title('Formula 1 - 2023 Season\n# of DNFs in Races (Tracks)', fontsize=19, fontweight='bold', color='#bbbbbb')
-ax.set_xlabel('DNFs', fontsize=14, fontweight='bold', color='#bbbbbb')
-ax.set_ylabel('TRACKS', fontsize=14, fontweight='bold', color='#bbbbbb')
+ax.set_title('Formula 1 - 2023 Season\n# of DNFs in Races (Tracks)', fontproperties = font_prop,fontsize=19, fontweight='bold', color='#bbbbbb')
+ax.set_xlabel('DNFs', fontsize=14, fontweight='bold',fontproperties = font_prop, color='#bbbbbb')
+ax.set_ylabel('TRACKS', fontsize=14, fontweight='bold', fontproperties = font_prop,color='#bbbbbb')
 
 # Add vertical line
 ax.axvline(0, color='#bbbbbb')
