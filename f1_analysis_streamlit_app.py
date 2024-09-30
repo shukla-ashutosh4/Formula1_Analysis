@@ -105,7 +105,7 @@ st.markdown(
 )
 
 # Display your profile image
-st.image("F1_new_logo.png", width=1500)
+st.image("F1_new_logo.png", width=1000)
 
 # Set Streamlit title
 st.title("🏎️ Formula 1 2023 Season Analysis")
