@@ -1151,3 +1151,33 @@ st.write("Piastri, Leclerc, Zhou, Bottas, De, Hulkenberg: The midfield drivers, 
 st.subheader("Variability in Performance")
 st.write("Sainz, Tsunoda, Perez, Alonso, Hamilton, Norris: Drivers like Carlos Sainz, Yuki Tsunoda, Sergio Perez, Fernando Alonso, Lewis Hamilton, and Lando Norris experienced a mix of reliability issues and strong performances. Their DNF numbers were relatively low, indicating a balance between reliability and competitiveness.")
 
+# Data
+DNFtrack = season2023RaceResults[season2023RaceResults['Time/Retired'] == 'DNF']['Track'].value_counts()
+
+# Create figure
+fig, ax = plt.subplots(figsize=(9,6))
+
+# Set axis limits
+ax.axis([0,10,20,-0.6])
+
+# Create bar chart
+ax.barh(DNFtrack.index, DNFtrack, color='#6abeca')
+
+# Add text to bars
+for i in range(len(DNFtrack)):
+    ax.text(DNFtrack[i]-0.18, i+0.22, DNFtrack[i], fontsize=12, fontweight='bold', color='k')
+
+# Set title and labels
+ax.set_title('Formula 1 - 2023 Season\n# of DNFs in Races (Tracks)', fontsize=19, fontweight='bold', color='#bbbbbb')
+ax.set_xlabel('DNFs', fontsize=14, fontweight='bold', color='#bbbbbb')
+ax.set_ylabel('TRACKS', fontsize=14, fontweight='bold', color='#bbbbbb')
+
+# Set ticks
+ax.set_xticks(color='#bbbbbb')
+ax.set_yticks(color='#bbbbbb', fontsize=9)
+
+# Add vertical line
+ax.axvline(0, color='#bbbbbb')
+
+# Display plot
+st.pyplot(fig)
