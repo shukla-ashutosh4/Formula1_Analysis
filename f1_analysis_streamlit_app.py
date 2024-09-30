@@ -954,11 +954,7 @@ data = {
 df = pd.DataFrame(data)
 
 # Color dictionary
-color_dict = {
-    "Red Bull": "#0600EF",
-    "Ferrari": "#DC0000",
-    "Mercedes": "#00D2BE"
-}
+
 
 # Animated bar chart
 st.subheader("Fastest Qualifying Times by Driver")
