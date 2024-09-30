@@ -1440,13 +1440,6 @@ ax.axvline(2000, color='#bbbbbb')
 st.pyplot(fig)
 
 
-import streamlit as st
-import pandas as pd
-import matplotlib.pyplot as plt
-
-# Set Streamlit App Config
-st.set_page_config(page_title="Formula 1 2023 & 2024 Season Review", layout="wide")
-
 # App Title
 st.title("🏎️ Formula 1 2023 & 2024 Season Review")
 
