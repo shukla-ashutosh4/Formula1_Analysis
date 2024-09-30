@@ -941,7 +941,6 @@ st.pyplot(fig)
 #     st.write(stream_data())
 
 # Set page config (this must be the first Streamlit command)
-st.set_page_config(page_title="F1 2023 Qualifying Insights", layout="wide")
 
 # Title
 st.title("Formula 1 - 2023 Season Fastest Qualifying Times Insights")
