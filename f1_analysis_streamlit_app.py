@@ -1131,9 +1131,23 @@ ax.set_title('Formula 1 - 2023 Season\n# of DNFs in Races (Drivers)', fontsize=1
 ax.set_xlabel('DNFs', fontsize=14, fontweight='bold', fontproperties = font_prop, color='#bbbbbb')
 ax.set_ylabel('DRIVERS', fontsize=14, fontweight='bold', fontproperties = font_prop, color='#bbbbbb')
 
-
 # Add vertical line
 ax.axvline(0, color='#bbbbbb')
 
 # Display plot
 st.pyplot(fig)
+
+st.header("Elaborated Insights from the Formula 1 2023 Season DNFs Chart")
+
+st.subheader("Reliability Issues")
+st.write("Ocon and Sargeant: The chart highlights the reliability concerns for Esteban Ocon and Logan Sargeant, both of whom experienced a significant number of DNFs (7 each). This suggests potential mechanical issues or driver errors that contributed to their retirements.")
+
+st.subheader("Consistent Performance")
+st.write("Magnussen, Stroll, Russell, and Albon: A group of drivers, including Kevin Magnussen, Lance Stroll, George Russell, and Alex Albon, demonstrated relatively consistent performance with 4 DNFs each. While they faced some reliability issues, their overall performance was more stable compared to the top two.")
+
+st.subheader("Midfield Challenges")
+st.write("Piastri, Leclerc, Zhou, Bottas, De, Hulkenberg: The midfield drivers, including Oscar Piastri, Charles Leclerc, Zhou Guanyu, Valtteri Bottas, Nyck de Vries, and Nico Hulkenberg, faced their fair share of reliability problems. This suggests that the midfield competition was not only close on the track but also in terms of car reliability.")
+
+st.subheader("Variability in Performance")
+st.write("Sainz, Tsunoda, Perez, Alonso, Hamilton, Norris: Drivers like Carlos Sainz, Yuki Tsunoda, Sergio Perez, Fernando Alonso, Lewis Hamilton, and Lando Norris experienced a mix of reliability issues and strong performances. Their DNF numbers were relatively low, indicating a balance between reliability and competitiveness.")
+
