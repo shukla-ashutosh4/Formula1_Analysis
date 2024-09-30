@@ -1109,3 +1109,34 @@ st.write("Ocon, Hulkenberg, Stroll, Albon, Bottas, Tsunoda: Drivers like Esteban
 
 st.subheader("Struggling Drivers")
 st.write("Magnussen, Zhou, Sargeant, Lawson, Ricciardo: Zhou Guanyu, Logan Sargeant, Kevin Magnussen, Nyck de Vries, and Liam Lawson faced significant challenges in qualifying, with very few Q3 appearances. These drivers might have struggled to adapt to the demands of Formula 1 or encountered difficulties with their cars or teams.")
+
+# Data
+DNFdriver = season2023RaceResults[season2023RaceResults['Time/Retired'] == 'DNF']['Driver'].value_counts()
+
+# Create figure
+fig, ax = plt.subplots(figsize=(9,6))
+
+# Set axis limits
+ax.axis([0,8,19,-0.6])
+
+# Create bar chart
+ax.barh([driver.split()[1] for driver in DNFdriver.index], DNFdriver, color=[color_dicttt.get(driver.split()[1], 'gray') for driver in DNFdriver.index])
+
+# Add text to bars
+for i in range(len(DNFdriver)):
+    ax.text(DNFdriver[i]-0.17, i+0.22, DNFdriver[i], fontsize=12, fontweight='bold', color='k')
+
+# Set title and labels
+ax.set_title('Formula 1 - 2023 Season\n# of DNFs in Races (Drivers)', fontsize=19, fontproperties = font_prop, fontweight='bold', color='#bbbbbb')
+ax.set_xlabel('DNFs', fontsize=14, fontweight='bold',fontproperties = font_prop, color='#bbbbbb')
+ax.set_ylabel('DRIVERS', fontsize=14, fontweight='bold',fontproperties = font_prop, color='#bbbbbb')
+
+# Set ticks
+ax.set_xticks(color='#bbbbbb')
+ax.set_yticks(color='#bbbbbb', fontsize=9)
+
+# Add vertical line
+ax.axvline(0, color='#bbbbbb')
+
+# Display plot
+st.pyplot(fig)
