@@ -1126,13 +1126,6 @@ As we look ahead to 2025, there are some exciting developments and changes antic
 5. **Calendar Expansion 🌍**:  
    - Formula 1 is expected to add new races in regions like **Africa** and **South America** as part of its global expansion efforts.
 """)
-# Conclusion
-st.subheader("Conclusion 🎉")
-st.markdown("""
-The 2024 season is shaping up to be another dominant year for Max Verstappen and Red Bull Racing, but the battles in the midfield and technological advancements from teams like McLaren ensure that the season remains thrilling. 🌟
-
-Thank you for reading the analysis! 🙌 Feel free to share your feedback, and stay tuned for more insights as we move towards the season’s end! 🏁
-""")
 
 # Section: About the Author
 st.write("---")
@@ -1149,7 +1142,10 @@ st.markdown("""
 - [![LinkedIn](https://img.shields.io/badge/LinkedIn-Ashutosh%20Shukla-blue)](https://www.linkedin.com/in/ashutosh-shukla4/)
 - [![GitHub](https://img.shields.io/badge/GitHub-ashutoshshukla-blue?logo=github)](https://github.com/shukla-ashutosh4)
 """)
+st.write("Also check out the Colab Notebook for much Detailed Analyis ")
 
 # Add a thank you message
 st.write("""
-Thank you for checking out my analysis! If you have any questions or feedback, feel free to reach out via LinkedIn""")
+The 2024 season is shaping up to be another dominant year for Max Verstappen and Red Bull Racing, but the battles in the midfield and technological advancements from teams like McLaren ensure that the season remains thrilling. 🌟
+Thank you for reading the analysis! 🙌 If you have any questions or feedback, feel free to reach out via LinkedIn, and stay tuned for more insights as we move towards the season’s end! 🏁  
+""")
