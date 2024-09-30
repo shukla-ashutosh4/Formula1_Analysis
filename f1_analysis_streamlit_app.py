@@ -1144,7 +1144,7 @@ st.markdown("""
 """)
 st.write("Also check out the Colab Notebook for much Detailed Analyis ")
 st.markdown("""
-[![Colab Notebook](https://www.google.com/imgres?q=google%20colab&imgurl=https%3A%2F%2Fcolab.research.google.com%2Fimg%2Fcolab_favicon_256px.png&imgrefurl=https%3A%2F%2Fcolab.research.google.com%2F&docid=l5bQPA_r0pib2M&tbnid=kKOjm-thSJ6RxM&vet=12ahUKEwjLxduUpOqIAxXOS2cHHdXsFJoQM3oECBkQAA..i&w=260&h=260&hcb=2&ved=2ahUKEwjLxduUpOqIAxXOS2cHHdXsFJoQM3oECBkQAA)](https://colab.research.google.com/drive/1NrpSs2ZlJZdBQqjkT0W9sCDyE7_Ap1vA?usp=sharing)""")
+[![Colab Notebook](download.png)](https://colab.research.google.com/drive/1NrpSs2ZlJZdBQqjkT0W9sCDyE7_Ap1vA?usp=sharing)""")
 
 
 # Add a thank you message
