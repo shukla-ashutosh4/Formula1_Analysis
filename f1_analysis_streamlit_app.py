@@ -940,3 +940,86 @@ st.pyplot(fig)
 # if st.button("Qualifying results"):
 #     st.write(stream_data())
 
+import streamlit as st
+import pandas as pd
+import altair as alt
+import time
+
+# Set page config
+st.set_page_config(page_title="F1 2023 Qualifying Insights", layout="wide")
+
+# Title
+st.title("Formula 1 - 2023 Season Fastest Qualifying Times Insights")
+
+# Data
+data = {
+    "Driver": ["Verstappen", "Leclerc", "Sainz", "Perez", "Hamilton"],
+    "FastestTimes": [13, 4, 2, 2, 1],
+    "Team": ["Red Bull", "Ferrari", "Ferrari", "Red Bull", "Mercedes"]
+}
+df = pd.DataFrame(data)
+
+# Animated bar chart
+st.subheader("Fastest Qualifying Times by Driver")
+chart = alt.Chart(df).mark_bar().encode(
+    x=alt.X('FastestTimes:Q', title='Number of Fastest Times'),
+    y=alt.Y('Driver:N', sort='-x', title='Driver'),
+    color='Team:N'
+).properties(
+    width=600,
+    height=300
+)
+
+# Animate the chart
+with st.empty():
+    for i in range(1, len(df) + 1):
+        temp_df = df.iloc[:i]
+        temp_chart = alt.Chart(temp_df).mark_bar().encode(
+            x=alt.X('FastestTimes:Q', title='Number of Fastest Times'),
+            y=alt.Y('Driver:N', sort='-x', title='Driver'),
+            color='Team:N'
+        ).properties(
+            width=600,
+            height=300
+        )
+        st.altair_chart(temp_chart, use_container_width=True)
+        time.sleep(0.5)
+
+# Key Insights
+st.subheader("Key Insights")
+
+insights = [
+    "Verstappen's Dominance: 13 out of 22 fastest qualifying times",
+    "Ferrari's Competitiveness: 6 combined fastest times (Leclerc 4, Sainz 2)",
+    "Red Bull's Overall Strength: 15 out of 22 fastest qualifying sessions",
+    "Mercedes' Struggles: Only 1 fastest qualifying time for Hamilton",
+    "Limited Top Performers: Only 5 drivers set fastest qualifying times all season"
+]
+
+for insight in insights:
+    st.write("• " + insight)
+    time.sleep(0.5)  # Add a slight delay for animation effect
+
+# Pie chart for team dominance
+st.subheader("Team Dominance in Fastest Qualifying Times")
+team_data = df.groupby('Team')['FastestTimes'].sum().reset_index()
+pie_chart = alt.Chart(team_data).mark_arc().encode(
+    theta='FastestTimes:Q',
+    color='Team:N',
+    tooltip=['Team', 'FastestTimes']
+).properties(
+    width=400,
+    height=400
+)
+st.altair_chart(pie_chart, use_container_width=True)
+
+# Conclusion
+st.subheader("Conclusion")
+conclusion = """
+The 2023 Formula 1 season's qualifying sessions were largely dominated by Red Bull and Ferrari,
+with Verstappen and Leclerc leading their teams. While Red Bull's overall strength was clear,
+Ferrari remained competitive in qualifying, but Mercedes and other teams struggled to match the top two.
+Verstappen's consistency in setting fastest laps and starting from pole contributed significantly to his dominance,
+while Leclerc and Ferrari put up a fight in one-lap performance.
+"""
+st.write(conclusion)
