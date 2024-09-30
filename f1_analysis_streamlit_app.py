@@ -10,11 +10,6 @@ import time
 font_path = 'Formula1-Regular.otf'  # Make sure this path is correct
 font_prop = fm.FontProperties(fname=font_path)
 
-# Sidebar for selecting season, driver, and team
-st.sidebar.header("Filter Options")
-seasons = ['Season Calendar', 'The Drivers', 'Race Tracks', 'RedBull 2023 Wins', "2023 Season Top 10 Driver's Points Progression", 'Drivers Standings 2023']
-selected_season = st.sidebar.selectbox("Select Analysis", seasons)
-
 # Manually specify the colors for top drivers/teams
 color_dict = {
     'Max Verstappen': '#00008B',  
