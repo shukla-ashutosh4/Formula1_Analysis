@@ -941,8 +941,6 @@ st.pyplot(fig)
 # if st.button("Qualifying results"):
 #     st.write(stream_data())
 
-
-
 # Set page config (this must be the first Streamlit command)
 st.set_page_config(page_title="F1 2023 Qualifying Insights", layout="wide")
 
@@ -958,3 +956,59 @@ data = {
 df = pd.DataFrame(data)
 
 # Animated bar chart
+st.subheader("Fastest Qualifying Times by Driver")
+
+progress_bar = st.progress(0)
+chart = st.bar_chart(df.set_index('Driver')['FastestTimes'])
+
+for i in range(len(df)):
+    # Updating progress bar
+    progress_bar.progress((i + 1) / len(df))
+    
+    # Updating chart
+    chart.add_rows(df.iloc[:i+1].set_index('Driver')['FastestTimes'])
+    
+    time.sleep(0.5)
+
+# Key Insights
+st.subheader("Key Insights")
+
+insights = [
+    "Verstappen's Dominance: 13 out of 22 fastest qualifying times",
+    "Ferrari's Competitiveness: 6 combined fastest times (Leclerc 4, Sainz 2)",
+    "Red Bull's Overall Strength: 15 out of 22 fastest qualifying sessions",
+    "Mercedes' Struggles: Only 1 fastest qualifying time for Hamilton",
+    "Limited Top Performers: Only 5 drivers set fastest qualifying times all season"
+]
+
+for insight in insights:
+    st.write("• " + insight)
+    time.sleep(0.5)  # Add a slight delay for animation effect
+
+# Team Dominance
+st.subheader("Team Dominance in Fastest Qualifying Times")
+
+team_data = df.groupby('Team')['FastestTimes'].sum().reset_index()
+st.bar_chart(team_data.set_index('Team')['FastestTimes'])
+
+# Conclusion
+st.subheader("Conclusion")
+conclusion = """
+The 2023 Formula 1 season's qualifying sessions were largely dominated by Red Bull and Ferrari,
+with Verstappen and Leclerc leading their teams. While Red Bull's overall strength was clear,
+Ferrari remained competitive in qualifying, but Mercedes and other teams struggled to match the top two.
+Verstappen's consistency in setting fastest laps and starting from pole contributed significantly to his dominance,
+while Leclerc and Ferrari put up a fight in one-lap performance.
+"""
+st.write(conclusion)
+
+# Interactive element
+st.subheader("Explore Driver Performance")
+selected_driver = st.selectbox("Select a driver:", df['Driver'])
+driver_data = df[df['Driver'] == selected_driver]
+st.write(f"{selected_driver} set the fastest qualifying time in {driver_data['FastestTimes'].values[0]} races.")
+
+# Add a fun fact
+st.sidebar.title("Fun Fact")
+st.sidebar.write("Did you know? The total number of fastest qualifying times set in the 2023 season was", 
+                 df['FastestTimes'].sum())
