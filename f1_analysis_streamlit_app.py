@@ -1136,7 +1136,7 @@ Thank you for reading the analysis! 🙌 Feel free to share your feedback, and s
 
 # Section: About the Author
 st.write("---")
-st.subheader("About the Author")
+st.subheader("About Me")
 
 # Add some introductory text
 st.write("""
