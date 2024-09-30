@@ -105,18 +105,18 @@ st.markdown(
 )
 
 # Set Streamlit title
-st.title("Formula 1 2023 Season Analysis")
+st.title("🏎️ Formula 1 2023 Season Analysis")
 
-st.header("Season Calendar")    
+st.header("Season Calendar 📅")    
 season2023RaceCalendar
 
-st.header("The Drivers")
+st.header("The Drivers 🙎🏻‍♂️")
 season2023Drivers
 
-st.header("Race Tracks")
+st.header("Race Tracks 🏁")
 RaceTracks
 
-st.header("RedBull 2023 Wins")
+st.header("RedBull 2023 Wins 🥇")
 redbull_wins = season2023RaceResults[(season2023RaceResults['Position'] == '1') & (season2023RaceResults['Team'] == 'Red Bull Racing Honda RBPT')]
 redbull_wins.groupby('Track').head(10)
 st.write(redbull_wins)
