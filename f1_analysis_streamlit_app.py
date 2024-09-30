@@ -1172,10 +1172,6 @@ ax.set_title('Formula 1 - 2023 Season\n# of DNFs in Races (Tracks)', fontsize=19
 ax.set_xlabel('DNFs', fontsize=14, fontweight='bold', color='#bbbbbb')
 ax.set_ylabel('TRACKS', fontsize=14, fontweight='bold', color='#bbbbbb')
 
-# Set ticks
-ax.set_xticks(color='#bbbbbb')
-ax.set_yticks(color='#bbbbbb', fontsize=9)
-
 # Add vertical line
 ax.axvline(0, color='#bbbbbb')
 
