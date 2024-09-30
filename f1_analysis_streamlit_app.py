@@ -1357,7 +1357,7 @@ ax.axis([2000,2600,9.5,-0.5])
 
 # Create bar chart
 teamLabel = [" ".join(team.split()[:2]) if len(team.split()) > 2 else team.split()[0] for team in teamsTotalLaps.index]
-ax.barh(teamLabel, teamsTotalLaps, color=[color_dicttt.get(team, 'gray') for team in teamsTotalLaps.index])
+ax.barh(teamLabel, teamsTotalLaps, color=[color_dict.get(team, 'gray') for team in teamsTotalLaps.index])
 
 # Add text to bars
 for i in range(len(teamsTotalLaps)):
