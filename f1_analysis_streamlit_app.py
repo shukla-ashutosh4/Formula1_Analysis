@@ -1142,9 +1142,8 @@ st.markdown("""
 - [![LinkedIn](https://img.shields.io/badge/LinkedIn-Ashutosh%20Shukla-blue)](https://www.linkedin.com/in/ashutosh-shukla4/)
 - [![GitHub](https://img.shields.io/badge/GitHub-ashutoshshukla-blue?logo=github)](https://github.com/shukla-ashutosh4)
 """)
-st.write("Also check out the Colab Notebook for much Detailed Analyis ")
-st.markdown("""
-[![Colab Notebook](download.png)](https://colab.research.google.com/drive/1NrpSs2ZlJZdBQqjkT0W9sCDyE7_Ap1vA?usp=sharing)""")
+st.write("Also check out the [Colab Notebook](https://colab.research.google.com/drive/1NrpSs2ZlJZdBQqjkT0W9sCDyE7_Ap1vA?usp=sharing) for much Detailed Analyis ")
+
 
 
 # Add a thank you message
