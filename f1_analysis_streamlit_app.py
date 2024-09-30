@@ -1439,22 +1439,6 @@ ax.axvline(2000, color='#bbbbbb')
 st.pyplot(fig)
 
 
-# App Title
-st.title("🏎️ Formula 1 2023 & 2024 Season Review")
-
-# Intro Section
-st.markdown("""
-## 🏁 Introduction
-Welcome to a comprehensive analysis of the 2023 and the progressing 2024 Formula 1 seasons. We’ll dive into Max Verstappen's dominance, the competitive midfield, and Ferrari and Mercedes' struggles. Let’s explore the exciting stories that unfolded across the seasons!
-""")
-
-# Sidebar for Navigation
-st.sidebar.title("Navigate the Analysis")
-section = st.sidebar.radio("Choose a section", 
-                           ["2023 Season - Total Distance Driven (Drivers)", 
-                            "2023 Season Review", 
-                            "2024 Season Insights", 
-                            "Feedback"])
 
 # 2023 Season - Total Distance Driven (Drivers)
 if section == "2023 Season - Total Distance Driven (Drivers)":
@@ -1472,170 +1456,147 @@ if section == "2023 Season - Total Distance Driven (Drivers)":
     - **Midfield Battle:** Midfield drivers like Russell, Zhou, and Sainz contributed to the exciting rivalry in the 2023 season.
     """)
     
-# 2023 Season Review
-elif section == "2023 Season Review":
-    st.header("Formula 1 2023 Season Review")
-    
-    st.subheader("1. Max Verstappen and Red Bull's Dominance")
-    st.write("""
-    Max Verstappen secured his third consecutive World Drivers' Championship, solidifying his legacy as one of the greats of the sport with a record-breaking 19 race wins.
-    """)
-    
-    # Red Bull Victory Highlight with Emoji
-    st.write("🏆 Red Bull Racing dominated the Constructors' Championship, winning 21 out of 22 races.")
-    
-    # Sprint Points
-    st.subheader("Sprint Race Points Leaderboard")
-    # Example Data for Sprint Races
-    sprint_data = {'Driver': ['Verstappen', 'Perez', 'Leclerc', 'Sainz'], 'Sprint Points': [125, 92, 85, 77]}
-    df_sprint = pd.DataFrame(sprint_data)
-    st.table(df_sprint)
-    
-    # Ferrari’s Inconsistency and Mercedes’ Struggles
-    st.subheader("2. Ferrari’s Inconsistency and Mercedes’ Developments")
-    st.write("""
-    Ferrari and Mercedes struggled to consistently challenge Red Bull, though Ferrari’s Carlos Sainz managed one race victory, and Mercedes introduced key mid-season upgrades.
-    """)
-    
-    # Alonso's Comeback
-    st.subheader("3. Fernando Alonso’s Aston Martin Revival")
-    st.write("Fernando Alonso secured 8 podium finishes in 2023, showcasing Aston Martin’s growing potential.")
-    
-# 2024 Season Insights
-elif section == "2024 Season Insights":
-    st.header("Formula 1 2024 Season Insights")
-    
-    # Verstappen's Continued Dominance
-    st.subheader("1. Max Verstappen’s Continued Dominance")
-    st.write("""
-    Max Verstappen continues to dominate the 2024 season with multiple race wins, showcasing his exceptional consistency and Red Bull’s superior car performance.
-    """)
-    
-    # Red Bull's Strength with Special Formatting
-    st.write("🔴 **Red Bull Racing's dominance** has persisted, with Sergio Perez also contributing crucial points towards the Constructors' Championship.")
-    
-    # McLaren's Tech Upgrades
-    st.subheader("2. McLaren’s New Tech Upgrades")
-    st.write("McLaren introduced significant aerodynamic upgrades, resulting in a strong performance by Lando Norris and Oscar Piastri.")
-    
-    # Ricciardo’s Retirement Note
-    st.subheader("3. Daniel Ricciardo's Retirement")
-    st.write("""
-    Daniel Ricciardo announced his retirement after the Singapore Grand Prix in 2024, marking the end of an era for the F1 paddock.
-    """)
 
-# Feedback Section
-elif section == "Feedback":
-    st.header("💬 We Value Your Feedback!")
-    st.write("Thank you for reading the analysis. Please provide your feedback below:")
-    feedback = st.text_area("Your Feedback")
-    
-    if st.button("Submit Feedback"):
-        st.write("Thank you for your valuable feedback!")
 
-import streamlit as st
+# Title and Introduction
+st.title("🏎️ Formula 1 2023 Season Review & 2024 Season Insights 🌟")
 
-# App Title
-st.title("Formula 1 2023 & 2024 Season Insights and Analysis")
-
-# Section 1: Verstappen's Dominance in 2023
-st.header("Formula 1 2023 Season Insights")
-
-st.subheader("Max Verstappen's Dominance")
-st.write("""
-Max Verstappen's impressive total of 7156.46 kilometers driven clearly demonstrates his dominance throughout the 2023 season. 
-His consistent participation in races and ability to complete a high number of laps underline his reliability and performance.
-""")
-
-# Section 2: Close Competition and Midfield Battle
-st.subheader("Close Competition: Ricciardo and Lawson")
-st.write("""
-Following closely behind Verstappen are Daniel Ricciardo and Liam Lawson, both of whom have driven over 7000 kilometers. 
-This indicates a competitive battle among the top drivers, with consistent participation and strong performance.
-""")
-
-# Section 3: Midfield Drivers
-st.subheader("Midfield Battle")
-st.write("""
-The midfield drivers, including George Russell, Zhou Guanyu, Carlos Sainz, Pierre Gasly, Valtteri Bottas, Sergio Perez, Yuki Tsunoda, 
-and Oscar Piastri, have demonstrated competitive nature and driven between 6217.30 and 6744.61 kilometers.
-""")
-
-# Section 4: Analysis of Ferrari’s Inconsistency
-st.subheader("Ferrari's Inconsistency")
-st.write("""
-Ferrari had a mixed season, with Charles Leclerc and Carlos Sainz unable to consistently challenge Red Bull. 
-However, Leclerc continued to show excellent qualifying pace but suffered from race-day inconsistencies, while Sainz managed 
-one of the few non-Red Bull victories in the season.
-""")
-
-# Section 5: Mercedes’ Struggles
-st.subheader("Mercedes' Struggles and Developments")
-st.write("""
-Mercedes showed signs of recovery after a challenging 2022 season. Lewis Hamilton and George Russell both achieved several podium finishes, 
-but the team struggled to consistently compete with Red Bull.
-""")
-
-# Section 6: Alonso's Aston Martin Revival
-st.subheader("Fernando Alonso’s Aston Martin Revival")
-st.write("""
-Fernando Alonso had a resurgence in the 2023 season, securing 8 podium finishes and bringing Aston Martin into the competitive midfield.
-Alonso’s experience allowed Aston Martin to challenge Ferrari and Mercedes in the fight for podiums.
-""")
-
-# Section 7: Review of 2023 Season
-st.header("Formula 1 2023 Season Review")
-st.write("""
-The 2023 season was an exciting year, filled with dominant performances, intense rivalries, and significant milestones.
-Here are the key takeaways:
-""")
 st.markdown("""
-- **Max Verstappen**: 19 wins out of 22 races and a dominant performance across the season.
-- **Red Bull Racing**: Constructors’ Championship secured with superior car performance and strategy.
-- **Ferrari**: Inconsistent but managed a breakthrough moment with Sainz’s race win.
-- **Mercedes**: Showed signs of recovery but were unable to regularly challenge Red Bull.
-- **Aston Martin**: Alonso’s revival made Aston Martin a strong competitor in the midfield.
+**Welcome to the Ultimate Formula 1 2023 Season Review and 2024 Season Insights! 🚦**
+In this analysis, we dive deep into the incredible performances, key stats, and surprises that defined the 2023 season and provide an exciting look ahead to how the 2024 season is progressing as of September. Let's get started! 🏁
 """)
 
-# Section 8: Introduction of Sprint Races
-st.subheader("Introduction of New Tech and Sprint Races")
-st.write("""
-The 2023 season saw an expansion of sprint races, with several rounds featuring this shorter race format, 
-which added an extra layer of excitement for both drivers and teams.
+# 2023 Season Total Distance Driven - Verstappen's Dominance
+st.header("📊 2023 Season: Total Distance Driven by Drivers")
+st.subheader("Verstappen's Dominance 🏆")
+st.markdown("""
+- Max Verstappen's **7156.46 kilometers driven** clearly demonstrates his dominance throughout the 2023 season. His consistency, reliability, and ability to complete a high number of laps make him stand out. 🚀
 """)
 
-# Section 9: 2024 Season Analysis
-st.header("Formula 1 2024 Season - Detailed Analysis")
-
-st.subheader("Max Verstappen’s Continued Dominance in 2024")
-st.write("""
-Max Verstappen has continued his dominance in 2024, securing several race wins already by mid-season. 
-His strategic brilliance, combined with Red Bull's technical superiority, has made him a formidable force once again.
+# Close competition
+st.subheader("Close Competition 🔥")
+st.markdown("""
+- **Daniel Ricciardo** and **Liam Lawson** followed closely behind, both driving over 7000 kilometers, indicating a strong competition among the top drivers. 💪
 """)
 
-st.subheader("Red Bull’s Strength in 2024")
-st.write("""
-Red Bull Racing remains the dominant force, with Sergio Perez delivering solid performances and contributing vital points 
-for the Constructors' Championship.
+# Experienced Drivers
+st.subheader("Experienced Drivers 🌟")
+st.markdown("""
+- **Fernando Alonso**, **Lando Norris**, **Lewis Hamilton**, and **Nico Hulkenberg** showed consistent performance, driving significant distances and proving their experience on the track. 🧠
 """)
 
-# Section 10: Competitive Midfield Battle
-st.subheader("Competitive Midfield Battle")
-st.write("""
-The midfield battle in 2024 remains highly competitive, with teams like Ferrari, Mercedes, and Aston Martin exchanging podium finishes.
-Despite some strong performances, these teams have struggled to consistently match Red Bull's dominance.
+# Midfield Battle
+st.subheader("Midfield Battle ⚔️")
+st.markdown("""
+- The midfield drivers, including **George Russell**, **Zhou Guanyu**, **Carlos Sainz**, **Pierre Gasly**, and more, demonstrated their competitive nature with distances between **6217.30 km** and **6744.61 km**. 🔄
 """)
 
-# Section 11: Upcoming Challenges
-st.subheader("Upcoming Challenges for 2024")
-st.write("""
-As the season progresses, key races like the Americas triple-header and final rounds in Las Vegas and Abu Dhabi will be crucial 
-in determining the Drivers' and Constructors' Championships.
+# Variability in Performance
+st.subheader("Variability in Performance 📉")
+st.markdown("""
+- Drivers like **Kevin Magnussen**, **Alex Albon**, **Lance Stroll**, and **Charles Leclerc** drove fewer kilometers, hinting at some missed races or retirements during the season. 🚧
 """)
 
-# Feedback Section
-st.header("We Value Your Feedback!")
-st.text_input("Please provide your feedback here:")
-st.button("Submit Feedback")
+# Overall Insights
+st.subheader("Overall Insights 🔍")
+st.markdown("""
+- The chart highlights Verstappen’s dominance 🏅 and the competitive nature of the midfield battle. While **Ricciardo** and **Lawson** showed strong performances, experienced drivers in the middle pack showcased consistent participation. 🚗💨
+""")
 
-st.write("Thank you for reading the analysis! See you with the analysis of the 2024 season!")
+# Formula 1 2023 Season Review
+st.header("🏎️ 2023 Formula 1 Season Review")
+
+# Max Verstappen and Red Bull's Dominance
+st.subheader("Max Verstappen and Red Bull's Dominance 🏆")
+st.markdown("""
+- **Max Verstappen** secured his third consecutive **World Drivers’ Championship** in 2023 with **19 race wins out of 22**. It was a record-breaking performance that underlined Red Bull’s superiority on the grid. 🚀
+- **Sprint Races**: Verstappen also topped the sprint race points, showing consistent performance across different race formats. 🏁
+
+Key Stats:
+- Total Wins: **19 out of 22 races** 🎉
+- Podiums: **21 podium finishes** 🏆
+- Constructors' Championship: **Red Bull** secured the championship early thanks to both Verstappen and **Sergio Pérez**. 🏅
+""")
+
+# Ferrari's Inconsistency
+st.subheader("Ferrari's Inconsistency 🚦")
+st.markdown("""
+- **Charles Leclerc** and **Carlos Sainz** had mixed seasons, unable to consistently challenge Red Bull, but still competitive with some podium finishes. Sainz’s win was a rare non-Red Bull victory. 🌟
+""")
+
+# Mercedes’ Struggles and Developments
+st.subheader("Mercedes' Struggles and Developments ⚙️")
+st.markdown("""
+- **Lewis Hamilton** and **George Russell** achieved several podiums, but despite mid-season upgrades, Mercedes struggled to consistently compete with Red Bull. ⚡️
+""")
+
+# Fernando Alonso’s Aston Martin Revival
+st.subheader("Fernando Alonso’s Aston Martin Revival 💥")
+st.markdown("""
+- **Fernando Alonso** had a resurgent season with **8 podiums**, bringing Aston Martin into the midfield battle and outperforming teammate **Lance Stroll**. 🔥
+""")
+
+# Midfield Battle
+st.subheader("Midfield Battle ⚔️")
+st.markdown("""
+- Teams like **McLaren**, **Alpine**, and **Aston Martin** had competitive showings, especially **Lando Norris** and **Oscar Piastri** for McLaren, who had significant improvements during the second half of the season. 📈
+""")
+
+# New Tech and Sprint Races
+st.subheader("Introduction of New Tech and Sprint Races 🛠️")
+st.markdown("""
+- The 2023 season saw an expansion of **sprint races**, requiring teams to adapt their strategies for both qualifying and race days. 🏎️
+""")
+
+# 2024 Season Insights
+st.header("🔮 Formula 1 2024 Season - Detailed Analysis (as of September)")
+
+# Max Verstappen’s Continued Dominance
+st.subheader("Max Verstappen’s Continued Dominance 🏆")
+st.markdown("""
+- **Max Verstappen** continues his dominant streak in 2024, winning the majority of races and securing pole positions. His consistent and strategic brilliance, coupled with Red Bull's technical superiority, puts him well ahead of the competition. 🔥
+""")
+
+# Red Bull Racing's Strength
+st.subheader("Red Bull Racing's Strength 💪")
+st.markdown("""
+- **Red Bull Racing** remains the dominant force in 2024. While **Sergio Pérez** has delivered key performances, Verstappen's consistency is what keeps Red Bull ahead. 🥇
+""")
+
+# Competitive Midfield Battle
+st.subheader("Competitive Midfield Battle ⚔️")
+st.markdown("""
+- Teams like **Ferrari**, **Mercedes**, and **Aston Martin** continue their fight for podiums. While **Charles Leclerc** and **Lewis Hamilton** show flashes of brilliance, the midfield remains fiercely competitive. 🚗💨
+""")
+
+# Sustainability and Logistical Adjustments
+st.subheader("Sustainability and Logistical Adjustments 🌍")
+st.markdown("""
+- Formula 1 has focused on sustainability in 2024 by adjusting the calendar to reduce the sport’s carbon footprint. The regionalized races are part of a broader effort to achieve net-zero carbon emissions by 2030. ♻️
+""")
+
+# Daniel Ricciardo’s Retirement
+st.subheader("Daniel Ricciardo’s Retirement 😢")
+st.markdown("""
+- **Daniel Ricciardo** announced his retirement after the Singapore Grand Prix. Known for his bold overtakes and charming personality, Ricciardo leaves behind a legacy of **8 Grand Prix wins** and unforgettable moments. 🏁
+""")
+
+# McLaren’s New Tech Upgrades
+st.subheader("McLaren's New Tech Upgrades 🚀")
+st.markdown("""
+- **McLaren** introduced significant **aerodynamic upgrades** in 2024, leading to improved performance. **Lando Norris** and **Oscar Piastri** have been strong contenders, challenging for podiums more frequently. ⚙️
+""")
+
+# Upcoming Challenges
+st.subheader("Upcoming Challenges 🔮")
+st.markdown("""
+- The final third of the season features pivotal races in **Austin**, **Mexico City**, **Brazil**, and the grand finale in **Abu Dhabi**. 🏁 Teams like **Ferrari** and **Mercedes** will look to disrupt Red Bull’s dominance. 🌟
+""")
+
+# Conclusion
+st.subheader("Conclusion 🎉")
+st.markdown("""
+The 2024 season is shaping up to be another dominant year for Max Verstappen and Red Bull Racing, but the battles in the midfield and technological advancements from teams like McLaren ensure that the season remains thrilling. 🌟
+
+Thank you for reading the analysis! 🙌 Feel free to share your feedback, and stay tuned for more insights as we move towards the season’s end! 🏁
+""")
