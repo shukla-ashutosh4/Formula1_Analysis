@@ -1023,10 +1023,10 @@ ax.barh([" ".join(driver.split()[1:]) for driver in qualiQ2.index], qualiQ2, col
 
 # Add text to the bars
 for i in range(len(qualiQ2)):
-    ax.text(qualiQ2[i]-0.75, i+0.24, "{:>2}".format(qualiQ2[i]), fontsize=12, fontweight='bold', color='k', fontproperties=font_prop)
+    ax.text(qualiQ2[i]-0.75, i+0.24, "{:>2}".format(qualiQ2[i]), fontsize=12, fontweight='bold', fontproperties=font_prop, color='k')
 
 # Set the title and labels
-ax.set_title("Formula 1 - 2023 Season\n# of Q2 Appearances in Qualifying (Drivers)", fontproperties=font_prop, fontsize=19, fontweight='bold', color='#bbbbbb')
+ax.set_title("Formula 1 - 2023 Season\n# of Q2 Appearances in Qualifying (Drivers)", fontsize=19,fontproperties = font_prop, fontweight='bold', color='#bbbbbb')
 ax.set_xlabel('Q2 APPEARANCES', fontsize=14, fontweight='bold', fontproperties=font_prop, color='#bbbbbb')
 ax.set_ylabel('DRIVERS', fontsize=14, fontweight='bold', fontproperties=font_prop, color='#bbbbbb')
 
