@@ -1031,8 +1031,8 @@ ax.set_xlabel('Q2 APPEARANCES', fontsize=14, fontweight='bold', color='#bbbbbb')
 ax.set_ylabel('DRIVERS', fontsize=14, fontweight='bold', color='#bbbbbb')
 
 # Set the tick colors and labels
-ax.tick_params(axis='x', colors='#bbbbbb', labelsize=9, fontproperties=font_prop)
-ax.tick_params(axis='y', colors='#bbbbbb', labelsize=9, fontproperties=font_prop)
+plt.xticks(fontproperties=font_prop, labelsize=9, color='#bbbbbb')
+plt.yticks(fontproperties=font_prop, labelsize=9,color='#bbbbbb')
 
 # Add a vertical line at x=0
 ax.axvline(0, color='#bbbbbb')
