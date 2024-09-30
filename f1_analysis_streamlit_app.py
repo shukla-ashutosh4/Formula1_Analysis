@@ -964,7 +964,7 @@ for i in range(len(df)):
     
     # Updating chart
     ax.clear()
-    ax.bar(df['Driver'][:i+1], df['FastestTimes'][:i+1], color=[color_dictt[driver] for driver in df['Driver'][:i+1]])
+    ax.bar(df['Driver'][:i+1], df['FastestTimes'][:i+1], color=[color_dicttt[driver] for driver in df['Driver'][:i+1]])
     ax.set_title('Fastest Qualifying Times by Driver')
     ax.set_xlabel('Driver')
     ax.set_ylabel('Fastest Times')
