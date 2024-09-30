@@ -1408,10 +1408,6 @@ for driver in driversLaps.keys():
     driversDist[driver] = round((driversLaps[driver] * trackDistance).sum(), 2)
 driversTotalDist = pd.Series(driversDist).sort_values(ascending=False)[:20]
 
-
-# Data
-driversTotalDist = season2023RaceResults.groupby('Driver')['Distance'].sum().sort_values(ascending=False)
-
 # Create figure
 fig, ax = plt.subplots(figsize=(10,6))
 
