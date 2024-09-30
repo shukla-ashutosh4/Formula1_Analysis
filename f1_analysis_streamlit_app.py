@@ -1226,3 +1226,54 @@ ax.axvline(0, color='#bbbbbb')
 
 # Display plot
 st.pyplot(fig)
+
+st.header("Elaborated Insights from the Formula 1 2023 Season Driver of the Day Awards Chart")
+
+st.subheader("Dominance")
+st.write("Norris: Lando Norris emerged as a clear leader in terms of Driver of the Day awards, securing five such accolades throughout the season. This highlights his impressive performances and ability to consistently impress fans and experts.")
+
+st.subheader("Close Competition")
+st.write("Verstappen and Perez: Max Verstappen and Sergio Perez, both from Red Bull Racing, finished in second place with three awards each. This close competition among the top drivers demonstrates the high level of racing and the difficulty of securing Driver of the Day honors.")
+
+st.subheader("Consistent Performance")
+st.write("Alonso, Sainz, and Piastri: Fernando Alonso, Carlos Sainz, and Oscar Piastri each received two Driver of the Day awards, showcasing their consistent performances and ability to deliver standout drives throughout the season.")
+
+st.subheader("Variability in Performance")
+st.write("Ocon, Hamilton, Albon, Leclerc, and Tsunoda: A group of drivers, including Esteban Ocon, Lewis Hamilton, Alex Albon, Charles Leclerc, and Yuki Tsunoda, received one Driver of the Day award each. This indicates that while they had some standout performances, their overall consistency might have been less compared to the top contenders.")
+
+# Data
+DotdAppearance = {}
+for place in range(5):
+    for driver in range(len(season2023DotdVotes)):
+        d = season2023DotdVotes.iloc[driver,place*2]
+        if d not in DotdAppearance.keys():   DotdAppearance[d] = 1
+        else:   DotdAppearance[d] += 1
+DotdAppearanceDf = pd.Series(DotdAppearance).sort_values(ascending=False)
+
+# Create figure
+fig, ax = plt.subplots(figsize=(9.5,6))
+
+# Set axis limits
+ax.axis([0,22,15,-0.5])
+
+# Create bar chart
+ax.barh([" ".join(driver.split()[1:]) for driver in DotdAppearanceDf.index], DotdAppearanceDf, fontproperties=font_prop, color=[color_dicttt.get(" ".join(driver.split()[1:]), 'gray') for driver in DotdAppearanceDf.index])
+
+# Add text to bars
+for i in range(len(DotdAppearanceDf)):
+    ax.text(DotdAppearanceDf[i]-0.9, i+0.25, "{:>3}".format(DotdAppearanceDf[i]), fontproperties=font_prop, fontsize=12, fontweight='bold', color='k')
+
+# Set title and labels
+ax.set_title('Formula 1 - 2023 Season\n# of Appearances in Driver of the Day Votes (Drivers)',fontproperties=font_prop, fontsize=18, fontweight='bold', color='#bbbbbb')
+ax.set_xlabel('DotD APPEARANCES', fontsize=14, fontweight='bold',fontproperties=font_prop, color='#bbbbbb')
+ax.set_ylabel('DRIVERS', fontsize=14, fontweight='bold',fontproperties=font_prop, color='#bbbbbb')
+
+plt.xticks(fontproperties=font_prop, color='#bbbbbb')
+plt.yticks(fontproperties=font_prop,color='#bbbbbb')
+
+# Add vertical line
+ax.axvline(0, color='#bbbbbb')
+
+# Display plot
+st.pyplot(fig)
+
