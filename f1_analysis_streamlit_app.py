@@ -945,8 +945,10 @@ import pandas as pd
 import altair as alt
 import time
 
-# Set page config
+# Set page config (this must be the first Streamlit command)
 st.set_page_config(page_title="F1 2023 Qualifying Insights", layout="wide")
+
+# Rest of the imports and code...
 
 # Title
 st.title("Formula 1 - 2023 Season Fastest Qualifying Times Insights")
