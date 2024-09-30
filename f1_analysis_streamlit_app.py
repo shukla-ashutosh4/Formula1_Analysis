@@ -287,8 +287,8 @@ for i in range(len(winners)):
     plt.text(winners[i]+0.2, i+0.15, "{:>3}".format(winners[i]), fontsize=19, fontweight='bold', color='k')
 
 plt.title('Formula 1 - 2023 Season\n# of Race Wins (Drivers)', fontproperties=font_prop, fontsize=19, fontweight='bold', color='#bbbbbb')
-plt.xlabel('RACE WINS', fontproperties=font_prop, fontsize=14, fontweight='bold', color='#bbbbbb')
-plt.ylabel('DRIVERS', fontproperties=font_prop, fontsize=14, fontweight='bold', color='#bbbbbb')
+plt.xlabel('RACE WINS', fontsize=14, fontweight='bold', fontproperties=font_prop,color='#bbbbbb')
+plt.ylabel('DRIVERS',  fontsize=14, fontweight='bold', fontproperties=font_prop,color='#bbbbbb')
 plt.xticks(fontproperties=font_prop,color='#bbbbbb')
 plt.yticks(fontproperties=font_prop,color='#bbbbbb')
 plt.axvline(0, color='#bbbbbb')
