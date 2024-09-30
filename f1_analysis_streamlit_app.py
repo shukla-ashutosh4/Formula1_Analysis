@@ -1480,7 +1480,7 @@ st.markdown("""
 # Overall Insights
 st.subheader("Overall Insights 🔍")
 st.markdown("""
-- The chart highlights Verstappen’s dominance 🏅 and the competitive nature of the midfield battle. While **Ricciardo** and **Lawson** showed strong performances, experienced drivers in the middle pack showcased consistent participation. 🚗💨
+- The chart highlights Verstappen’s dominance 🏅 and the competitive nature of the midfield battle. While **Ricciardo** and **Lawson** showed strong performances, experienced drivers in the middle pack showcased consistent participation. 🏎️💨
 """)
 
 # Formula 1 2023 Season Review
@@ -1546,7 +1546,7 @@ st.markdown("""
 # Competitive Midfield Battle
 st.subheader("Competitive Midfield Battle ⚔️")
 st.markdown("""
-- Teams like **Ferrari**, **Mercedes**, and **Aston Martin** continue their fight for podiums. While **Charles Leclerc** and **Lewis Hamilton** show flashes of brilliance, the midfield remains fiercely competitive. 🚗💨
+- Teams like **Ferrari**, **Mercedes**, and **Aston Martin** continue their fight for podiums. While **Charles Leclerc** and **Lewis Hamilton** show flashes of brilliance, the midfield remains fiercely competitive. 🏎️💨
 """)
 
 # Sustainability and Logistical Adjustments
@@ -1558,7 +1558,7 @@ st.markdown("""
 # Daniel Ricciardo’s Retirement
 st.subheader("Daniel Ricciardo’s Retirement 😢")
 st.markdown("""
-- **Daniel Ricciardo** announced his retirement after the Singapore Grand Prix. Known for his bold overtakes and charming personality, Ricciardo leaves behind a legacy of **8 Grand Prix wins** and unforgettable moments. 🏁
+- **Daniel Ricciardo** The Legend announced his retirement after the Singapore Grand Prix. Known for his bold overtakes and charming personality, Ricciardo leaves behind a legacy of **8 Grand Prix wins** and unforgettable moments. 🏁
 """)
 
 # McLaren’s New Tech Upgrades
