@@ -1211,7 +1211,7 @@ ax.barh([" ".join(driver.split()[1:]) for driver in DotdAwards.index], DotdAward
 
 # Add text to bars
 for i in range(len(DotdAwards)):
-    ax.text(DotdAwards[i]-0.18, i+0.2, DotdAwards[i], fontsize=16, fontweight='bold', color='k')
+    ax.text(DotdAwards[i]-0.18, i+0.2, DotdAwards[i], fontsize=16, fontproperties = font_prop,fontweight='bold', color='k')
 
 # Set title and labels
 ax.set_title('Formula 1 - 2023 Season\n# of Driver of the Day Awards (Drivers)', fontproperties = font_prop, fontsize=19, fontweight='bold', color='#bbbbbb')
