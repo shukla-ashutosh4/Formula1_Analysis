@@ -518,7 +518,7 @@ season2023Drivers
 st.header("Race Tracks")
 RaceTracks
 
-st.header("Several Notable Races in 2022 Season")
+st.header("Several Notable Races in 2023 Season")
 season2023RaceResults[season2023RaceResults['Track'] == 'Bahrain'].drop('Track', axis=1).set_index('Position').head(10)
 
 st.header("RedBull 2023 Wins")
@@ -914,6 +914,7 @@ st.write("Suggests dynamic driver lineup changes during the season")
 st.subheader("Conclusion")
 st.write("This analysis provides a comprehensive overview of the 2023 F1 season's competitive landscape, team performances, and individual driver achievements.")
 
+st.write_stream("Qualifying Results")
 st.write(season2023QualifyingResults[season2023QualifyingResults['Position'] == '1'].set_index('Track').drop('Position', axis=1))
 
 fastestTimeQualifying = season2023QualifyingResults[season2023QualifyingResults['Position'] == '1']['Driver'].value_counts()
@@ -931,3 +932,4 @@ ax.tick_params(axis='y', colors='#bbbbbb')
 ax.axvline(0, color='#bbbbbb')
 
 st.pyplot(fig)
+
