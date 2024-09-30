@@ -933,12 +933,10 @@ ax.axvline(0, color='#bbbbbb')
 
 st.pyplot(fig)
 
-def stream_data():
-    for word in "Qualifying Results".split(" "):
-        yield word + " "
-        time.sleep(0.02)
-if st.snow:
-    st.header(stream_data())
-
-# if st.button("Stream data"):
+# def stream_data():
+#     for word in "Qualifying Results".split(" "):
+#         yield word + " "
+#         time.sleep(0.02)
+# if st.button("Qualifying results"):
 #     st.write(stream_data())
+
