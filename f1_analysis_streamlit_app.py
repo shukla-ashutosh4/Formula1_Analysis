@@ -985,7 +985,7 @@ st.bar_chart(team_data.set_index('Team')['FastestTimes'])
 
 # Conclusion
 st.subheader("Conclusion")
-conclusion = fontproperties=font_prop,"""
+conclusion = """
 The 2023 Formula 1 season's qualifying sessions were largely dominated by Red Bull and Ferrari,
 with Verstappen and Leclerc leading their teams. While Red Bull's overall strength was clear,
 Ferrari remained competitive in qualifying, but Mercedes and other teams struggled to match the top two.
@@ -999,7 +999,7 @@ st.subheader("Explore Driver Performance")
 selected_driver = st.selectbox("Select a driver:", df['Driver'])
 driver_data = df[df['Driver'] == selected_driver]
 if selected_driver == "Hamilton":
-    st.write(f"{selected_driver} set the fastest qualifying time in {driver_data['FastestTimes'].values[0]} race.",fontproperties=font_prop)
+    st.write(f"{selected_driver} set the fastest qualifying time in {driver_data['FastestTimes'].values[0]} race.")
 else:
     st.write(f"{selected_driver} set the fastest qualifying time in {driver_data['FastestTimes'].values[0]} races.")
 
