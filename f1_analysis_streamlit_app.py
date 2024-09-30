@@ -1006,7 +1006,7 @@ selected_driver = st.selectbox("Select a driver:", df['Driver'])
 driver_data = df[df['Driver'] == selected_driver]
 st.write(f"{selected_driver} set the fastest qualifying time in {driver_data['FastestTimes'].values[0]} races.")
 
-# Add a fun fact
-st.sidebar.title("Fun Fact")
-st.sidebar.write("Did you know? The total number of fastest qualifying times set in the 2023 season was", 
-                 df['FastestTimes'].sum())
+# # Add a fun fact
+# st.sidebar.title("Fun Fact")
+# st.sidebar.write("Did you know? The total number of fastest qualifying times set in the 2023 season was", 
+#                  df['FastestTimes'].sum())
