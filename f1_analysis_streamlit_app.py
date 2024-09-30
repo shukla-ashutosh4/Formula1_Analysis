@@ -776,9 +776,6 @@ st.write("This reflects Mercedes' struggles throughout the 2023 season, as they 
 st.write("These insights highlight the competitive landscape of the 2023 Formula 1 season in qualifying, with Verstappen and Red Bull showing clear superiority, while Ferrari remained competitive and other teams had occasional standout performances.")
 
 
-import streamlit as st
-import matplotlib.pyplot as plt
-import pandas as pd
 
 podiumFinishes = season2023RaceResults[season2023RaceResults['Position'].isin(['1','2','3'])]['Driver'].value_counts()
 
@@ -796,9 +793,6 @@ ax.axvline(0, color='#bbbbbb')
 
 st.pyplot(fig)
 
-
-
-import streamlit as st
 
 st.header("Formula 1 - 2023 Season Podium Finishes Insights")
 
