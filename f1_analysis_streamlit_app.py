@@ -1328,3 +1328,53 @@ ax.axvline(90, color='#bbbbbb')
 
 # Display plot
 st.pyplot(fig) 
+
+st.header("Elaborated Insights from the Formula 1 2023 Season Total Laps Driven (Drivers) Chart")
+
+st.subheader("Verstappen's Dominance")
+st.write("Max Verstappen's impressive total of 1325 laps driven clearly demonstrates his dominance throughout the 2023 season. His consistent participation in races and his ability to complete a high number of laps highlight his reliability and performance.")
+
+st.subheader("Close Competition")
+st.write("Alonso, Norris, Hamilton, and Russell: Following closely behind Verstappen are Fernando Alonso, Lando Norris, Lewis Hamilton, and George Russell, all of whom have driven over 1200 laps. This indicates a competitive battle among the top drivers, with consistent participation and strong performance.")
+
+st.subheader("Midfield Battle")
+st.write("Hulkenberg, Gasly, Sainz, Zhou, Bottas, Perez, Tsunoda, and Piastri: The midfield drivers, including Nico Hulkenberg, Pierre Gasly, Carlos Sainz, Zhou Guanyu, Valtteri Bottas, Sergio Perez, Yuki Tsunoda, and Oscar Piastri, have also driven a significant number of laps, showcasing their consistent participation and competitive nature.")
+
+st.subheader("Variability in Performance")
+st.write("Magnussen, Albon, Stroll, Leclerc, Sargeant, Ocon, and de Vries: Drivers like Kevin Magnussen, Alex Albon, Lance Stroll, Charles Leclerc, Logan Sargeant, Esteban Ocon, and Nyck de Vries have driven fewer laps, indicating some missed races or retirements during the season.")
+
+import streamlit as st
+import matplotlib.pyplot as plt
+
+# Data
+teamsTotalLaps = season2023RaceResults.groupby('Team')['Laps'].sum().sort_values(ascending=False)
+
+# Create figure
+fig, ax = plt.subplots(figsize=(10,5))
+
+# Set axis limits
+ax.axis([2000,2600,9.5,-0.5])
+
+# Create bar chart
+teamLabel = [" ".join(team.split()[:2]) if len(team.split()) > 2 else team.split()[0] for team in teamsTotalLaps.index]
+ax.barh(teamLabel, teamsTotalLaps, color=[color_dicttt.get(team, 'gray') for team in teamsTotalLaps.index])
+
+# Add text to bars
+for i in range(len(teamsTotalLaps)):
+    ax.text(teamsTotalLaps[i]-45, i+0.2, teamsTotalLaps[i],fontproperties=font_prop, fontsize=14, fontweight='bold', color='k')
+
+# Add note
+ax.text(2400, 8.6, "* Reserve Drivers Included", fontweight='bold', color='#bbbbbb')
+
+# Set title and labels
+ax.set_title('Formula 1 - 2023 Season\nTotal Laps Driven in Race Sessions (Teams)', fontproperties=font_prop,fontsize=19, fontweight='bold', color='#bbbbbb')
+ax.set_xlabel('TOTAL LAPS', fontsize=14, fontweight='bold', fontproperties=font_prop,color='#bbbbbb')
+ax.set_ylabel('TEAMS', fontsize=14, fontweight='bold', fontproperties=font_prop,color='#bbbbbb')
+
+plt.xticks(fontproperties=font_prop, color='#bbbbbb')
+plt.yticks(fontproperties=font_prop,color='#bbbbbb')
+# Add vertical line
+ax.axvline(2000, color='#bbbbbb')
+
+# Display plot
+st.pyplot(fig)
