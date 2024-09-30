@@ -1143,6 +1143,9 @@ st.markdown("""
 - [![GitHub](https://img.shields.io/badge/GitHub-ashutoshshukla-blue?logo=github)](https://github.com/shukla-ashutosh4)
 """)
 st.write("Also check out the Colab Notebook for much Detailed Analyis ")
+st.markdown("""
+- [![Colab Notebook](https://colab.research.google.com/drive/1NrpSs2ZlJZdBQqjkT0W9sCDyE7_Ap1vA?usp=sharing)""")
+
 
 # Add a thank you message
 st.write("""
