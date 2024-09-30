@@ -1257,7 +1257,7 @@ fig, ax = plt.subplots(figsize=(9.5,6))
 ax.axis([0,22,15,-0.5])
 
 # Create bar chart
-ax.barh([" ".join(driver.split()[1:]) for driver in DotdAppearanceDf.index], DotdAppearanceDf, fontproperties=font_prop, color=[color_dicttt.get(" ".join(driver.split()[1:]), 'gray') for driver in DotdAppearanceDf.index])
+ax.barh([" ".join(driver.split()[1:]) for driver in DotdAppearanceDf.index], DotdAppearanceDf, color=[color_dicttt.get(" ".join(driver.split()[1:]), 'gray') for driver in DotdAppearanceDf.index])
 
 # Add text to bars
 for i in range(len(DotdAppearanceDf)):
