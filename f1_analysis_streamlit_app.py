@@ -1277,3 +1277,22 @@ ax.axvline(0, color='#bbbbbb')
 # Display plot
 st.pyplot(fig)
 
+import streamlit as st
+
+st.header("Elaborated Insights from the Formula 1 2023 Season Driver of the Day Votes (Drivers) Chart")
+
+st.subheader("Dominance")
+st.write("Verstappen: Max Verstappen's 21 appearances in Driver of the Day votes clearly demonstrate his dominance throughout the season. His consistent strong performances and ability to impress fans and experts earned him a significant number of nominations.")
+
+st.subheader("Close Competition")
+st.write("Perez and Hamilton: Following closely behind Verstappen are Sergio Perez and Lewis Hamilton, both with 15 and 14 appearances, respectively. This indicates a competitive battle for the top spot, with Perez and Hamilton consistently delivering impressive drives.")
+
+st.subheader("Consistent Performance")
+st.write("Norris and Leclerc: Lando Norris and Charles Leclerc both secured 12 appearances in Driver of the Day votes, showcasing their consistent ability to deliver standout performances and earn recognition from fans and experts.")
+
+st.subheader("Midfield Contenders")
+st.write("Alonso, Piastri, Russell, and Sainz: Fernando Alonso, Oscar Piastri, George Russell, and Carlos Sainz demonstrated solid performances in the midfield, with appearances in Driver of the Day votes ranging from 4 to 10. This highlights the competitive nature of the midfield battle.")
+
+st.subheader("Variability in Performance")
+st.write("Albon, Tsunoda, Gasly, Ocon, Lawson, and Ricciardo: Drivers like Alex Albon, Yuki Tsunoda, Pierre Gasly, Esteban Ocon, Nyck de Vries, and Daniel Ricciardo experienced some fluctuations in their performances, as evidenced by their lower number of appearances in Driver of the Day votes.")
+
