@@ -1177,3 +1177,4 @@ ax.axvline(0, color='#bbbbbb')
 
 # Display plot
 st.pyplot(fig)
+
