@@ -1140,18 +1140,16 @@ st.subheader("About the Author")
 
 # Add some introductory text
 st.write("""
-Hello, my name is **Ashutosh Shukla**, a passionate Data Scientist and Machine Learning enthusiast with a deep interest in AI, Formula 1, and advanced data analytics. My work revolves around analyzing data to provide insights and predictions, with a particular focus on motorsports analytics.
+Hello, my name is **Ashutosh Shukla**, a passionate Computer Science and Engineering student with huge interest in Data Science and Machine Learning enthusiast with a deep interest in AI, Formula 1, and advanced data analytics. 
 """)
 
 # Add LinkedIn and GitHub links with emojis
 st.write("Feel free to connect with me:")
 st.markdown("""
-- [![LinkedIn](https://img.shields.io/badge/LinkedIn-Ashutosh%20Shukla-blue)](https://www.linkedin.com/in/your-linkedin-profile)
-- [![GitHub](https://img.shields.io/badge/GitHub-ashutoshshukla-blue?logo=github)](https://github.com/your-github-profile)
-- [Email Me](mailto:your-email@example.com)
+- [![LinkedIn](https://img.shields.io/badge/LinkedIn-Ashutosh%20Shukla-blue)](https://www.linkedin.com/in/ashutosh-shukla4/)
+- [![GitHub](https://img.shields.io/badge/GitHub-ashutoshshukla-blue?logo=github)](https://github.com/shukla-ashutosh4)
 """)
 
 # Add a thank you message
 st.write("""
-Thank you for checking out my analysis! If you have any questions or feedback, feel free to reach out via LinkedIn or email.
-""")
+Thank you for checking out my analysis! If you have any questions or feedback, feel free to reach out via LinkedIn""")
