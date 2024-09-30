@@ -1178,3 +1178,19 @@ ax.axvline(0, color='#bbbbbb')
 # Display plot
 st.pyplot(fig)
 
+import streamlit as st
+
+st.header("Elaborated Insights from the Formula 1 2023 Season DNFs (Tracks) Chart")
+
+st.subheader("Reliability Challenges")
+st.write("Australia, Brazil, and Mexico: The chart highlights the reliability concerns at certain tracks, particularly Australia, Brazil, and Mexico, which experienced a higher number of DNFs. These circuits might have specific characteristics or conditions that contributed to mechanical failures or driver errors.")
+
+st.subheader("Consistent Issues")
+st.write("Bahrain, Las Vegas, United States, Netherlands, Hungary, Great Britain: Several tracks, including Bahrain, Las Vegas, the United States, the Netherlands, Hungary, and Great Britain, consistently faced reliability challenges throughout the season. This suggests underlying issues with the track layout, conditions, or infrastructure that affected driver performance.")
+
+st.subheader("Variability in Performance")
+st.write("Belgium, Saudi Arabia, Canada, Qatar, Monaco, Azerbaijan: Tracks like Belgium, Saudi Arabia, Canada, Qatar, Monaco, and Azerbaijan experienced a mix of reliability issues and relatively consistent performance. This indicates that factors like track layout, weather conditions, and driver skill played a significant role in determining the number of DNFs.")
+
+st.subheader("Few Reliability Concerns")
+st.write("Italy, Austria, Abu Dhabi: The tracks of Italy, Austria, and Abu Dhabi had the fewest DNFs, suggesting that their conditions and layouts were more conducive to consistent racing.")
+
