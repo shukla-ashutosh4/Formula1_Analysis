@@ -1438,26 +1438,6 @@ ax.axvline(2000, color='#bbbbbb')
 # Display plot
 st.pyplot(fig)
 
-
-
-# 2023 Season - Total Distance Driven (Drivers)
-if section == "2023 Season - Total Distance Driven (Drivers)":
-    st.header("2023 Season - Total Distance Driven (Drivers)")
-    
-    # Verstappen's Dominance Insights
-    st.subheader("Verstappen's Dominance")
-    st.write("Max Verstappen's impressive total of 7156.46 kilometers driven clearly demonstrates his dominance throughout the 2023 season.")
-    
-
-    # Additional Insights
-    st.write("""
-    - **Close Competition:** Ricciardo and Lawson also had strong performances, driving over 7000 kilometers.
-    - **Experienced Drivers:** Alonso, Norris, Hamilton, and Hulkenberg demonstrated consistent performance and reliability.
-    - **Midfield Battle:** Midfield drivers like Russell, Zhou, and Sainz contributed to the exciting rivalry in the 2023 season.
-    """)
-    
-
-
 # Title and Introduction
 st.title("🏎️ Formula 1 2023 Season Review & 2024 Season Insights 🌟")
 
