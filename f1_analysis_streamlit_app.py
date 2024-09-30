@@ -1026,13 +1026,13 @@ for i in range(len(qualiQ2)):
     ax.text(qualiQ2[i]-0.75, i+0.24, "{:>2}".format(qualiQ2[i]), fontsize=12, fontweight='bold', color='k')
 
 # Set the title and labels
-ax.set_title("Formula 1 - 2023 Season\n# of Q2 Appearances in Qualifying (Drivers)",fontproperties=font_prop, fontsize=19, fontweight='bold', color='#bbbbbb')
+ax.set_title("Formula 1 - 2023 Season\n# of Q2 Appearances in Qualifying (Drivers)", fontproperties=font_prop, fontsize=19, fontweight='bold', color='#bbbbbb')
 ax.set_xlabel('Q2 APPEARANCES', fontsize=14, fontweight='bold', fontproperties=font_prop,color='#bbbbbb')
 ax.set_ylabel('DRIVERS', fontsize=14, fontweight='bold',fontproperties=font_prop, color='#bbbbbb')
 
 # Set the tick colors and labels
-ax.tick_params(axis='x', colors='#bbbbbb', labelsize=9, fontproperties=font_prop)
-ax.tick_params(axis='y', colors='#bbbbbb', labelsize=9, fontproperties=font_prop)
+ax.tick_params(axis='x', colors='#bbbbbb', labelsize=9)
+ax.tick_params(axis='y', colors='#bbbbbb', labelsize=9)
 
 # Add a vertical line at x=0
 ax.axvline(0, color='#bbbbbb')
