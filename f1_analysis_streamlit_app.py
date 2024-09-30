@@ -532,6 +532,10 @@ section = st.sidebar.radio("Choose a section",
                             "Total Laps Driven in Race Sessions (Teams)", 
                             "Total Distance Driven in Race Sessions (Drivers)"])
 
+# Set Streamlit title
+st.title("Formula 1 2023 Season Analysis")
+
+
 # Season Calendar
 if section == "Season Calendar":
     st.header("Season Calendar")    
@@ -566,10 +570,6 @@ elif section == "2023 Season Top 10 Drivers' Points Progression":
     driverPointsTop10 = {}
     driverPointsTop10Sprint = {}
     
-
-# Set Streamlit title
-st.title("Formula 1 2023 Season Analysis")
-
 st.header("Season Calendar")    
 season2023RaceCalendar
 
