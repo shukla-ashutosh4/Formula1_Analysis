@@ -104,6 +104,9 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+# Display your profile image
+st.image("F1_new_logo.png", caption="F1", width=150)
+
 # Set Streamlit title
 st.title("🏎️ Formula 1 2023 Season Analysis")
 st.write("Developed by Ashutosh Shukla")
