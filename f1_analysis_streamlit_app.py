@@ -943,7 +943,7 @@ st.pyplot(fig)
 # Set page config (this must be the first Streamlit command)
 
 # Title
-st.title("Formula 1 - 2023 Season Fastest Qualifying Times Insights")
+st.header("Formula 1 - 2023 Season Fastest Qualifying Times Insights")
 
 # Data
 data = {
