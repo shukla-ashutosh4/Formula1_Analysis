@@ -1197,4 +1197,29 @@ st.write("Italy, Austria, Abu Dhabi: The tracks of Italy, Austria, and Abu Dhabi
 st.header("Driver Of The Day 2023")
 season2023DotdVotes
 
+# Data
+DotdAwards = season2023DotdVotes['1st Place'].value_counts()
 
+# Create figure
+fig, ax = plt.subplots(figsize=(9,5))
+
+# Set axis limits
+ax.axis([0,5.5,11,-0.5])
+
+# Create bar chart
+ax.barh([" ".join(driver.split()[1:]) for driver in DotdAwards.index], DotdAwards, color=[color_dicttt.get(" ".join(driver.split()[1:]), 'gray') for driver in DotdAwards.index])
+
+# Add text to bars
+for i in range(len(DotdAwards)):
+    ax.text(DotdAwards[i]-0.18, i+0.2, DotdAwards[i], fontsize=16, fontweight='bold', color='k')
+
+# Set title and labels
+ax.set_title('Formula 1 - 2023 Season\n# of Driver of the Day Awards (Drivers)', fontproperties = font_prop, fontsize=19, fontweight='bold', color='#bbbbbb')
+ax.set_xlabel('DotD AWARDS', fontsize=14, fontweight='bold', fontproperties = font_prop,color='#bbbbbb')
+ax.set_ylabel('DRIVERS', fontsize=14, fontweight='bold', fontproperties = font_prop,color='#bbbbbb')
+
+# Add vertical line
+ax.axvline(0, color='#bbbbbb')
+
+# Display plot
+st.pyplot(fig)
