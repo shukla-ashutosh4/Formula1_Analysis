@@ -1194,3 +1194,7 @@ st.write("Belgium, Saudi Arabia, Canada, Qatar, Monaco, Azerbaijan: Tracks like 
 st.subheader("Few Reliability Concerns")
 st.write("Italy, Austria, Abu Dhabi: The tracks of Italy, Austria, and Abu Dhabi had the fewest DNFs, suggesting that their conditions and layouts were more conducive to consistent racing.")
 
+st.header("Driver Of The Day 2023")
+season2023DotdVotes
+
+
