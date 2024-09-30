@@ -1059,34 +1059,34 @@ st.subheader("Struggling Drivers")
 st.write("Zhou, Sargeant, Ricciardo, De Vries, Lawson: Zhou Guanyu, Logan Sargeant, Daniel Ricciardo, Nyck de Vries, and Liam Lawson faced challenges in qualifying, with significantly fewer Q2 appearances. These drivers might have struggled to adapt to the demands of Formula 1 or encountered difficulties with their cars or teams.")
 
 # Data
-qualiQ3 = season2023QualifyingResults[season2023QualifyingResults['Position'].isin([str(i) for i in range(1,11)])] \
-    ['Driver'].value_counts()
+# qualiQ3 = season2023QualifyingResults[season2023QualifyingResults['Position'].isin([str(i) for i in range(1,11)])] \
+#     ['Driver'].value_counts()
 
-# Create figure
-fig, ax = plt.subplots(figsize=(10,6))
+# # Create figure
+# fig, ax = plt.subplots(figsize=(10,6))
 
-# Set axis limits
-ax.axis([0,22,21,-0.6])
+# # Set axis limits
+# ax.axis([0,22,21,-0.6])
 
-# Create bar chart
-ax.barh([" ".join(driver.split()[1:]) for driver in qualiQ3.index], qualiQ3, color=[color_dicttt.get(" ".join(driver.split()[1:]), 'gray') for driver in qualiQ3.index])
+# # Create bar chart
+# ax.barh([" ".join(driver.split()[1:]) for driver in qualiQ3.index], qualiQ3, color=[color_dicttt.get(" ".join(driver.split()[1:]), 'gray') for driver in qualiQ3.index])
 
-# Add text to bars
-for i in range(len(qualiQ3)):
-    ax.text(qualiQ3[i]-0.75, i+0.24, "{:>2}".format(qualiQ3[i]), fontsize=12, fontweight='bold', color='k')
+# # Add text to bars
+# for i in range(len(qualiQ3)):
+#     ax.text(qualiQ3[i]-0.75, i+0.24, "{:>2}".format(qualiQ3[i]), fontsize=12, fontweight='bold', color='k')
 
-# Set title and labels
-ax.set_title("Formula 1 - 2023 Season\n# of Q3 Appearances in Qualifying (Drivers)", fontsize=19,fontproperties = font_prop, fontweight='bold', color='#bbbbbb')
-ax.set_xlabel('Q3 APPEARANCES', fontproperties = font_prop, fontsize=14, fontweight='bold', color='#bbbbbb')
-ax.set_ylabel('DRIVERS', fontsize=14, fontproperties = font_prop, fontweight='bold', color='#bbbbbb')
+# # Set title and labels
+# ax.set_title("Formula 1 - 2023 Season\n# of Q3 Appearances in Qualifying (Drivers)", fontsize=19,fontproperties = font_prop, fontweight='bold', color='#bbbbbb')
+# ax.set_xlabel('Q3 APPEARANCES', fontproperties = font_prop, fontsize=14, fontweight='bold', color='#bbbbbb')
+# ax.set_ylabel('DRIVERS', fontsize=14, fontproperties = font_prop, fontweight='bold', color='#bbbbbb')
 
-# Set ticks
-# ax.set_xticks(range(0,23,2))
-# ax.set_xticklabels(range(0,23,2), color='#bbbbbb')
-# ax.set_yticks(fontsize=9, color='#bbbbbb')
+# # Set ticks
+# # ax.set_xticks(range(0,23,2))
+# # ax.set_xticklabels(range(0,23,2), color='#bbbbbb')
+# # ax.set_yticks(fontsize=9, color='#bbbbbb')
 
-# Add vertical line
-ax.axvline(0, color='#bbbbbb')
+# # Add vertical line
+# ax.axvline(0, color='#bbbbbb')
 
-# Display plot
-st.pyplot(fig)
+# # Display plot
+# st.pyplot(fig)
